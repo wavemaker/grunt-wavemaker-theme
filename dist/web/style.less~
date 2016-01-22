@@ -1,0 +1,837 @@
+/*START - default Theme*/
+
+.wm-app {
+
+  @import url("../components/bootstrap/less/bootstrap.less");
+  @import url("variables.less");
+
+  font-size: @font-size-base;
+  color: @text-color;
+  font-family: @font-family-base;
+  background-color: @wm-body-bg;
+
+  //Variables
+  @wm-brand-default: #5d5d5d;
+  @wm-body-bg: #fff;
+
+  //Panel
+  @panel-box-shadow: 1px 1px 1px 0px  @panel-inner-border;
+  @wm-panel-title-font-size: 1.2em;
+  @wm-panel-action-color: lighten(@text-color, 30%);
+  @wm-panel-action-font-size: 0.833em;
+
+  //Header
+  @wm-header-color: inherit;
+  @wm-app-header-container-border-color: rgba(0, 0, 0, 0.1);
+  @wm-header-text-color: #515253;
+  @wm-header-bg-color: #fff;
+  @wm-navbar-toggle-text-color: #fff;
+  @wm-navbar-toggle-hover-text-color: #fff;
+
+  //Side panels
+  @wm-panels-border-color: #CFDBE2;
+  @wm-left-panel-btn-color: @wm-header-text-color;
+  @wm-left-panel-bg: #F2F3F6;
+  @wm-left-panel-list-border: 1px #e6e5e5 solid;
+
+  @wm-right-panel-bg: #F2F3F6;
+  @wm-right-panel-btn-color: @wm-header-text-color;
+  @wm-right-panel-list-border: 1px #e6e5e5 solid;
+
+  //Tabset
+  @wm-tab-color-normal: @wm-brand-default;
+  @wm-tab-color-hover: @brand-primary;
+  @wm-tab-bg-hover: #fff;
+  @wm-tab-color-active: #233e9e;
+  @wm-tab-bg-active: #fff;
+
+  //Breadcrumb
+  @wm-breadcrumb-color : @brand-primary;
+
+  //Grid
+  @wm-app-grid-sort-icon-color: #ccc;
+
+  //Tile
+  @wm-tile-border-color: #f0f0f0;
+
+  //Secondary button
+  @wm-btn-secondary-bg-color: #999;
+  @wm-btn-secondary-hover-bg-color: #666;
+
+  //Calendar
+  @wm-calendar-btn-bg-color: #e6e6e6;
+  @wm-calendar-border-color: #cdd6e1;
+  @wm-calendar-text-color: #515151;
+  @wm-calendar-bg-color: #fff;
+  @wm-calendar-thead-button-text-color: #fff;
+  @wm-calendar-tbody-button-border-color: #fff;
+  @wm-calendar-tbody-button-hover-text-color: #fff;
+  @wm-calendar-highlight-bg: @brand-primary;
+  @wm-calendar-heading-text-color: @text-color;
+  @wm-calendar-active-text-color: #fff;
+
+  @wm-dropdown-toggle-tbody-btn-text-color: #fff;
+
+  //Left Panel
+  @wm-left-panel-anchor-hover-bg-color: #e6e4e4;
+  @wm-left-panel-dropdown-menu-border-color: #ccc;
+  @wm-left-panel-dropdown-menu-bg-color: transparent;
+
+  //Footer
+  @wm-footer-bg-color: #F5F7FA;
+
+  //Search
+  @wm-search-input-group-addon-hover-bg-color: #e7e7e7;
+
+  //Calendar
+  @wm-calendar-thead-button-bg-color: #545765;
+  @wm-calendar-tbody-button-bg-color: #ebebf3;
+
+  //Datetime, Timeinput
+  @wm-datetime-em-text-color: #ccc;
+  @wm-datetime-btn-hover-color: #fff;
+
+  //Rich Text Editor
+  @wm-richtexteditor-btn-bg-color: #f7f7f7;
+  @wm-richtexteditor-btn-border-color: #ccc;
+  @wm-richtexteditor-btn-text-color: #666;
+  @wm-richtexteditor-btn-disabled-bg-color: #eee;
+  @wm-richtexteditor-btn-disabled-border-color: #ccc;
+  @wm-richtexteditor-btn-disabled-text-color: #333;
+
+
+  //Switch widget
+  @wm-app-switch-btn-hover-bg-color: darken(@btn-default-bg, 10%);
+  @wm-app-switch-btn-hover-text-color: #fff;
+  @wm-app-switch-btn-default-bg-color: transparent;
+
+  //Livelist
+  @wm-app-livelist-li-btn-bg-color: rgba(0, 0, 0, 0);
+  @wm-app-livelist-li-active-btn-bg-color: transparent;
+  @wm-app-livelist-li-active-btn-text-color: #fff;
+
+  //File Upload
+  @wm-fileupload-btn-hover-color: #fff;
+  @wm-fileupload-path-holder-bg-color: #fff;
+
+  //Buttons
+  @wm-btn-hover-color: #fff;
+  @wm-btn-group-active-btn-bg-color: #fff;
+
+  //Tree
+  @app-tree-node-color: darken(@gray-base, 25%);
+
+  //Table
+  @wm-table-header-bg-color: #E7E9F1;
+
+  //Buttons
+  @wm-btn-default-text-color: #fff;
+  @wm-btn-default-hover-text-color: #fff;
+
+  .img-rounded {
+    border-radius: 6px;
+  }
+  /******Label: overiding the label class as bootstrap is making all the labels bold***/
+  label {
+    font-weight: normal;
+  }
+
+  /***Tabs Widget: Styling for the tabs widget comes here********/
+  //Tab Content
+  .tab-content {
+    .tab-body {
+      border-color: transparent;
+      padding: 1.333em;
+    }
+  }
+  //navigation
+  .nav-tabs {
+    border-bottom-color: @nav-tabs-border-color;
+    > li {
+      > a, .app-menu a {
+        color: @wm-tab-color-normal;
+        background-color: @nav-tabs-active-link-hover-bg;
+        border-bottom-color: @nav-tabs-border-color;
+        border-radius: @border-radius-base;
+        box-shadow: none;
+        margin-right: 0;
+        border-color: transparent;
+        text-transform: uppercase;
+        &:hover, &:focus {
+          color: @wm-tab-color-hover;
+          background-color: @nav-tabs-active-link-hover-bg;
+          border-bottom: 0.167em solid @brand-primary;
+        }
+      }
+      &.active {
+        > a, .app-menu a {
+          border-color: transparent transparent @brand-primary;
+          color: @wm-tab-color-hover;
+          //background-color: @wm-tab-bg-hover;
+          border-bottom-width: 0.167em;
+          &:hover {
+            border-color: transparent transparent @brand-primary;
+            color: @wm-tab-color-hover;
+            background-color: @wm-tab-bg-hover;
+            border-bottom-width: 0.167em;
+          }
+        }
+      }
+    }
+  }
+/***Tabs Widget: Styling for the tabs widget comes here********/
+  .list-group-item-separator {
+    margin-bottom: 0.16em;
+    border-radius: 0.16em;
+    .form-group {
+      padding: 0 1em;
+    }
+  }
+
+  /***Button Style: Defining the sixe of the button for bootstrap classes********/
+  .btn {
+    text-transform: uppercase;
+    &.btn-lg {
+      font-size: 1.4em;
+    }
+    &.btn-xs {
+      padding: 0 0.5em;
+    }
+    .caret {
+      margin-left: 0.7em;
+    }
+    &.active, &:active {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+
+  .btn-default {
+    color: @wm-btn-default-text-color;
+    &:hover, &:focus &:active {
+      color: @wm-btn-default-hover-text-color;
+      background-color: darken(@btn-default-bg, 10%);
+      border-color: darken(@btn-default-bg, 10%);
+      span {
+        color: @btn-primary-color;
+      }
+    }
+
+    i {
+      color: @wm-btn-default-text-color;
+    }
+  }
+
+  /***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
+  .modal-header {
+    background-color: @navbar-default-bg;
+    color: @navbar-default-color;
+  }
+
+  //Breadcrumb
+  .breadcrumb {
+    li {
+      a {
+        color: @wm-breadcrumb-color;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+
+  //Calendar Specific
+  .app-calendar {
+    background-color: @wm-calendar-bg-color;
+    box-shadow: 0 0.167em 0 rgba(0, 0, 0, 0.05);
+    .fc-state-default {
+      background: @wm-calendar-btn-bg-color;
+      border: 1px solid @wm-calendar-border-color;
+      color: @wm-calendar-text-color;
+      &.fc-state-hover, &:focus, &.fc-state-active {
+        color: @wm-calendar-bg-color;
+        background: @btn-primary-bg;
+        border: 1px solid @btn-primary-border;
+      }
+    }
+
+    .fc-state-highlight {
+      &.fc-today {
+        background-color: @wm-calendar-highlight-bg;
+        color: @wm-calendar-active-text-color;
+      }
+    }
+    .fc {
+      .fc-toolbar {
+        h2 {
+          color: @wm-calendar-heading-text-color;
+        }
+      }
+    }
+    .fc-widget-header {
+      background-color: @wm-calendar-bg-color;
+      color: @wm-calendar-text-color;
+    }
+    .fc-body {
+      .fc-row {
+        min-height: 3em;
+        .fc-content-skeleton {
+          padding: .8em 0;
+          td {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  //Progress Bar
+  .progress {
+    border-radius: 0;
+    box-shadow: none;
+    height: 1.667em;
+  }
+
+  //Table
+  .table {
+    > thead {
+      > tr {
+        th {
+          text-transform: uppercase;
+          background-color: @wm-table-header-bg-color;
+        }
+      }
+    }
+  }
+
+  /*****************************************************************************************************************************************/
+  /*********************************************************Layout**************************************************************************/
+  /*****************************************************************************************************************************************/
+  .app-content-column {
+    background-color: @wm-body-bg;
+    padding: 1em;
+  }
+
+  //Header
+  .app-header, .app-mobile-header {
+    background-color: @wm-header-bg-color;
+    color: @wm-header-text-color;
+    border-bottom: 1px solid @wm-app-header-container-border-color;
+
+    a {
+      color: @wm-header-text-color;
+    }
+
+    .app-mobile-header {
+      background-color: @navbar-default-bg;
+      color: @navbar-default-color;
+      a {
+        color: @navbar-default-color;
+      }
+    }
+  }
+  //Top Nav Bar
+  .app-navbar {
+    border-radius: 0;
+    background-color: @navbar-default-bg;
+    color: @navbar-default-color;
+
+    //Mobile Specific button
+    .navbar-toggle {
+      margin-right: 1.2em;
+      color: @wm-navbar-toggle-text-color;
+      &:hover, &:focus {
+        color: @wm-navbar-toggle-hover-text-color;
+      }
+    }
+    .navbar-nav {
+      li {
+        a {
+          font-size: 1em;
+          padding-left: 3em;
+          padding-right: 3em;
+          text-transform: uppercase;
+          font-weight: normal;
+          text-decoration: none;
+          word-spacing: .4em;
+          i {
+            margin-right: 0.417em;
+          }
+          &:hover, &:focus, &.active, &.app-popover-open {
+            color: @navbar-default-link-hover-color;
+            background-color: @navbar-default-hover-bg;
+          }
+        }
+
+        > .dropdown .dropdown-menu {
+          margin: 0;
+          background-color: @navbar-default-bg;
+          a {
+            color: inherit;
+            padding: .65em 1em;
+            &:hover {
+              background-color: @navbar-default-hover-bg;
+            }
+          }
+        }
+      }
+
+      .app-nav-item {
+        > .dropdown {
+          a.dropdown-toggle {
+            padding-left: 3em;
+            padding-right: 3em;
+            color: inherit;
+            &:hover {
+              background-color: @navbar-default-hover-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Popover
+  .popover {
+    min-width: 16.667em;
+    .popover-content {
+      padding: 0;
+    }
+  }
+
+  //Left & Right Panels
+  .app-left-panel, .app-right-panel {
+    background-color: @wm-left-panel-bg;
+    .nav {
+      li {
+        margin-top: 0;
+        border-bottom: @wm-left-panel-list-border;
+
+        a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
+          font-size: 0.917em;
+          text-transform: uppercase;
+          letter-spacing: .025em;
+          font-weight: 400;
+          padding: 1em;
+          position: relative;
+          border-radius: 0;
+          line-height: 1.7;
+          color: @wm-left-panel-btn-color;
+          border-left: 0.5em solid transparent;
+          transition: color .5s ease, background .5s ease;
+          -webkit-transition: color .5s ease, background .5s ease;
+          -moz-transition: color .5s ease, background .5s ease;
+          -ms-transition: color .5s ease, background .5s ease;
+          -o-transition: color .5s ease, background .5s ease;
+          &:hover {
+            color: @brand-primary;
+            text-decoration: none;
+            background-color: @wm-left-panel-anchor-hover-bg-color;
+            border-left-color: @brand-primary;
+            transition: color .5s ease, background .5s ease;
+            -webkit-transition: color .5s ease, background .5s ease;
+            -moz-transition: color .5s ease, background .5s ease;
+            -ms-transition: color .5s ease, background .5s ease;
+            -o-transition: color .5s ease, background .5s ease;
+          }
+          &.active {
+            background-color: transparent;
+            border-left-color: @brand-primary;
+            color: @brand-primary;
+          }
+          .app-icon {
+            margin-left: 0.833em;
+            margin-right: 0.417em;
+          }
+        }
+
+        > .dropdown.open {
+          > .dropdown-menu {
+            position: relative;
+            padding: 0.833em 0;
+            margin: 0 0 1.333em;
+            border: 0;
+            border-bottom: 1px solid @wm-left-panel-dropdown-menu-border-color;
+            box-shadow: none;
+            background-color: @wm-left-panel-dropdown-menu-bg-color;
+            li {
+              a {
+                padding: 0.667em 1.667em;
+              }
+            }
+          }
+        }
+      }
+    }
+    .app-nav {
+      .app-nav-item {
+        > .dropdown {
+          > a {
+            padding: 1.333em;
+          }
+        }
+      }
+    }
+  }
+
+  //Left Panel
+  .app-left-panel {
+    border-right: 1px solid @wm-panels-border-color;
+  }
+
+  //Right Panel
+  .app-right-panel {
+    border-left: 1px solid @wm-panels-border-color;
+  }
+
+  //Footer
+  .app-footer {
+    padding: 1em 1.5em;
+    background-color: @wm-footer-bg-color;
+  }
+
+  .btn-group {
+    .btn.active {
+      box-shadow: none;
+      background-color: @wm-btn-group-active-btn-bg-color;
+      border-color: @brand-primary;
+      color: @text-color;
+    }
+  }
+
+  /******************************************************************************************************************************************/
+  /***************************************************Widgets styling************************************************************************/
+  /******************************************************************************************************************************************/
+  .form-group {
+    margin-bottom: 0.833em;
+  }
+  //for text, select controls
+  .form-control {
+    box-shadow: none;
+    &:focus {
+      border: 1px solid @input-border-focus;
+      box-shadow: none;
+    }
+  }
+  .form-control-static {
+    padding-bottom: 0;
+  }
+
+
+  //form widgets
+  .app-form, .app-liveform {
+    //for labels in the form
+    .control-label {
+      padding: @padding-base-vertical @padding-base-horizontal 0 @padding-base-horizontal;
+    }
+    //action buttons in the form
+    .form-action {
+      .btn {
+        margin: 0 0.333em;
+        border-radius: @border-radius-base;
+      }
+    }
+
+    //Styling File Upload in IE
+    input[type="file"] {
+      padding: 0;
+      //Browse textbox
+      &::-ms-value {
+        border: 1px solid @input-border;
+        background-color: @wm-fileupload-path-holder-bg-color;
+      }
+
+      //Browse button
+      &::-ms-browse {
+        border: 1px solid @input-border;
+      }
+    }
+  }
+
+  /***search widget****/
+  .app-search {
+    .input-group-addon {
+      padding: 0.667em;
+      &:hover {
+        background: @wm-search-input-group-addon-hover-bg-color;
+      }
+    }
+  }
+  //switch button styles
+  .app-switch {
+    .btn-group {
+      .btn {
+        background-color: @btn-default-bg;
+        &:hover, &:focus {
+          background-color: @wm-app-switch-btn-hover-bg-color;
+          color: @wm-app-switch-btn-hover-text-color;
+        }
+      }
+    }
+    .btn-default {
+      background-color: @wm-app-switch-btn-default-bg-color;
+    }
+  }
+  /******grid styles*******/
+  .app-grid {
+    .table {
+      thead {
+        th {
+          .header-data {
+            font-size: 0.917em;
+          }
+          .sort-buttons-container {
+            .sort-button {
+              .sort-icon {
+                color: @wm-app-grid-sort-icon-color;
+              }
+              .up {
+                border-width: 0 0.333em 0.333em;
+                bottom: -0.167em;
+              }
+              .down {
+                border-width: 0.333em 0.333em 0;
+                top: 0.250em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //carousel styling: removing the left and right background image
+  .carousel-control {
+    &.left, &.right {
+      background-image: none;
+    }
+  }
+
+/****accordion classes****/
+  .app-accordion {
+    .app-accordion-panel {
+      .panel-heading {
+        .panel-actions {
+          right: 1em;
+          top: 1.5em;
+        }
+      }
+    }
+  }
+
+  //file upload button
+  .app-single-file-upload {
+    .glyphicon {
+      margin-right: 0.500em;
+    }
+  }
+
+
+  /*Date, DateTime & Dropdown widgets*/
+  .app-calendar, .app-date, .app-datetime, .app-timeinput {
+     //setting the margin for the group button so that it shows up over the input
+    .input-group-btn:last-child {
+        > .btn, .btn-group {
+          margin-left: 0;
+        }
+    }
+    //setting the base font color for the popup content
+    .dropdown-menu {
+      color: @text-color;
+    }
+
+    thead {
+      tr {
+        th {
+          height: 2.5em;
+          button {
+            font-size: 1em;
+            background: @wm-calendar-thead-button-bg-color;
+            color: @wm-calendar-thead-button-text-color;
+          }
+        }
+      }
+    }
+
+    tbody {
+      .btn {
+        background: @wm-calendar-tbody-button-bg-color;
+        border-color: @wm-calendar-tbody-button-border-color;
+      }
+      .btn-default {
+        color: @gray-base;
+        width: auto;
+        &:hover, &:focus &:active {
+          background-color: @brand-primary;
+          border-color: @brand-primary;
+          box-shadow: none;
+          span {
+            color: @wm-calendar-tbody-button-hover-text-color;
+          }
+        }
+      }
+      .btn-info {
+        &:hover, &:focus, &:active, &.active {
+          background-color: @brand-info;
+          border-color: @wm-calendar-tbody-button-border-color;
+          box-shadow: none;
+          span {
+            color: @wm-calendar-tbody-button-hover-text-color;
+          }
+        }
+      }
+    }
+
+    small {
+      font-size: 1em;
+      font-weight: normal;
+    }
+  }
+
+  .open {
+    > .dropdown-toggle {
+      .app-date, .app-datetime {
+        tbody {
+          .btn-default {
+            background-color: @brand-primary;
+            border-color: @brand-primary;
+            box-shadow: none;
+            span {
+              color: @wm-dropdown-toggle-tbody-btn-text-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  //styling for the popup calendar actions
+  .app-date, .app-datetime {
+    .btn-group {
+      .btn {
+        margin-right: 1em;
+      }
+    }
+    .btn-success {
+      margin-right: -0.5em;
+    }
+    .btn-group {
+      margin-left: 2em;
+    }
+    em {
+      color: @wm-datetime-em-text-color;
+    }
+    .dropdown-menu {
+      li {
+        &:last-child {
+          border-top: 1px solid @input-border;
+          margin-top: 0.5em;
+          overflow: auto;
+        }
+      }
+    }
+  }
+
+  //Time Widget classes for styling the buttons
+  .app-timeinput, .app-datetime {
+    tbody {
+      .btn:not(.btn-link) {
+          border: 1px solid @input-border;
+      }
+      .btn-link {
+        width: 100%;
+        background-color: transparent;
+        &:hover {
+          background-color: @btn-primary-bg;
+          color: @btn-primary-color;
+        }
+      }
+    }
+  }
+/*********************************************************************************************************************************************/
+/****************************************************Advanced editors******************************************************************************/
+/*********************************************************************************************************************************************/
+  .app-richtexteditor {
+    .btn-default {
+      background: @wm-richtexteditor-btn-bg-color;
+      border-color: @wm-richtexteditor-btn-border-color;
+      color: @wm-richtexteditor-btn-text-color;
+      &.disabled, &[disabled], &.disabled:hover, &[disabled]:hover, &.disabled:focus, &[disabled]:focus,
+      &.disabled.focus, &.focus[disabled], &.disabled:active, &[disabled]:active, &.disabled.active, &.active[disabled],
+      &.disabled.active, &.active[disabled] {
+        background: @wm-richtexteditor-btn-disabled-bg-color;
+        border-color: @wm-richtexteditor-btn-disabled-border-color;
+        color: @wm-richtexteditor-btn-disabled-text-color;
+      }
+    }
+
+    .ta-root .ta-toolbar .btn-group .btn {
+      height: 2.917em;
+      padding: 0.833em;
+    }
+  }
+
+  fieldset[disabled] {
+    .app-richtexteditor {
+      .btn-default, .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
+        background: @wm-richtexteditor-btn-disabled-bg-color;
+        border-color: @wm-richtexteditor-btn-disabled-border-color;
+        color: @wm-richtexteditor-btn-disabled-text-color;
+      }
+    }
+  }
+
+  //Tree
+  .app-tree {
+    ul {
+      li {
+        span {
+          &:hover {
+            color: @app-tree-node-color;
+          }
+        }
+        &.selected {
+          > i, > span {
+            color: @brand-primary;
+          }
+        }
+      }
+    }
+  }
+
+/***color picker class: adding the default size and padding to the addon*******/
+  .app-colorpicker {
+    &.input-group {
+      width: 13em;
+    }
+    .input-group-addon {
+      padding: 0.833em 1.333em;
+    }
+  }
+/***popover class: removing the radius*******/
+  .popover {
+    padding: 0;
+    border-radius: @border-radius-base;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    color: @text-color;
+  }
+
+  .app-fileupload .app-multi-file-upload, .app-fileupload .app-single-file-upload {
+    height: auto;
+    min-height: 3em;
+  }
+
+  .app-files-upload-status {
+    padding-top: 0.833em;
+    &.multiple {
+      padding-top: 0.333em;
+      font-size: 1.2em;
+    }
+  }
+
+  .app-fileupload {
+    .btn-default {
+      &:hover {
+        color: @wm-fileupload-btn-hover-color;
+        background-color: @brand-primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Theme Properties</comment>
+<entry key="version">1.0</entry>
+<entry key="name">mobile</entry>
+<entry key="platformType">MOBILE</entry>
+<entry key="type">THEME</entry>
+<entry key="author">WM</entry>
+<entry key="description">Mobile Default Theme</entry>
+</properties>

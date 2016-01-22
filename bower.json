@@ -1,0 +1,13 @@
+{
+  "name": "wavemaker-lib",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "3.3.6"
+  },
+  "exportsOverride": {
+    "bootstrap" : {
+      "less": "less/",
+      "fonts": "fonts/"	
+    }
+  }
+ }

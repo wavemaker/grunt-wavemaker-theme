@@ -1,0 +1,672 @@
+/*START - ios Theme Customizations*/
+.wm-app  {
+  @import "../../../components/bootstrap/less/bootstrap.less";
+  @import "variables";
+
+
+  //Variables
+
+  font-size: @font-size-base;
+  color: @text-color;
+  font-family: @font-family-base;
+  background-color: @wm-body-bg;
+
+  @wm-brand-default: #e0e0e0;
+  @wm-dark-bg-text-color: #fff;
+  @wm-transparent-color: transparent;
+
+  @wm-body-bg: #efeff4;
+  @wm-form-input-height: 30pt;
+  @wm-container-margin: 0;
+//header
+  @wm-header-text-color: #000;
+  @wm-header-link-color: @brand-primary;
+  @wm-header-bg: #f5f5f7;
+  @wm-header-border-color: #c1c1c4;
+//side panels
+  @wm-panels-border-color: rgba(0,0,0,0.1);
+
+  @wm-left-panel-btn-color: #515253;
+  @wm-left-panel-bg: @wm-body-bg;
+  @wm-left-panel-list-border: 1px #e6e5e5 solid;
+  @wm-left-panel-link-hover-bg-color: @wm-body-bg;
+  @wm-left-panel-link-hover-text-color: @brand-primary;
+  @wm-left-panel-hover-text-color: @brand-primary;
+
+//tabs
+  @wm-tab-border-color: #dddddd;
+  @wm-tab-color-normal: @text-color;
+  @wm-tab-bg-normal: #fff;
+
+  @wm-tab-color-hover: #fff;
+  @wm-tab-bg-hover: @brand-primary;
+
+  @wm-tab-color-active: #233e9e;
+  @wm-tab-bg-active: #fff;
+  @wm-tab-active-border-color: @brand-primary;
+
+  @wm-tab-active-text-color: @brand-primary;
+  @wm-tab-bg-active-color: #fff;
+
+//Switch widget
+  @wm-app-switch-btn-border-color: @wm-transparent-color;
+  @wm-app-switch-btn-hover-bg-color: @wm-transparent-color;
+  @wm-app-switch-btn-default-bg-color: @wm-transparent-color;
+  @wm-app-switch-bg-color: #fff;
+
+//Calendar
+  @wm-calendar-btn-bg-color: #e6e6e6;
+  @wm-calendar-border-color: #cdd6e1;
+  @wm-calendar-text-color: #515151;
+  @wm-calendar-active-text-color: @wm-dark-bg-text-color;
+  @wm-calendar-bg-color: @wm-transparent-color;
+
+  @wm-calendar-thead-button-bg-color: #fff;
+  @wm-calendar-thead-button-text-color: @text-color;
+  @wm-calendar-thead-button-hover-bg-color: @brand-danger;
+  @wm-calendar-thead-button-border-color: @brand-danger;
+
+  @wm-calendar-button-default-bg-color: @wm-brand-default;
+  @wm-calendar-button-default-bg-color: @wm-brand-default;
+
+  @wm-calendar-tbody-button-hover-bg-color: @brand-danger;
+  @wm-calendar-tbody-button-bg-color: #fff;
+  @wm-calendar-tbody-button-border-color: #fff;
+  @wm-calendar-tbody-button-hover-text-color: @wm-dark-bg-text-color;
+  @wm-calendar-tbody-button-hover-border-color: @brand-danger;
+  @wm-datetime-em-text-color: #ccc;
+
+  @wm-dropdown-toggle-tbody-btn-text-color: @wm-dark-bg-text-color;
+  @wm-calendar-highlight-bg: @brand-danger;
+  @wm-calendar-heading-text-color: @brand-danger;
+
+//Top nav
+  @wm-nav-toggle-text-color: @brand-primary;
+  @wm-top-nav-border-color: #fff;
+  @wm-top-nav-text-color: @wm-dark-bg-text-color;
+  @wm-top-nav-bg-color: #fff;
+
+//footer
+  @wm-footer-bg: #424554;
+
+  @wm-search-input-group-addon-hover-bg-color: #e7e7e7;
+
+  @wm-datetime-btn-hover-color: #fff;
+  @wm-fileupload-btn-hover-text-color: #fff;
+  @wm-fileupload-btn-bg-color: @brand-primary;
+
+  @wm-segmented-tabs-bg: #fff;
+  @wm-segmented-tabs-bg-active: @brand-primary;
+  @wm-segmented-tabs-color: #fff;
+
+//Modal header
+  @wm-modal-header-bg: @brand-primary;
+  @wm-modal-header-text-color: @wm-dark-bg-text-color;
+
+  //form
+  @wm-form-bg-color: @wm-transparent-color;
+
+
+/*******************************************************************************************/
+/***************************************     LAYOUTS     ***********************************/
+/*******************************************************************************************/
+//content background
+  .app-content-column {
+    background-color: @wm-body-bg;
+  }
+
+//Header
+  .app-mobile-navbar {
+    background-color: @wm-header-bg;
+    color: @wm-header-text-color;
+    .searchbar {
+      color: #999;
+      .search-container {
+        border: 0;
+        background-color: @input-bg;
+        border-radius: @border-radius-base;
+      }
+    }
+    .navbar {
+      border-bottom: 1px @wm-header-border-color solid;
+      .navbar-nav {
+        > li {
+          > a {
+            color: @brand-primary;
+          }
+        }
+      }
+      .navbar-nav.navbar-right  {
+        > li {
+          .dropdown {
+            background-color: transparent;
+          }
+          .app-popover > a , .dropdown > .app-button, a {
+            color: @brand-primary;
+          }
+        }
+      }
+    }
+    .mobile-navbar-left, .mobile-navbar-right {
+      width: 25%;
+    }
+    .mobile-navbar-center {
+      width: 50%;
+    }
+  }
+
+//Mobile menu panel which comes from left
+  .app-left-panel {
+    background-color: @wm-left-panel-bg;
+    border-right: 1px solid @wm-panels-border-color;
+
+    .nav {
+      li {
+        background: #fff;
+        a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
+          color: @wm-left-panel-btn-color;
+          border-radius: 0;
+          border-left: 0.5em solid @wm-transparent-color;
+          transition: color .5s ease, background .5s ease;
+          -webkit-transition: color .5s ease, background .5s ease;
+          -moz-transition: color .5s ease, background .5s ease;
+          -ms-transition: color .5s ease, background .5s ease;
+          -o-transition: color .5s ease, background .5s ease;
+          &:hover {
+            color: @wm-left-panel-link-hover-text-color;
+            background-color: @wm-left-panel-link-hover-bg-color;
+            border-left-color: @wm-left-panel-link-hover-text-color;
+            transition: color .5s ease, background .5s ease;
+            -webkit-transition: color .5s ease, background .5s ease;
+            -moz-transition: color .5s ease, background .5s ease;
+            -ms-transition: color .5s ease, background .5s ease;
+            -o-transition: color .5s ease, background .5s ease;
+          }
+          &.active {
+            border-left-color: @wm-left-panel-link-hover-text-color;
+            color: @wm-left-panel-link-hover-text-color;
+          }
+        }
+      }
+    }
+  }
+
+//naviagtion styles for links list in the application
+  .app-nav {
+    .app-nav-item {
+      border-bottom: 1px @wm-panels-border-color solid;
+      a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
+        letter-spacing: .025em;
+        font-weight: 400;
+        padding: .93em 1em;
+        position: relative;
+        border-radius: 0;
+        line-height: 24pt;
+        color: @text-color;
+        &:hover {
+          text-decoration: none;
+          color: @wm-left-panel-link-hover-text-color;
+          background-color: @wm-left-panel-link-hover-bg-color;
+        }
+        &.active {
+          background-color: @wm-transparent-color;
+          color: @wm-left-panel-link-hover-text-color;
+          border-left-color: @wm-left-panel-link-hover-text-color;
+        }
+        .app-icon {
+          width: 1.2em;
+          text-align: center;
+        }
+      }
+
+      > .dropdown.open {
+        .dropdown-menu {
+          position: relative;
+          padding: 0.833em 0px;
+          margin: 0 0 1.333em;
+          border: 0;
+          border-bottom: 1px solid @input-border;
+          box-shadow: none;
+          li {
+            a {
+              padding: 0.667em 1.667em;
+            }
+          }
+        }
+      }
+      > .dropdown {
+        > a {
+          padding: 1.333em;
+        }
+      }
+    }
+  }
+
+//Mobile segmented control for android it should look like tabs
+  .app-segmented-control {
+    > .btn-group {
+      .btn.active {
+        color: @wm-tab-color-hover;
+        border-color: @brand-primary;
+        background-color: @brand-primary;
+      }
+      .btn {
+        background-color: @wm-tab-color-hover;
+        color: @brand-primary;
+        border-color: @brand-primary;
+        border-bottom-width: 1px;
+        border-right-width: 0;
+        &:active, &:focus, &:hover {
+            box-shadow: none;
+        }
+        &:last-child {
+            border-right-width: 1px;
+        }
+      }
+      &.btn-group-justified {
+         padding: 1em;
+      }
+    }
+  }
+
+//Tabs
+  .nav-tabs {
+    border-bottom-color: @wm-tab-border-color;
+    > li {
+      > a, .app-menu a  {
+        color: @wm-tab-color-normal;
+        background-color: @wm-tab-bg-normal;
+        border-bottom-color: @wm-tab-border-color;
+        border-radius: 0;
+        box-shadow: none;
+        margin-right: 0px;
+        border-color: @wm-transparent-color;
+        text-transform: uppercase;
+        border-left-width: 0px !important;
+        border-right-width: 0px !important;
+        &:hover, &:focus {
+          border-bottom: @wm-transparent-color;
+          color: @wm-tab-color-hover;
+          background-color: @wm-tab-bg-hover;
+        }
+        .app-icon {
+          background-size: 100%;
+          margin-right: 0.417em;
+          top: 0.167em;
+        }
+      }
+      &.active {
+        > a, .app-menu a {
+          border-bottom: @wm-transparent-color;
+          color: @wm-tab-color-hover;
+          background-color: @wm-tab-bg-hover;
+          &:hover {
+            border-bottom: @wm-transparent-color;
+            color: @wm-tab-color-hover;
+            background-color: @wm-tab-bg-hover;
+          }
+        }
+      }
+
+    }
+  }
+
+//Tab Content
+  .tab-content {
+    .tab-body {
+      border-color: @wm-transparent-color;
+    }
+  }
+
+/*******************************************************************************************/
+/***************************************Containers Widgets**********************************/
+/*******************************************************************************************/
+//Panels
+  .panel {
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    .panel-body {
+      padding: 0;
+    /***specific use cases when the radioset and checkboxset comes directly in the panel****/
+      > .app-radioset, > .app-checboxset {
+        li {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  .app-panel, .app-accordion {
+   .panel-body {
+      padding: 1em 0 0 1em;
+    }
+  }
+//Popover styles
+  .popover {
+    border-radius: 0px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    color: @text-color;
+  }
+
+//Carousel
+  .carousel-control {
+    &.left, &.right {
+      background-image: none;
+    }
+    &.icon-prev, .icon-next, .glyphicon-chevron-left, .glyphicon-chevron-right {
+      color: grey;
+      text-shadow: none;
+    }
+  }
+
+  /***confirm dialog specific classes*****/
+  .app-dialog-title {
+    text-align: center;
+  }
+  .app-confirm-dialog {
+    .app-dialog-footer {
+      padding: 0;
+      .btn {
+        width: 50%;
+        background: @wm-transparent-color;
+        color: @brand-primary;
+        border: 0;
+        border-radius: 0;
+      }
+      .btn + .btn {
+        margin: 0;
+        border-left: 1px @panel-inner-border solid;
+      }
+    }
+  }
+  .app-alert-dialog {
+    .app-dialog-footer .btn {
+       width: 100%;
+    }
+  }
+/*******************************************************************************************/
+/***************************************List Widgets**********************************/
+/*******************************************************************************************/
+//App Live list. The list-group classes are set through the boostrap variable
+  .app-livelist {
+    .media {
+      background-color: @list-group-bg;
+      border-bottom: 1px solid @list-group-border;
+      padding: @nav-link-padding;
+      margin-top: 0;
+    }
+    .media-right {
+      a, .btn{
+        color: inherit;
+      }
+    }
+    &.panel {
+        margin: 0;
+    }
+  }
+
+//Tree
+  .app-tree {
+    ul {
+      li {
+        span {
+          &:hover {
+            color: @gray-base;
+          }
+        }
+      }
+    }
+  }
+//App toggle
+  .app-toggle {
+      .switch {
+          top: 0;
+      }
+      label {
+        box-shadow: none;
+      }
+  }
+
+/*******************************************************************************************/
+/***************************************Form Widgets****************************************/
+/*******************************************************************************************/
+//Button
+  .btn {
+    text-align: center;
+  }
+
+//Label Styles: Donot remove
+  label {
+    font-weight: normal;
+  }
+
+  .app-form, .app-liveform {
+    .app-grid-layout {
+      input, select, textarea {
+        border: 0;
+      }
+      .app-grid-row {
+        border-bottom: 1px solid @input-border;
+        .app-grid-column {
+          border-right: 1px solid @input-border;
+        }
+      }
+    }
+    .form-action, .form-action.btn-group {
+      .btn {
+        border-radius: @border-radius-base;
+        margin: 0 0.333em;
+      }
+    }
+  }
+
+//form group widget
+  .form-group {
+    margin-bottom: 0;
+    .control-label {
+      margin-top: 1.1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-top: 0;
+    }
+  }
+
+//form controls
+  .form-control {
+    box-shadow: none;
+    height: @wm-form-input-height;
+    &textarea {
+      height: 60pt;
+    }
+    &select {
+      padding-left: 6px;
+    }
+  }
+
+  .input-group {
+    .input-group-btn {
+      height: @wm-form-input-height;
+      .btn{
+        height: @wm-form-input-height;
+      }
+    }
+  }
+
+/*******************************************************************************************/
+/***************************************Advanced Widgets****************************************/
+/*******************************************************************************************/
+  //Spinner icon
+  .app-spinner .spinner-image{
+   //customize the spinner
+  }
+
+
+//Progress Bar
+  .progress {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .app-calendar, .date-wrapper {
+    table {
+      width: 100%;
+      .btn-default {
+        border-radius: 0;
+        border-color: @wm-transparent-color;
+        background: @wm-calendar-bg-color;
+        color: @text-color;
+        &.active {
+          color: @text-color;
+          background-color: lighten(@brand-primary, 50%);
+          border-color: lighten(@brand-primary, 40%);
+          box-shadow: none;
+          .text-info {
+            color: @text-color;
+          }
+        }
+        &:hover {
+          color: @text-color;
+          background-color: lighten(@brand-primary, 50%);
+          border-color: lighten(@brand-primary, 40%);
+
+        }
+
+        &.pull-left, &.pull-right {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+//Calendar
+  .app-calendar {
+    background-color: @wm-calendar-bg-color;
+    .fc-state-default {
+      color: @wm-calendar-text-color;
+      &.fc-state-hover, &:focus, &.fc-state-active {
+        color: @wm-calendar-bg-color;
+        background: @btn-primary-bg;
+      }
+    }
+
+    .fc-state-highlight {
+      &.fc-today {
+        background-color: @wm-calendar-highlight-bg;
+        color: @wm-calendar-active-text-color;
+      }
+    }
+    .fc {
+      .fc-toolbar {
+        h2 {
+          color: @wm-calendar-heading-text-color;
+        }
+      }
+    }
+    .fc-widget-header {
+      background-color: @wm-calendar-bg-color;
+      color: @text-color;
+    }
+    .fc-body {
+      .fc-row {
+        min-height: 3em;
+        .fc-content-skeleton {
+          padding: .8em 0;
+          td {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+//App-date
+  .app-date, .app-datetime {
+    thead {
+      tr {
+        th {
+          button {
+            font-size: 1em;
+            background: @wm-calendar-thead-button-bg-color;
+            color: @wm-calendar-thead-button-text-color;
+          }
+        }
+      }
+    }
+
+    tbody {
+      .btn {
+        background: @wm-calendar-tbody-button-bg-color;
+        border-color: @wm-calendar-tbody-button-border-color;
+        font-size: 10pt;
+        &:focus, &:hover, &.active {
+          background-color: @brand-info;
+          box-shadow: none;
+          span {
+            color: @wm-calendar-tbody-button-hover-text-color;
+          }
+        }
+      }
+    }
+
+    .btn-success {
+      margin-right: -0.5em;
+    }
+    .btn-group {
+      margin-left: -1em;
+    }
+    em {
+      color: @wm-datetime-em-text-color;
+    }
+    .dropdown-menu {
+      li {
+        &:last-child {
+          border-top: 1px solid @input-border;
+          margin-top: 0.583em;
+          overflow: auto;
+        }
+      }
+    }
+  }
+
+  .open {
+    > .dropdown-toggle {
+      .app-date, .app-datetime {
+        tbody {
+          .btn-default {
+            background-color: @wm-calendar-highlight-bg;
+            border-color: @wm-calendar-highlight-bg;
+            box-shadow: none;
+            span {
+              color: @wm-dropdown-toggle-tbody-btn-text-color;
+            }
+          }
+        }
+      }
+    }
+  }
+//App-datetime
+  .app-timeinput, .app-datetime {
+    tbody {
+      .btn {
+        height: 30pt;
+        &:not(.btn-link) {
+          border: 1px solid @input-border;
+        }
+      }
+      .text-info {
+        color: @text-color;
+      }
+
+      .btn-link {
+        width: 100%;
+        background-color: @wm-transparent-color;
+
+        &:hover {
+          background-color: @btn-primary-bg;
+          color: @btn-primary-color;
+        }
+      }
+    }
+  }
+}

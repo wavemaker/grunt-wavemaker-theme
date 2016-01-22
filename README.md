@@ -17,7 +17,7 @@ If you need to upgrade or install Node, the easiest way is to use an installer f
 You can check if you have Git installed by typing:
 <pre>
 $ git --version
-<pre>
+</pre>
 If you don't have Git, grab the installers from the [git website](http://git-scm.com/).
 
 
@@ -41,7 +41,7 @@ To clone the grunt-wavemaker-theme repository, use git clone:
 
 Understanding the Repository
 --------
-
+<pre>
 +--src
 |  +--web
 |     +--.wmproject.properties
@@ -72,7 +72,7 @@ Understanding the Repository
 +--package.json
 |
 +--bower.json
-
+</pre>
 Build
 --------
 To build the WaveMaker Theme run the below command from grunt-wavemaker-theme directory

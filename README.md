@@ -36,7 +36,9 @@ Setup WaveMaker Theme Repository
 To clone the grunt-wavemaker-theme repository, use git clone:
 
 <pre>
- git clone git@github.com:wavemaker/grunt-wavemaker-theme.git
+ git clone https://github.com/wavemaker/grunt-wavemaker-theme.git
+ cd grunt-wavemaker-theme
+ npm install
 </pre>
 
 Understanding the Repository

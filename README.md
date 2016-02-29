@@ -46,29 +46,32 @@ Understanding the Repository
 <pre>
 +--src
 |  +--web
-|     +--.wmproject.properties
 |     +--style.less
 |     +--variable.less
+|     +--.wmproject.properties
 |     +--theme.png
 |     +--fonts/
 |  +--mobile
 |     +--android
 |        +--style.less
-|        +--variable.less
-|        +--theme.png
 |        +--fonts/
-|        +--style.css
 |     +--ios
 |        +--style.less
 |        +--variable.less
-|        +--theme.png
 |        +--fonts/
-|        +--style.css
 |     +.wmproject.properties
 |     +theme.png
+|  +--bootswatch
+|     +--style.less
+|     +--variable.less
+|     +--bootswatch.less
+|     +--.wmproject.properties
+|     +--theme.png
+|     +--fonts/
 +--dist
 |  +--web.zip
 |  +--mobile.zip
+|  +--bootswatch.zip
 +--Gruntfile.js
 |
 +--package.json

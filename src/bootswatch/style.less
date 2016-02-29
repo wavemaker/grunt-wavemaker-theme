@@ -1,0 +1,396 @@
+/*START - default Theme*/
+
+.wm-app {
+
+@import url("../../components/bootstrap/less/bootstrap.less");
+@import url("variables.less");
+@import url("bootswatch.less");
+
+  @icon-font-path: "fonts/";
+  font-size: @font-size-base;
+  color: @text-color;
+  font-family: @font-family-base;
+  background-color: @body-bg;
+
+//modal dialogs
+  @modal-header-bg: @navbar-default-bg;
+  @modal-header-color: @navbar-default-color;
+  @modal-header-border-color: #7B706A;
+
+  .img-rounded {
+    border-radius: @thumbnail-border-radius;
+  }
+/******Label: overiding the label class as bootstrap is making all the labels bold***/
+  label {
+    font-weight: normal;
+  }
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .btn-secondary, .close {
+    background-color: transparent;
+  }
+/***Tabs Widget: Styling for the tabs widget comes here********/
+//Tab Content
+  .tab-content {
+    background-color: @panel-bg;
+    .tab-body {
+      border-color: transparent;
+      padding: @padding-base-vertical @padding-base-horizontal;
+    }
+  }
+
+/***Tabs Widget: Styling for the tabs widget comes here********/
+  .list-group-item-separator {
+    margin-bottom: 2px;
+    border-radius: 2px;
+    .form-group {
+      padding: 0 @padding-base-horizontal;
+    }
+  }
+
+/***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
+  .modal-header {
+    background-color: @modal-header-bg;
+    border-bottom-color: @modal-header-border-color;
+    color: @modal-header-color;
+  }
+
+/*****************************************************************************************************************************************/
+/*********************************************************Layout**************************************************************************/
+/*****************************************************************************************************************************************/
+  .app-page {
+    background-color: @body-bg;
+  }
+  .app-content-column {
+    padding: 1em;
+  }
+
+//Header
+  .app-header, .app-mobile-header {
+    background-color: @body-bg;
+    .app-mobile-header {
+      background-color: @navbar-default-bg;
+      color: @navbar-default-color;
+      a {
+        color: @navbar-default-color;
+      }
+    }
+  }
+//Top Nav Bar
+  .app-navbar {
+    border-radius: 0;
+    background-color: @navbar-default-bg;
+    color: @navbar-default-color;
+    margin-bottom: 0;
+    .navbar-nav {
+      li {
+        a {
+          font-size: 1em;
+          padding-left: 3em;
+          padding-right: 3em;
+          text-transform: uppercase;
+          font-weight: normal;
+          text-decoration: none;
+          word-spacing: .4em;
+          i {
+            margin-right: 0.417em;
+          }
+          &:hover, &:focus, &.active, &.app-popover-open {
+            color: @navbar-default-link-hover-color;
+            background-color: @navbar-default-link-hover-bg;
+          }
+        }
+
+        > .dropdown .dropdown-menu {
+          margin: 0;
+          background-color: @navbar-default-bg;
+          a {
+            color: inherit;
+            padding: .65em 1em;
+            &:hover {
+              background-color: @navbar-default-link-hover-bg;
+            }
+          }
+        }
+      }
+
+      .app-nav-item {
+        > .dropdown {
+          a.dropdown-toggle {
+            padding-left: 3em;
+            padding-right: 3em;
+            color: inherit;
+            &:hover {
+              background-color: @navbar-default-link-hover-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+
+//Footer
+  .app-footer {
+    padding: 1em 1.5em;
+  }
+
+/******************************************************************************************************************************************/
+/***************************************************Widgets styling************************************************************************/
+/******************************************************************************************************************************************/
+
+//form widgets
+  .app-form, .app-liveform {
+  //for labels in the form
+    .control-label {
+      padding: @padding-base-vertical @padding-base-horizontal 0 @padding-base-horizontal;
+    }
+  //action buttons in the form
+    .form-action {
+      .btn {
+        margin: 0 0.333em;
+        border-radius: @border-radius-base;
+      }
+    }
+
+  //Styling File Upload in IE
+    input[type="file"] {
+      padding: 0;
+    //Browse textbox
+      &::-ms-value {
+        border: 1px solid @input-border;
+        background-color: @input-bg;
+      }
+
+    //Browse button
+      &::-ms-browse {
+        border: 1px solid @input-border;
+      }
+    }
+  }
+
+/******grid styles*******/
+  .app-grid {
+    .table {
+      thead {
+        th {
+          .sort-buttons-container {
+            .sort-button {
+              .up {
+                border-width: 0 0.333em 0.333em;
+                bottom: -2px;
+              }
+              .down {
+                border-width: 0.333em 0.333em 0;
+                top: 0.250em;
+              }
+            }
+          }
+          &.info {
+            background-color: lighten(@state-info-bg, 10%);
+          }
+        }
+      }
+    }
+  }
+//carousel styling: removing the left and right background image
+  .carousel-control {
+    &.left, &.right {
+      background-image: none;
+    }
+  }
+
+//file upload button
+  .app-single-file-upload {
+    .glyphicon {
+      margin-right: 0.500em;
+    }
+  }
+
+
+/*Date, DateTime & Dropdown widgets*/
+  .app-calendar, .app-date, .app-datetime, .app-timeinput {
+  //setting the margin for the group button so that it shows up over the input
+    .input-group-btn:last-child {
+      > .btn, .btn-group {
+        margin-left: 0;
+      }
+    }
+  //setting the base font color for the popup content
+    .dropdown-menu {
+      color: @text-color;
+    }
+    .fc-view-container {
+      background-color: transparent;
+    }
+    thead {
+      tr {
+        th {
+          height: 2.5em;
+          button {
+            font-size: 1em;
+            background: @btn-default-bg;
+            color: @btn-default-color;
+          }
+        }
+      }
+    }
+
+    tbody {
+      .btn-default {
+        background-color: @body-bg;
+        border-color: @gray-lighter;
+        color: @text-color;
+        width: auto;
+        box-shadow: none;
+        padding: 0.66em;
+        &.btn-info {
+          background-color: @btn-info-bg;
+          color: @btn-info-color;
+        }
+        &:hover {
+          background-color: @component-active-bg;
+          border-color: @component-active-bg;
+          color: @component-active-color;
+          .text-info {
+            color: inherit;
+          }
+        }
+        .text-info {
+          color: @brand-primary;
+        }
+      }
+    }
+    small {
+      font-size: 1em;
+      font-weight: normal;
+    }
+  }
+
+//styling for the popup calendar actions
+  .app-date, .app-datetime {
+    .dropdown-menu {
+      li {
+        &:last-child {
+          border-top: 1px solid @input-border;
+          margin-top: 0.5em;
+          overflow: auto;
+        }
+      }
+    }
+  }
+
+//Time Widget classes for styling the buttons
+  .app-timeinput, .app-datetime {
+    tbody {
+      .btn:not(.btn-link) {
+        border: 1px solid @input-border;
+      }
+      .btn-link {
+        width: 100%;
+        background-color: transparent;
+        &:hover {
+          background-color: @btn-primary-bg;
+          color: @btn-primary-color;
+        }
+      }
+    }
+  }
+
+//Calendar Specific
+  .app-calendar {
+    background-color: @body-bg;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+    .fc {
+      .fc-state-default {
+        background: @btn-default-bg;
+        border: 1px solid @btn-default-border;
+        color: @btn-default-color;
+        text-shadow: none;
+        &.fc-state-hover, &:focus, &.fc-state-active {
+          color: @component-active-color;
+          background: @component-active-bg;
+          border: 1px solid @component-active-bg;
+        }
+      }
+    }
+    .fc-state-highlight {
+      &.fc-today {
+        background-color: @component-active-bg;
+        color: @component-active-color;
+      }
+    }
+    .fc {
+      .fc-toolbar {
+        h2 {
+          color: @text-color;
+        }
+      }
+    }
+    .fc-widget-header {
+      background-color: @body-bg;
+      color: @text-color;
+    }
+    .fc-body {
+      .fc-row {
+        min-height: 3em;
+        .fc-content-skeleton {
+          padding: .8em 0;
+          td {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+/*********************************************************************************************************************************************/
+/****************************************************Advanced editors******************************************************************************/
+/*********************************************************************************************************************************************/
+
+//Tree
+  .app-tree {
+    ul {
+      li {
+        span {
+          &:hover {
+            color: @text-color;
+          }
+        }
+        &.selected {
+          > i, > span {
+            color: @brand-primary;
+          }
+        }
+      }
+    }
+  }
+
+/***color picker class: adding the default size and padding to the addon*******/
+  .app-colorpicker {
+    &.input-group {
+      width: 13em;
+    }
+    .input-group-addon {
+      padding: 0.833em 1.333em;
+      background-color: #fff;
+    }
+  }
+
+  .app-fileupload .app-multi-file-upload, .app-fileupload .app-single-file-upload {
+    height: auto;
+    min-height: 3em;
+  }
+
+  .app-files-upload-status {
+    padding-top: 0.833em;
+    &.multiple {
+      padding-top: 0.333em;
+      font-size: 1.2em;
+    }
+  }
+}

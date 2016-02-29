@@ -1,22 +1,21 @@
 /*START - default Theme*/
 
 .wm-app {
-
-  @import url("../../components/bootstrap/less/bootstrap.less");
-  @import url("variables.less");
+@import url("../../components/bootstrap/less/bootstrap.less");
+@import url("variables.less");
 
   font-size: @font-size-base;
   color: @text-color;
   font-family: @font-family-base;
   background-color: @body-bg;
 
-  //Header
+//Header
   @wm-header-border-color: rgba(0, 0, 0, 0.1);
   @wm-header-text-color: #515253;
   @wm-header-bg-color: #fff;
   @wm-header-height: auto;
 
-  //left panel
+//left panel
   @wm-left-panel-bg: #F2F3F6;
   @wm-left-panel-list-border: 1px #e6e5e5 solid;
   @wm-left-panel-border-color: #CFDBE2;
@@ -26,32 +25,32 @@
   @wm-left-panel-link-hover-border-color: @brand-primary;
   @wm-left-panel-dropdown-menu-bg: transparent;
 
-  //right panel
+//right panel
   @wm-right-panel-border-color: #CFDBE2;
   @wm-right-panel-bg: #F2F3F6;
   @wm-right-panel-btn-color: #515253;
   @wm-right-panel-list-border: 1px #e6e5e5 solid;
 
-  //Footer
-  @wm-footer-border-color: #F5F7FA;
+//Footer
+  @wm-footer-border-color: #ccc;
   @wm-footer-text-color: #515253;
   @wm-footer-bg-color: #F5F7FA;
   @wm-footer-height: auto;
 
 
-  //Table
+//Table
   @table-header-bg: #E7E9F1;
 
-  //Tabset
+//Tabset
   @nav-tabs-color-hover : @brand-primary;
 
-  //input group hover
+//input group hover
   @input-group-addon-hover-bg: #e7e7e7;
 
-  //Buttons
+//Buttons
   @btn-group-active-btn-bg: #fff;
 
-  //modal dialogs
+//modal dialogs
   @modal-header-bg: @navbar-default-bg;
   @modal-header-color: @navbar-default-color;
   @modal-header-border-color: #7B706A;
@@ -59,20 +58,20 @@
   .img-rounded {
     border-radius: @thumbnail-border-radius;
   }
-  /******Label: overiding the label class as bootstrap is making all the labels bold***/
+/******Label: overiding the label class as bootstrap is making all the labels bold***/
   label {
     font-weight: normal;
   }
 
-  /***Tabs Widget: Styling for the tabs widget comes here********/
-  //Tab Content
+/***Tabs Widget: Styling for the tabs widget comes here********/
+//Tab Content
   .tab-content {
     .tab-body {
       border-color: transparent;
       padding: @padding-base-vertical @padding-base-horizontal;
     }
   }
-  //navigation
+//navigation
   .nav-tabs {
     border-bottom-color: @nav-tabs-border-color;
     > li {
@@ -114,7 +113,7 @@
     }
   }
 
-  /***Button Style: Defining the sixe of the button for bootstrap classes********/
+/***Button Style: Defining the sixe of the button for bootstrap classes********/
   .btn {
     text-transform: uppercase;
     &.btn-lg {
@@ -140,14 +139,14 @@
     }
   }
 
-  /***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
+/***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
   .modal-header {
     background-color: @modal-header-bg;
     border-bottom-color: @modal-header-border-color;
     color: @modal-header-color;
   }
 
-  //Breadcrumb
+//Breadcrumb
   .breadcrumb {
     li {
       a {
@@ -156,14 +155,14 @@
     }
   }
 
-  //Progress Bar
+//Progress Bar
   .progress {
     border-radius: 0;
     box-shadow: none;
     height: 1.667em;
   }
 
-  //Table
+//Table
   .table {
     > thead {
       > tr {
@@ -175,15 +174,15 @@
     }
   }
 
-  /*****************************************************************************************************************************************/
-  /*********************************************************Layout**************************************************************************/
-  /*****************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
+/*********************************************************Layout**************************************************************************/
+/*****************************************************************************************************************************************/
   .app-content-column {
     background-color: @body-bg;
     padding: 1em;
   }
 
-  //Header
+//Header
   .app-header, .app-mobile-header {
     background-color: @wm-header-bg-color;
     color: @wm-header-text-color;
@@ -201,7 +200,7 @@
       }
     }
   }
-  //Top Nav Bar
+//Top Nav Bar
   .app-navbar {
     border-radius: 0;
     background-color: @navbar-default-bg;
@@ -254,7 +253,7 @@
     }
   }
 
-  //Popover
+//Popover
   .popover {
     min-width: 16.667em;
     .popover-content {
@@ -262,7 +261,7 @@
     }
   }
 
-  //Left & Right Panels
+//Left & Right Panels
   .app-left-panel, .app-right-panel {
     .nav {
       li {
@@ -336,24 +335,24 @@
     }
   }
 
-  //Left Panel
+//Left Panel
   .app-left-panel {
     background-color: @wm-left-panel-bg;
     border-right: 1px solid @wm-left-panel-border-color;
   }
 
-  //Right Panel
+//Right Panel
   .app-right-panel {
     background-color: @wm-right-panel-bg;
     border-left: 1px solid @wm-right-panel-border-color;
   }
 
-  //Footer
+//Footer
   .app-footer {
     padding: 1em 1.5em;
     background-color: @wm-footer-bg-color;
     color: @wm-footer-text-color;
-    border-color: @wm-footer-border-color;
+    border-top: 1px solid @wm-footer-border-color;
     height: @wm-footer-height;
   }
 
@@ -365,13 +364,13 @@
     }
   }
 
-  /******************************************************************************************************************************************/
-  /***************************************************Widgets styling************************************************************************/
-  /******************************************************************************************************************************************/
+/******************************************************************************************************************************************/
+/***************************************************Widgets styling************************************************************************/
+/******************************************************************************************************************************************/
   .form-group {
     margin-bottom: 0.833em;
   }
-  //for text, select controls
+//for text, select controls
   .form-control {
     box-shadow: none;
     &:focus {
@@ -384,13 +383,13 @@
   }
 
 
-  //form widgets
+//form widgets
   .app-form, .app-liveform {
-    //for labels in the form
+  //for labels in the form
     .control-label {
       padding: @padding-base-vertical @padding-base-horizontal 0 @padding-base-horizontal;
     }
-    //action buttons in the form
+  //action buttons in the form
     .form-action {
       .btn {
         margin: 0 0.333em;
@@ -398,23 +397,23 @@
       }
     }
 
-    //Styling File Upload in IE
+  //Styling File Upload in IE
     input[type="file"] {
       padding: 0;
-      //Browse textbox
+    //Browse textbox
       &::-ms-value {
         border: 1px solid @input-border;
         background-color: @input-bg;
       }
 
-      //Browse button
+    //Browse button
       &::-ms-browse {
         border: 1px solid @input-border;
       }
     }
   }
 
-  /***search widget****/
+/***search widget****/
   .app-search {
     .input-group-addon {
       padding: 0.667em;
@@ -424,7 +423,7 @@
     }
   }
 
-  /******grid styles*******/
+/******grid styles*******/
   .app-grid {
     .table {
       thead {
@@ -434,7 +433,7 @@
           }
           .sort-buttons-container {
             .sort-button {
-             .up {
+              .up {
                 border-width: 0 0.333em 0.333em;
                 bottom: -2px;
               }
@@ -444,11 +443,14 @@
               }
             }
           }
+          &.info {
+            background-color: lighten(@state-info-bg, 10%);
+          }
         }
       }
     }
   }
-  //carousel styling: removing the left and right background image
+//carousel styling: removing the left and right background image
   .carousel-control {
     &.left, &.right {
       background-image: none;
@@ -467,7 +469,7 @@
     }
   }
 
-  //file upload button
+//file upload button
   .app-single-file-upload {
     .glyphicon {
       margin-right: 0.500em;
@@ -475,15 +477,15 @@
   }
 
 
-  /*Date, DateTime & Dropdown widgets*/
+/*Date, DateTime & Dropdown widgets*/
   .app-calendar, .app-date, .app-datetime, .app-timeinput {
-     //setting the margin for the group button so that it shows up over the input
+  //setting the margin for the group button so that it shows up over the input
     .input-group-btn:last-child {
-        > .btn, .btn-group {
-          margin-left: 0;
-        }
+      > .btn, .btn-group {
+        margin-left: 0;
+      }
     }
-    //setting the base font color for the popup content
+  //setting the base font color for the popup content
     .dropdown-menu {
       color: @text-color;
     }
@@ -532,7 +534,7 @@
     }
   }
 
-  //styling for the popup calendar actions
+//styling for the popup calendar actions
   .app-date, .app-datetime {
     .dropdown-menu {
       li {
@@ -545,11 +547,11 @@
     }
   }
 
-  //Time Widget classes for styling the buttons
+//Time Widget classes for styling the buttons
   .app-timeinput, .app-datetime {
     tbody {
       .btn:not(.btn-link) {
-          border: 1px solid @input-border;
+        border: 1px solid @input-border;
       }
       .btn-link {
         width: 100%;
@@ -562,7 +564,7 @@
     }
   }
 
-  //Calendar Specific
+//Calendar Specific
   .app-calendar {
     background-color: @body-bg;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
@@ -644,7 +646,7 @@
     }
   }
 
-  //Tree
+//Tree
   .app-tree {
     ul {
       li {

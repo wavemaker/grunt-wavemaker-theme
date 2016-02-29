@@ -99,6 +99,18 @@ module.exports = function (grunt) {
                         cwd: '<%= config.themes_tmp %>/mobile/',
                         expand: true
                     }]
+                },
+                bootswatch: {
+                    options: {
+                        archive: '<%= config.themes_dist %>/bootswatch.zip',
+                        mode: 'zip'
+                    },
+                    files: [{
+                        src: ['**/*'],
+                        dot: true,
+                        cwd: '<%= config.themes_tmp %>/bootswatch/',
+                        expand: true
+                    }]
                 }
             }
         }

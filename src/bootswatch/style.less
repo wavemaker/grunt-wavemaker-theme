@@ -34,6 +34,7 @@
   }
   .btn-secondary, .close {
     background-color: transparent;
+    border-color: transparent;
   }
 /***Tabs Widget: Styling for the tabs widget comes here********/
 //Tab Content
@@ -54,18 +55,14 @@
     }
   }
 
-/***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
-  .modal-header {
-    background-color: @modal-header-bg;
-    border-bottom-color: @modal-header-border-color;
-    color: @modal-header-color;
-  }
-
 /*****************************************************************************************************************************************/
 /*********************************************************Layout**************************************************************************/
 /*****************************************************************************************************************************************/
   .app-page {
     background-color: @body-bg;
+	.app-content {
+	  background-color: inherit;
+	}
   }
   .app-content-column {
     padding: 1em;
@@ -88,49 +85,26 @@
     background-color: @navbar-default-bg;
     color: @navbar-default-color;
     margin-bottom: 0;
-    .navbar-nav {
-      li {
-        a {
-          font-size: 1em;
-          padding-left: 3em;
-          padding-right: 3em;
-          text-transform: uppercase;
-          font-weight: normal;
-          text-decoration: none;
-          word-spacing: .4em;
-          i {
-            margin-right: 0.417em;
-          }
-          &:hover, &:focus, &.active, &.app-popover-open {
-            color: @navbar-default-link-hover-color;
-            background-color: @navbar-default-link-hover-bg;
-          }
-        }
-
-        > .dropdown .dropdown-menu {
-          margin: 0;
-          background-color: @navbar-default-bg;
-          a {
-            color: inherit;
-            padding: .65em 1em;
+	.navbar-nav {
+      .app-nav-item {
+        > .dropdown {
+		  a.dropdown-toggle {
+            padding: @nav-link-padding;
+            line-height: @line-height-computed;
             &:hover {
               background-color: @navbar-default-link-hover-bg;
             }
           }
         }
       }
+    }
+  }
 
-      .app-nav-item {
-        > .dropdown {
-          a.dropdown-toggle {
-            padding-left: 3em;
-            padding-right: 3em;
-            color: inherit;
-            &:hover {
-              background-color: @navbar-default-link-hover-bg;
-            }
-          }
-        }
+//Navs
+  .app-nav {
+    .app-nav-item {
+      > .dropdown > a.dropdown-toggle {
+        color: inherit;
       }
     }
   }
@@ -376,7 +350,6 @@
       width: 13em;
     }
     .input-group-addon {
-      padding: 0.833em 1.333em;
       background-color: #fff;
     }
   }
@@ -392,5 +365,9 @@
       padding-top: 0.333em;
       font-size: 1.2em;
     }
+  }
+//app-switch
+  .app-switch {
+    background-color: @body-bg;
   }
 }

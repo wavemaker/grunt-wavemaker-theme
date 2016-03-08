@@ -55,13 +55,23 @@
 .wm-app  {
 @import "../../../components/bootstrap/less/bootstrap.less";
 @import "../../../components/bootstrap-material-design/less/bootstrap-material-design.less";
-  @brand-primary: @blue;
-  @icon-font-path:          "fonts/";
-
-  //Variables
-  font-size: @font-size-base;
-  color: @text-color;
-  font-family: @font-family-base;
+  @brand-primary:   @blue;
+  @icon-font-path:  "fonts/";
+  @panel-bg:        @body-bg;
+  @font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'), local('Roboto-Regular'),  url('fonts/Roboto-Regular-webfont.eot');
+    src: local('Roboto'), local('Roboto-Regular'),  url('fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Roboto-Regular-webfont.woff') format('woff'),
+    url('fonts/Roboto-Regular.ttf') format('truetype'),
+    url('fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+  }
+//Variables
+  font-size:        @font-size-base;
+  color:            @text-color;
+  font-family:      @font-family-base;
   background-color: @body-bg;
 
   @wm-default-shadow-color: 0 1px 1px rgba(0, 0, 0, .4);
@@ -82,12 +92,17 @@
   @toggle-active-bg: @blue-100;
 //Tabset
   @nav-tabs-active-bg-color: @blue-600;
-  @nav-tabs-active-border-color: @blue-900;
+  @nav-tabs-active-border-color: #fff;
 
 //calendar
   @wm-calendar-btn-bg: transparent;
   @wm-calendar-btn-color: #fff;
   @wm-calendar-active-bg-color: @brand-primary;
+
+//Tab content
+  .tab-content {
+    background-color: @body-bg;
+  }
 
 //Label Styles: Donot remove
   label {
@@ -208,6 +223,7 @@
       .btn {
         color: inherit;
         border-bottom: 2px solid transparent;
+        padding: @padding-base-vertical @padding-base-horizontal;
         &:hover, &:focus {
           .focus-shadow();
         }
@@ -300,6 +316,13 @@
     border-radius: 0px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
     color: @text-color;
+    background-color: @popover-bg;
+    .arrow {
+      display: block;
+      &:after {
+        border-bottom-color: inherit;
+      }
+    }
   }
 
 //carousel
@@ -540,22 +563,27 @@
     .list-group-item {
       padding-top: 10px;
       padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
         outline: 0;
-        color: inherit;
       }
       &.active {
         outline: 0;
-        background: @brand-primary;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-bottom-width: 1px;
         label {
-          color: inherit;
+          color: initial;
         }
         &:hover, &:focus {
           outline: 0;
+          background-color: rgba(0, 0, 0, 0.1);
         }
       }
+      .a {
+        color: inherit;
+      }
     }
-
   }
 
 /*******************************************************************************************/

@@ -4,3 +4,6 @@ components/
 .idea/
 dist/
 tmp/
+src/**/*.css
+src/**/fonts/glyphicons-halflings-regular.*
+src/**/fonts/wavicon.*

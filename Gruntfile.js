@@ -10,7 +10,8 @@ module.exports = function (grunt) {
         themes_src: 'src',
         themes_tmp: 'tmp',
         themes_dist: 'dist',
-        themes_fonts: 'components/bootstrap/fonts'
+        themes_fonts: 'components/bootstrap',
+        themes_icons: 'components/wavicon'
     };
     grunt.initConfig({
             config: wmBuildConfig,
@@ -51,28 +52,6 @@ module.exports = function (grunt) {
                             expand: true,
                             dest: '<%= config.themes_tmp %>/'
                         }]
-                },
-                fonts: {
-                    files: [
-                        {
-                        cwd: '<%= config.themes_fonts%>/',
-                        src: '*',
-                        expand: true,
-                        dest: '<%= config.themes_tmp %>/web/fonts'
-                        },
-                        {
-                            cwd: '<%= config.themes_fonts%>/',
-                            src: '*',
-                            expand: true,
-                            dest: '<%= config.themes_tmp %>/mobile/android/fonts'
-                        },
-                        {
-                            cwd: '<%= config.themes_fonts%>/',
-                            src: '*',
-                            expand: true,
-                            dest: '<%= config.themes_tmp %>/mobile/ios/fonts'
-                        }
-                    ]
                 }
             },
             compress: {
@@ -115,6 +94,37 @@ module.exports = function (grunt) {
             }
         }
     );
-    grunt.registerTask('themes', ['clean', 'bower', 'copy', 'less:themes', 'compress']);
+    grunt.registerTask("load-fonts", "copy fonts into themes", function () {
+        var copy, platform;
+        grunt.file.expand('src/**/fonts').forEach(function (dir) {
+            copy = grunt.config.get('copy') || {};
+            platform = dir.split('/')[2];
+            copy[dir] = {
+                files: [
+                    {
+                        cwd: wmBuildConfig.themes_fonts + '/fonts',
+                        dest: dir,
+                        expand: true,
+                        src: ['*']
+                    }
+                ]
+            };
+            if (platform === 'ios') {
+                copy[dir + '-wavicons'] = {
+                    files: [
+                        {
+                            cwd: wmBuildConfig.themes_icons + '/' + platform + '/fonts',
+                            dest: dir,
+                            expand: true,
+                            src: ['*']
+                        }
+                    ]
+                };
+            }
+            grunt.config.set('copy', copy);
+        });
+        grunt.task.run('copy');
+    });
+    grunt.registerTask('themes', ['clean', 'bower', 'copy', 'load-fonts', 'less:themes', 'compress']);
 };
 

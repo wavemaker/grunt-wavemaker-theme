@@ -78,6 +78,11 @@ Understanding the Repository
 |
 +--bower.json
 </pre>
+
+Fonts
+-----
+There will be references to Roboto regular fonts in the variables.less(src/web), to avail them please download Roboto regular fonts and paste them in fonts directory(src/web/fonts).
+
 Build
 --------
 To build the WaveMaker Theme run the below command from grunt-wavemaker-theme directory
@@ -86,3 +91,4 @@ To build the WaveMaker Theme run the below command from grunt-wavemaker-theme di
 cd grunt-wavemaker-theme
 grunt themes
 </pre>
+

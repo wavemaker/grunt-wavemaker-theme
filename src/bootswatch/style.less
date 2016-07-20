@@ -12,6 +12,23 @@
   font-family: @font-family-base;
   background-color: @body-bg;
 
+  //left panel
+  @wm-left-panel-bg: #fff;
+  @wm-left-panel-list-border: 1px #e6e5e5 solid;
+  @wm-left-panel-border-color: #CFDBE2;
+  @wm-left-panel-link-color: #4f5256;
+  @wm-left-panel-link-hover-bg: #f7f7f7;
+  @wm-left-panel-link-active-bg: #F4F4F4;
+  @wm-left-panel-link-hover-text-color: inherit;
+  @wm-left-panel-link-hover-border-color: transparent;
+  @wm-left-panel-dropdown-menu-bg: transparent;
+
+  //right panel
+  @wm-right-panel-border-color: #CFDBE2;
+  @wm-right-panel-bg: #fff;
+  @wm-right-panel-btn-color: #515253;
+  @wm-right-panel-list-border: 1px #e6e5e5 solid;
+
 //modal dialogs
   @modal-header-bg: @navbar-default-bg;
   @modal-header-color: @navbar-default-color;
@@ -24,6 +41,14 @@
   label {
     font-weight: normal;
   }
+
+  .h1,.h2,.h3,.h4,.h5,.h6 {
+    width: 100%;
+  }
+  .btn-secondary {
+    background-color: #f3f3f3;
+    color: @text-color;
+  }
   .row {
     margin-left: 0;
     margin-right: 0;
@@ -32,10 +57,7 @@
     padding-left: 0;
     padding-right: 0;
   }
-  .btn-secondary, .close {
-    background-color: transparent;
-    border-color: transparent;
-  }
+
 /***Tabs Widget: Styling for the tabs widget comes here********/
 //Tab Content
   .tab-content {
@@ -89,7 +111,7 @@
       .app-nav-item {
         > .dropdown {
 		  a.dropdown-toggle {
-            padding: @nav-link-padding;
+            padding: 15px;
             line-height: @line-height-computed;
             &:hover {
               background-color: @navbar-default-link-hover-bg;
@@ -108,8 +130,110 @@
       }
     }
   }
+  //Left & Right Panels
+  .app-left-panel, .app-right-panel {
+    box-shadow: 2px 2px 4px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 4px rgba(0,0,0,.15);
+    .nav.nav-pills {
+      li {
+        margin-top: 0;
+        //border-bottom: @wm-left-panel-list-border;
 
-//Footer
+        a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
+          //letter-spacing: .025em;
+          padding: 1em;
+          position: relative;
+          border-radius: 0;
+          line-height: 1.7;
+          color: @wm-left-panel-link-color;
+          text-shadow: none;
+          font-family: 'Robotomedium', Arial, sans-serif;
+          &:hover {
+            color: @wm-left-panel-link-hover-text-color;
+            text-decoration: none;
+            background-color: @wm-left-panel-link-hover-bg;
+          }
+          &.active {
+            background-color: @wm-left-panel-link-active-bg;
+            &:hover, &:focus {
+              background-color: @wm-left-panel-link-hover-bg;
+              color: inherit;
+            }
+          }
+          .app-icon {
+            margin-left: 0.13em;
+            margin-right: 0.53em;
+            margin-top: .2em;
+            font-size: 1.143em;
+          }
+
+          .badge {
+            right: @padding-large-horizontal;
+            top: @padding-large-horizontal;
+            padding: 4px 6px;
+          }
+        }
+        &.active {
+          a {
+            background-color: @wm-left-panel-link-active-bg;
+            &.active, &:hover, &:focus {
+              background-color: @wm-left-panel-link-hover-bg;
+              color: inherit;
+            }
+          }
+        }
+
+        > .dropdown.open {
+          > .dropdown-menu {
+            position: relative;
+            padding: 0;
+            margin: 0 0 1.333em;
+            border: 0;
+            border-bottom: @wm-left-panel-list-border;
+            box-shadow: none;
+            background-color: @wm-left-panel-dropdown-menu-bg;
+            li {
+              a {
+                padding: 0.92em .92em .92em 3em;
+                font-size: 1.02em;
+              }
+            }
+          }
+        }
+      }
+      &.open {
+        a {
+          &:hover, &:focus {
+            background-color: @wm-left-panel-link-hover-bg;
+          }
+        }
+      }
+    }
+    .app-nav {
+      .app-nav-item {
+        > .dropdown {
+          > a {
+            padding: 1.333em;
+          }
+        }
+      }
+    }
+  }
+
+  //Left Panel
+  .app-left-panel {
+    background-color: @wm-left-panel-bg;
+    border-right: 1px solid @wm-left-panel-border-color;
+  }
+
+  //Right Panel
+  .app-right-panel {
+    background-color: @wm-right-panel-bg;
+    border-left: 1px solid @wm-right-panel-border-color;
+  }
+
+  //Footer
   .app-footer {
     padding: 1em 1.5em;
   }
@@ -172,6 +296,38 @@
       }
     }
   }
+  //***** data grid basic pagination****///
+
+  .app-datanavigator {
+    .pagination {
+      &.basic {
+        .pagination-prev, .pagination-next, .pagination-first, .pagination-last {
+          &.active, &:hover, &:focus {
+            a {
+              padding: 3px 12px;
+              border: 0;
+            }
+          }
+          a {
+            padding: 3px 12px;
+          }
+        }
+        > li {
+          &.active, &:hover, &:focus {
+            > a {
+              padding: 6px 12px;
+            }
+          }
+        }
+      }
+      &.advanced {
+        padding: 10px 12px;
+        input {
+          color: inherit;
+        }
+      }
+    }
+  }
 //carousel styling: removing the left and right background image
   .carousel-control {
     &.left, &.right {
@@ -218,7 +374,7 @@
     tbody {
       .btn-default {
         background-color: @body-bg;
-        border-color: @gray-lighter;
+        border-color: transparent;
         color: @text-color;
         width: auto;
         box-shadow: none;
@@ -297,6 +453,7 @@
       &.fc-today {
         background-color: @component-active-bg;
         color: @component-active-color;
+        font-weight: bold;
       }
     }
     .fc {

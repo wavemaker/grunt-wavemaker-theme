@@ -10,24 +10,25 @@
   background-color: @body-bg;
 
 //Header
-  @wm-header-border-color: rgba(0, 0, 0, 0.1);
-  @wm-header-text-color: #515253;
-  @wm-header-bg-color: #fff;
+  @wm-header-border-color: #ffeb3b;
+  @wm-header-text-color: #fff;
+  @wm-header-bg-color: #2196f3;
   @wm-header-height: auto;
 
 //left panel
-  @wm-left-panel-bg: #F2F3F6;
+  @wm-left-panel-bg: #fff;
   @wm-left-panel-list-border: 1px #e6e5e5 solid;
   @wm-left-panel-border-color: #CFDBE2;
-  @wm-left-panel-link-color: #515253;
-  @wm-left-panel-link-hover-bg: #e6e4e4;
-  @wm-left-panel-link-hover-text-color: @brand-primary;
-  @wm-left-panel-link-hover-border-color: @brand-primary;
+  @wm-left-panel-link-color: #4f5256;
+  @wm-left-panel-link-hover-bg: #f7f7f7;
+  @wm-left-panel-link-active-bg: #F4F4F4;
+  @wm-left-panel-link-hover-text-color: inherit;
+  @wm-left-panel-link-hover-border-color: transparent;
   @wm-left-panel-dropdown-menu-bg: transparent;
 
 //right panel
   @wm-right-panel-border-color: #CFDBE2;
-  @wm-right-panel-bg: #F2F3F6;
+  @wm-right-panel-bg: #fff;
   @wm-right-panel-btn-color: #515253;
   @wm-right-panel-list-border: 1px #e6e5e5 solid;
 
@@ -37,23 +38,57 @@
   @wm-footer-bg-color: #F5F7FA;
   @wm-footer-height: auto;
 
-
 //Table
-  @table-header-bg: #E7E9F1;
+  @table-header-bg: #fff;
+  @pagination-active-hover-bg: darken(@brand-primary, 15%);
+  @pagination-basic-bg: #ddd;
+  @wm-grid-selection-bg: #CFD8DC;
 
 //Tabset
-  @nav-tabs-color-hover : @brand-primary;
+  @nav-tabs-color-hover : #000;
+  @nav-tabs-color : #7a7a7a;
+  @nav-tabs-bg: #fff;
 
 //input group hover
-  @input-group-addon-hover-bg: #e7e7e7;
+  @input-group-addon-hover-bg: rgba(0,0,0,.1);
 
 //Buttons
   @btn-group-active-btn-bg: #fff;
 
 //modal dialogs
   @modal-header-bg: @navbar-default-bg;
-  @modal-header-color: @navbar-default-color;
-  @modal-header-border-color: #7B706A;
+  @modal-header-color: @navbar-default-link-active-color;
+
+  @form-label-color: inherit;
+  @wm-calendar-header-color: #adadad;
+  @wm-calendar-text-color: #ccc;
+  @wm-datepicker-text-color: #000;
+  @wm-datepicker-header-bg: #128ff2;
+  @wm-datepicker-btn-hover-bg: #f0f0f0;
+  @wm-checked-color: #fff;
+
+  /*Box Shadow effect*/
+  .box-shadow (@x:0px, @y:2px, @blur:5px, @color:#DBDBDB) {
+    box-shadow: @arguments;
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    -ms-box-shadow: @arguments;
+    -o-box-shadow: @arguments;
+  }
+  .btn-shadow {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+  }
+
+  /*Applies inset shadow effect*/
+  .inset-shadow(@x:0px, @y:2px, @blur:5px, @spread:0 , @color:#DBDBDB) {
+    box-shadow: inset @arguments;
+    -webkit-box-shadow: inset @arguments;
+    -moz-box-shadow: inset @arguments;
+    -ms-box-shadow: inset @arguments;
+    -o-box-shadow: inset @arguments;
+  }
 
   .img-rounded {
     border-radius: @thumbnail-border-radius;
@@ -63,46 +98,105 @@
     font-weight: normal;
   }
 
-/***Tabs Widget: Styling for the tabs widget comes here********/
-//Tab Content
+  .h1,.h2,.h3,.h4,.h5,.h6 {
+    width: 100%;
+  }
+  .btn-secondary {
+    background-color: #f3f3f3;
+    color: @text-color;
+  }
+  * {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .badge {
+    right: 4px;
+    top: 5px;
+  }
+
+  .close {
+    border: 0;
+    background-color: transparent;
+  }
+
+  /***Tabs Widget: Styling for the tabs widget comes here********/
+  //Tab Content
   .tab-content {
     .tab-body {
       border-color: transparent;
-      padding: @padding-base-vertical @padding-base-horizontal;
+      padding: @padding-base-horizontal;
     }
   }
 //navigation
-  .nav-tabs {
+  .nav-tabs, .nav-justified {
     border-bottom-color: @nav-tabs-border-color;
+    background-color: @nav-tabs-bg;
     > li {
       > a, .app-menu a {
-        color: @text-color;
+        color: @nav-tabs-color;
+        text-transform: uppercase;
         background-color: @nav-tabs-active-link-hover-bg;
-        border-bottom-color: @nav-tabs-border-color;
-        border-radius: @border-radius-base;
+        border-bottom-color: transparent;
+        border-radius: 0;
         box-shadow: none;
         margin-right: 0;
         border-color: transparent;
-        text-transform: uppercase;
+        &:after {
+          content: "";
+          height: 2px;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          -webkit-transition: all;
+          -o-transition: all;
+          transition: all;
+          -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+          -webkit-transform: scale(0);
+          -ms-transform: scale(0);
+          -o-transform: scale(0);
+          transform: scale(0);
+        }
         &:hover, &:focus {
-          color: @nav-tabs-color-hover;
+          outline: none;
+          color: @nav-tabs-color;
           background-color: @nav-tabs-active-link-hover-bg;
-          border-bottom: 2px solid @brand-primary;
+          border-color: transparent;
+          border-bottom-color: transparent;
         }
       }
       &.active {
         > a, .app-menu a {
-          border-color: transparent transparent @brand-primary;
+          border-color: transparent;
           color: @nav-tabs-color-hover;
-          border-bottom-width: 2px;
-          &:hover {
-            border-color: transparent transparent @brand-primary;
+          &:after {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+            background: @brand-primary;
+          }
+          &:hover, &:focus {
+            outline: none;
+            border-color: transparent;
             color: @nav-tabs-color-hover;
-            border-bottom-width: 2px;
           }
         }
       }
     }
+  }
+
+  .app-tabs, .tab-body {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  /***App Message********/
+  .app-message .close {
+    top: initial;
   }
 /***Tabs Widget: Styling for the tabs widget comes here********/
   .list-group-item-separator {
@@ -116,6 +210,9 @@
 /***Button Style: Defining the sixe of the button for bootstrap classes********/
   .btn {
     text-transform: uppercase;
+    font-size: 12px;
+    .btn-shadow();
+    padding: 6px 15px;
     &.btn-lg {
       font-size: 1.4em;
     }
@@ -131,6 +228,14 @@
     }
   }
 
+  .btn-group {
+    .btn-shadow();
+    .btn {
+      box-shadow: none;
+      border-color: transparent;
+    }
+  }
+
   .btn-default {
     &:hover, &:focus &:active {
       color: @btn-default-color;
@@ -139,11 +244,66 @@
     }
   }
 
-/***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
+  .btn.btn-transparent {
+    &:hover {
+      background-color: #f0f0f0 !important;
+    }
+  }
+
+  .btn-flat {
+    text-transform: uppercase;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &.btn-primary {
+      color: @brand-primary;
+      &:hover, &:focus {
+        background-color: @btn-primary-bg;
+        color: @btn-primary-color;
+      }
+    }
+    &.btn-info {
+      color: @brand-info;
+      &:hover, &:focus {
+        background-color: @btn-info-bg;
+        color: @btn-info-color;
+      }
+    }
+    &.btn-warning {
+      color: @brand-warning;
+      &:hover, &:focus {
+        background-color: @btn-warning-bg;
+        color: @btn-warning-color;
+      }
+    }
+    &.btn-danger {
+      color: @brand-danger;
+      &:hover, &:focus {
+        background-color: @btn-danger-bg;
+        color: @btn-danger-color;
+      }
+    }
+  }
+
+  /***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
   .modal-header {
     background-color: @modal-header-bg;
     border-bottom-color: @modal-header-border-color;
     color: @modal-header-color;
+    .modal-title {
+      color: @modal-header-color;
+    }
+  }
+
+  /*****login modal form***/
+  .app-login-dialog {
+    .app-dialog-body {
+      .app-form {
+        border: 0;
+        margin-bottom: 0;
+      }
+    }
   }
 
 //Breadcrumb
@@ -157,9 +317,12 @@
 
 //Progress Bar
   .progress {
-    border-radius: 0;
     box-shadow: none;
-    height: 1.667em;
+    border-radius: 0;
+    height: .55em;
+    .progress-bar {
+      line-height: .92em;
+    }
   }
 
 //Table
@@ -167,7 +330,7 @@
     > thead {
       > tr {
         th {
-          text-transform: uppercase;
+          font-weight: normal;
           background-color: @table-header-bg;
         }
       }
@@ -179,17 +342,37 @@
 /*****************************************************************************************************************************************/
   .app-content-column {
     background-color: @body-bg;
-    padding: 1em;
+    padding: 1em 1.5em;
   }
 
 //Header
   .app-header, .app-mobile-header {
     background-color: @wm-header-bg-color;
     color: @wm-header-text-color;
-    border-bottom: 1px solid @wm-header-border-color;
     height: @wm-header-height;
     a {
       color: @wm-header-text-color;
+    }
+
+    .app-search {
+      background-color: @wm-header-bg-color;
+      .form-control {
+        background-image: linear-gradient(@wm-header-border-color, @wm-header-border-color), linear-gradient(@input-border, @input-border);
+        color: @wm-header-text-color;
+        &::-webkit-input-placeholder {
+          color: @wm-header-text-color;
+        }
+        &:-moz-placeholder {
+          color: @wm-header-text-color;
+        }
+        &:-ms-placeholder {
+          color: @wm-header-text-color;
+        }
+      }
+    }
+    .input-group-addon {
+      color: @wm-header-text-color;
+      font-size: 1.1em;
     }
 
     .app-mobile-header {
@@ -205,32 +388,41 @@
     border-radius: 0;
     background-color: @navbar-default-bg;
     color: @navbar-default-color;
-
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 0 1.52em;
     .navbar-nav {
       li {
         a {
           font-size: 1em;
-          padding-left: 3em;
-          padding-right: 3em;
-          text-transform: uppercase;
+          padding: 1.2em;
           font-weight: normal;
           text-decoration: none;
-          word-spacing: .4em;
-          i {
-            margin-right: 0.417em;
-          }
+          text-transform: uppercase;
+          box-shadow: inset 0px -3px 0 0px transparent;
+          color: @navbar-default-color;
           &:hover, &:focus, &.active, &.app-popover-open {
-            color: @navbar-default-link-hover-color;
+            color: @navbar-default-link-active-color;
             background-color: @navbar-default-hover-bg;
+            -webkit-transition: color .3s ease;
+            -o-transition: color .3s ease;
+            transition: color .3s ease;
+          }
+          &.active {
+            color: @navbar-default-link-active-color;
+            box-shadow: inset 0px -3px 0 0px @wm-header-border-color;
           }
         }
 
         > .dropdown .dropdown-menu {
           margin: 0;
-          background-color: @navbar-default-bg;
+          top: 95%;
+          background-color: @dropdown-bg;
           a {
-            color: inherit;
-            padding: .65em 1em;
+            color: @text-color;
+            padding: 1em;
+            font-size: 1em;
+            text-transform: initial;
             &:hover {
               background-color: @navbar-default-hover-bg;
             }
@@ -241,11 +433,13 @@
       .app-nav-item {
         > .dropdown {
           a.dropdown-toggle {
-            padding-left: 3em;
-            padding-right: 3em;
-            color: inherit;
-            &:hover {
-              background-color: @navbar-default-hover-bg;
+            padding: 1.2em;
+          }
+          .dropdown-menu {
+            li > a {
+              &:hover {
+                background-color: rgba(0,0,0,.03);
+              }
             }
           }
         }
@@ -263,53 +457,60 @@
 
 //Left & Right Panels
   .app-left-panel, .app-right-panel {
-    .nav {
+    box-shadow: 2px 2px 4px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 4px rgba(0,0,0,.15);
+    .nav.nav-pills {
       li {
         margin-top: 0;
-        border-bottom: @wm-left-panel-list-border;
 
         a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
-          font-size: 0.917em;
-          text-transform: uppercase;
-          letter-spacing: .025em;
-          font-weight: 400;
           padding: 1em;
           position: relative;
           border-radius: 0;
           line-height: 1.7;
           color: @wm-left-panel-link-color;
-          border-left: 0.5em solid transparent;
-          transition: color .5s ease, background .5s ease;
-          -webkit-transition: color .5s ease, background .5s ease;
-          -moz-transition: color .5s ease, background .5s ease;
-          -ms-transition: color .5s ease, background .5s ease;
-          -o-transition: color .5s ease, background .5s ease;
+          text-shadow: none;
+          font-family: 'Robotomedium', Arial, sans-serif;
           &:hover {
             color: @wm-left-panel-link-hover-text-color;
             text-decoration: none;
             background-color: @wm-left-panel-link-hover-bg;
-            border-left-color: @wm-left-panel-link-hover-border-color;
-            transition: color .5s ease, background .5s ease;
-            -webkit-transition: color .5s ease, background .5s ease;
-            -moz-transition: color .5s ease, background .5s ease;
-            -ms-transition: color .5s ease, background .5s ease;
-            -o-transition: color .5s ease, background .5s ease;
           }
           &.active {
-            background-color: transparent;
-            border-left-color: @brand-primary;
-            color: @brand-primary;
+            background-color: @wm-left-panel-link-active-bg;
+            &:hover, &:focus {
+              background-color: @wm-left-panel-link-hover-bg;
+              color: inherit;
+            }
           }
           .app-icon {
-            margin-left: 0.833em;
-            margin-right: 0.417em;
+            margin-left: 0.13em;
+            margin-right: 0.53em;
+            margin-top: .2em;
+            font-size: 1.143em;
+          }
+
+          .badge {
+            right: @padding-large-horizontal;
+            top: @padding-large-horizontal;
+            padding: 4px 6px;
+          }
+        }
+        &.active {
+          a {
+            background-color: @wm-left-panel-link-active-bg;
+            &.active, &:hover, &:focus {
+              background-color: @wm-left-panel-link-hover-bg;
+              color: inherit;
+            }
           }
         }
 
         > .dropdown.open {
           > .dropdown-menu {
             position: relative;
-            padding: 0.833em 0;
+            padding: 0;
             margin: 0 0 1.333em;
             border: 0;
             border-bottom: @wm-left-panel-list-border;
@@ -317,9 +518,17 @@
             background-color: @wm-left-panel-dropdown-menu-bg;
             li {
               a {
-                padding: 0.667em 1.667em;
+                padding: 0.92em .92em .92em 3em;
+                font-size: 1.02em;
               }
             }
+          }
+        }
+      }
+      &.open {
+        a {
+          &:hover, &:focus {
+            background-color: @wm-left-panel-link-hover-bg;
           }
         }
       }
@@ -363,40 +572,208 @@
       color: @text-color;
     }
   }
-
 /******************************************************************************************************************************************/
 /***************************************************Widgets styling************************************************************************/
 /******************************************************************************************************************************************/
   .form-group {
     margin-bottom: 0.833em;
+    &.live-field.active {
+      .control-label {
+        color: @brand-primary;
+      }
+    }
+    .text-danger, .control-label.text-danger {
+      color: @brand-danger;
+    }
+    .ng-touched.ng-invalid {
+      border-color: transparent;
+      background-image: none;
+      border-bottom: 2px solid @brand-danger;
+      outline: none;
+    }
   }
 //for text, select controls
-  .form-control {
+  .form-control, .form-group + .form-control {
+    color: inherit;
+    border: 0;
+    -webkit-background-size: 0 2px, 100% 1px;
+    background-size: 0 2px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center -webkit-calc(100% - 1px);
+    background-position: center bottom, center calc(100% - 1px);
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-box-shadow: none;
     box-shadow: none;
-    &:focus {
-      border: 1px solid @input-border-focus;
+    -webkit-transition: background 0s ease-out;
+    -o-transition: background 0s ease-out;
+    transition: background 0s ease-out;
+    background-image: linear-gradient(@brand-primary, @brand-primary), linear-gradient(@input-border, @input-border);
+    &:hover, &:focus {
+      outline: none;
+      -webkit-background-size: 100% 2px, 100% 1px;
+      background-size: 100% 2px, 100% 1px;
+      -webkit-transition-duration: 0.4s;
+      -o-transition-duration: 0.4s;
+      transition-duration: 0.4s;
       box-shadow: none;
     }
   }
-  .form-control-static {
-    padding-bottom: 0;
+
+  .input-group-btn {
+    .btn {
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      color: inherit;
+      i {
+        font-size: 18pt;
+      }
+    }
+  }
+  //**** form elements*****/
+
+  .radio, .checkbox {
+    input {
+      opacity: 0;
+      z-index: -1;
+      margin: 3px 0 !important;
+      &:focus + span.caption:before {
+        outline: 1px solid @brand-primary;
+      }
+    }
+    label {
+      padding-left: @padding-base-horizontal;
+    }
+    .caption {
+      position: relative;
+      cursor: pointer;
+      padding-left: 27px;
+      margin: 5px 0;
+      &:before, &:after {
+        position: absolute;
+        content: "";
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        background: transparent;
+      }
+    }
   }
 
+  //radio buttons
+  .radio {
+    .caption {
+      &:before, &:after {
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+      }
+      &:before {
+        top: 0;
+        left: 0;
+        width: 17px;
+        height: 17px;
+        background-color: @brand-primary;
+        border: 1px @pre-border-color solid;
+        .inset-shadow(0, 0, 0, 13px, @body-bg);
+      }
+      &:after {
+        top: 45%;
+        left: 10px;
+        width: 17px;
+        height: 17px;
+        -moz-transform: translate(-50%, -50%) scale(0);
+        -ms-transform: translate(-50%, -50%) scale(0);
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
+    input:checked + .caption:before {
+      -moz-box-shadow: inset 0 0 0 3px @body-bg;
+      -webkit-box-shadow: inset 0 0 0 3px @body-bg;
+      box-shadow: inset 0 0 0 3px @body-bg;
+    }
+    input:checked + .caption:after {
+      -moz-transform: translate(-50%, -50%) scale(1);
+      -ms-transform: translate(-50%, -50%) scale(1);
+      -webkit-transform: translate(-50%, -50%) scale(1);
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+
+  //checkbox
+  .checkbox {
+    .caption {
+      &:before {
+        top: 0;
+        left: 0;
+        width: 17px;
+        height: 17px;
+        background-color: @brand-primary;
+        border: 1px @pre-border-color solid;
+        .inset-shadow(0, 0, 0, 13px, @body-bg);
+      }
+      &:after {
+        top: 45%;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        -moz-transform: translate(-50%, -50%) scale(0);
+        -ms-transform: translate(-50%, -50%) scale(0);
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
+    input:checked + .caption:before {
+      -moz-box-shadow: inset 0 0 0 13px @brand-primary;
+      -webkit-box-shadow: inset 0 0 0 13px @brand-primary;
+      box-shadow: inset 0 0 0 13px @brand-primary;
+      background-color: @body-bg;
+      border-color: @brand-primary;
+      border-top-style: none;
+      border-right-style: none;
+      padding: 0 3px;
+      color: @wm-checked-color;
+      content: "\2713";
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    }
+    input:checked + .caption:after {
+      -moz-transform: translate(-50%, -50%) scale(1);
+      -ms-transform: translate(-50%, -50%) scale(1);
+      -webkit-transform: translate(-50%, -50%) scale(1);
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
 
 //form widgets
   .app-form, .app-liveform {
   //for labels in the form
-    .control-label {
-      padding: @padding-base-vertical @padding-base-horizontal 0 @padding-base-horizontal;
+    .control-label, .app-label {
+      padding: 1em 1em 0;
+      font-family: Robotomedium;
+      margin-bottom: 1em;
+      font-weight: normal;
+      color: @form-label-color;
     }
   //action buttons in the form
     .form-action {
+      background-color: inherit;
+      padding: @padding-base-horizontal;
+      border-top: 1px solid @panel-inner-border;
       .btn {
         margin: 0 0.333em;
         border-radius: @border-radius-base;
       }
     }
 
+    .panel-body {
+      padding: 0;
+      .app-grid-layout {
+        padding: @padding-base-horizontal;
+      }
+    }
   //Styling File Upload in IE
     input[type="file"] {
       padding: 0;
@@ -411,6 +788,43 @@
         border: 1px solid @input-border;
       }
     }
+
+    input {
+      &:focus.ng-valid {
+        border: 0;
+      }
+    }
+
+    .form-control-static {
+      font-family: @font-family-sans-serif;
+      color: @input-color-placeholder;
+    }
+  }
+
+  //filter
+  .app-livefilter {
+    .control-label, .app-label {
+      padding: 1em 1em 0;
+      margin-bottom: 1em;
+      font-weight: bold;
+    }
+    .form-action {
+      padding: @padding-base-horizontal;
+      border-top: 1px solid @panel-inner-border;
+      .btn {
+        margin: 0 0.333em;
+        border-radius: @border-radius-base;
+      }
+    }
+    .panel-body {
+      padding: @padding-base-horizontal;
+    }
+  }
+  /***Switch widget****/
+  .app-switch {
+    .btn {
+      border-color: rgba(0, 0, 0, 0.05);
+    }
   }
 
 /***search widget****/
@@ -423,16 +837,29 @@
     }
   }
 
+  /****Input addon***/
+  .input-group-addon {
+    border:0;
+    border-bottom: 1px solid transparent;
+  }
 /******grid styles*******/
   .app-grid {
+    .form-search {
+      padding: 1.5em;
+    }
     .table {
       thead {
+        tr {
+          padding: @padding-base-horizontal 1.72em;
+        }
         th {
           .header-data {
-            font-size: 0.917em;
+            text-transform: uppercase;
+            color: @kbd-bg;
           }
           .sort-buttons-container {
             .sort-button {
+              //display: none;
               .up {
                 border-width: 0 0.333em 0.333em;
                 bottom: -2px;
@@ -443,13 +870,129 @@
               }
             }
           }
-          &.info {
-            background-color: lighten(@state-info-bg, 10%);
+        }
+      }
+      th, td, tr {
+        &.info, &.info:hover {
+          background-color: @wm-grid-selection-bg;
+        }
+      }
+    }
+
+    .input-group-addon {
+      border-bottom: 0;
+      padding: @padding-base-vertical 0;
+    }
+
+    .panel-footer {
+      .app-datagrid-actions {
+        vertical-align: middle;
+        .btn {
+          margin: 0 0.333em;
+        }
+      }
+    }
+
+    .app-datagrid {
+      .app-datagrid-cell {
+        &.cell-editing {
+          padding: @padding-small-vertical @padding-small-horizontal;
+          input {
+            border: 1px solid darken(@table-border-color, 10%);
+            background-color: @table-bg;
+            background-image: none;
           }
         }
       }
     }
   }
+
+  //***** data grid basic pagination****///
+
+  .app-datanavigator {
+    .pagination.basic {
+      .pagination-prev, .pagination-next, .pagination-first, .pagination-last{
+        a {
+          padding: 3px 7px;
+        }
+      }
+      li {
+        font-size: 1.08em;
+        a {
+          color: @pagination-color;
+          background-color: @pagination-basic-bg;
+          border: 0;
+          border-radius: 50%;
+          padding: 8px 0;
+          margin: 0 2px;
+          width: 27pt;
+          height: 27pt;
+        }
+        &.active {
+          a, a:hover, a:focus {
+            color: @pagination-active-color;
+            background-color: @pagination-active-bg;
+            border: 0;
+          }
+          &:hover {
+            a, a:hover, a:focus {
+              background-color: @pagination-active-hover-bg;
+              color: @pagination-active-color;
+            }
+          }
+        }
+        &:hover, &:focus {
+          a, a:hover, a:focus {
+            color: inherit;
+            background-color: @pagination-hover-bg;
+            border: 0;
+          }
+        }
+        &.disabled {
+          a {
+            background-color: @pagination-basic-bg;
+            color: @pagination-disabled-color;
+          }
+        }
+      }
+    }
+    .pagination {
+      li {
+        &.pagecount {
+          a {
+            height: 100%;
+            padding: 0;
+            background-color: @pagination-active-bg;
+            border-color: @pagination-active-bg;
+            input {
+              color: @pagination-active-color;
+              text-align: center;
+              background-image: none;
+              padding: @padding-base-vertical 2px;
+            }
+          }
+        }
+      }
+    }
+    .pager {
+      li {
+        a {
+          margin: 0 .5em 0 0;
+          padding: @padding-base-vertical @padding-base-horizontal;
+        }
+      }
+    }
+  }
+
+  /*** pagination***/
+  .pagination {
+    li {
+      > a, > span {
+        color: @brand-primary;
+      }
+    }
+  }
+
 //carousel styling: removing the left and right background image
   .carousel-control {
     &.left, &.right {
@@ -459,15 +1002,195 @@
 
 /****accordion classes****/
   .app-accordion {
-    .app-accordion-panel {
+    .app-accordion-panel.panel {
+      box-shadow: none;
       .panel-heading {
+        background-color: transparent;
+        .panel-icon {
+          margin-top: 0;
+        }
+        .panel-title {
+          .heading {
+            line-height: inherit;
+            font-size: 1em;
+          }
+        }
         .panel-actions {
           right: 1em;
-          top: 1.5em;
+          top: 1.2em;
+          outline: none;
+
+        }
+      }
+      .panel-collapse {
+        border: 0;
+        &:before {
+          content: "";
+          height: 2px;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top: 0;
+          -webkit-transition: all;
+          -o-transition: all;
+          transition: all;
+          -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+          -webkit-transform: scale(0);
+          -ms-transform: scale(0);
+          -o-transform: scale(0);
+          transform: scale(0);
+        }
+
+        &.in {
+          outline: none;
+          box-shadow: none;
+          &:before {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+            background: @brand-primary;
+          }
         }
       }
     }
   }
+
+  .panel-group {
+    .panel-heading + .panel-collapse {
+      > .panel-body {
+        border-top: 0;
+      }
+    }
+  }
+
+  /**** panel *****/
+  .panel, .card {
+    border-radius: @border-radius-base;
+    border-color: transparent;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1em;
+    .panel-heading {
+      .panel-title {
+        .heading {
+          font-size: 1.125em;
+        }
+        .description {
+          font-size: .75em;
+          color: inherit;
+          font-style: normal;
+          margin-top: 5px;
+          opacity: .7;
+        }
+      }
+      .panel-actions {
+        .panel-action {
+          top: -0.2em;
+          a {
+            &:focus, &:hover {
+              text-decoration: none;
+            }
+          }
+          .app-anchor{
+            font-size: 1.15em;
+            padding: 0 6px;
+            width: 30px;
+            height: 30px;
+            &:hover, &:focus {
+              background-color: rgba(158,158,158,.2);
+              border-radius: 50%;
+              transition: color .5s ease, background .5s ease;
+              -webkit-transition: color .5s ease, background .5s ease;
+              -moz-transition: color .5s ease, background .5s ease;
+              -ms-transition: color .5s ease, background .5s ease;
+              -o-transition: color .5s ease, background .5s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+  .app-livelist, .app-grid {
+    &.panel {
+      border: 0;
+      background-color: @table-header-bg;
+      box-shadow: none;
+    }
+  }
+  .app-list, .app-livelist {
+    .app-list-item {
+      &.active {
+        > .app-panel, > .app-card {
+          border-color: @brand-primary;
+        }
+      }
+    }
+  }
+  .app-card {
+    .app-card-header {
+      background-color: transparent;
+      .card-heading {
+        font-size: 1.155em;
+      }
+
+      .app-card-avatar {
+        height: 18pt;
+        width: 18pt;
+        .app-icon {
+          font-size: 18pt;
+          padding: 5px 0;
+        }
+      }
+      .app-card-header-text {
+        padding-left: 1em;
+      }
+      .app-card-avatar, .app-card-header-text{
+        padding-top: 0;
+      }
+    }
+
+    .card-title {
+      font-size: 1.87em;
+      font-weight: normal;
+      color: rgba(0,0,0,0.87);
+    }
+    .card-text {
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+
+    .app-card-actions {
+      padding: .5em;
+    }
+  }
+
+  /*** dropdown menu*****/
+  .dropdown-menu {
+    padding: 0;
+    margin: 0;
+    border: 1px solid @dropdown-border;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    li {
+      a {
+        font-size: 1.1em;
+        padding: 10px 15px;
+        &:hover {
+          background-color: rgba(158,158,158,.2);
+        }
+      }
+    }
+  }
+
 
 //file upload button
   .app-single-file-upload {
@@ -493,29 +1216,43 @@
     thead {
       tr {
         th {
-          height: 2.5em;
-          button {
-            font-size: 1em;
-            background: @btn-default-bg;
-            color: @btn-default-color;
+          .btn.uib-left, .btn.uib-right, .btn.uib-title {
+            color: @component-active-color;
+            background: transparent;
+            border-color: transparent;
+            box-shadow: none;
+            font-size: 1.24em;
+            padding: 1.4em 1em;
+            text-transform: uppercase;
+            &:hover, &:focus, &:active, &:active:hover, &:active:focus {
+              color: @component-active-color;
+              background-color: rgba(0,0,0,.01);
+              border-color: transparent;
+            }
+          }
+          .uib-left {
+            text-align: left;
+          }
+          .uib-right {
+            text-align: right;
           }
         }
       }
     }
 
     tbody {
-      .btn-default {
-        background-color: @body-bg;
+      .btn-default, .btn {
+        background-color: @gray-lighter;
         border-color: @gray-lighter;
-        color: @text-color;
+        color: @wm-datepicker-text-color;
         width: auto;
         box-shadow: none;
-        padding: 0.66em;
+        padding: @padding-base-horizontal;
         &.btn-info {
-          background-color: @btn-info-bg;
-          color: @btn-info-color;
+          background-color: transparent;
+          color: @brand-primary;
         }
-        &:hover {
+        &:hover, &:focus, &.active:hover, &:focus:hover {
           background-color: @component-active-bg;
           border-color: @component-active-bg;
           color: @component-active-color;
@@ -529,20 +1266,120 @@
       }
     }
     small {
-      font-size: 1em;
-      font-weight: normal;
+      font-size: .85em;
+      text-transform: uppercase;
+      color: @component-active-color;
+    }
+    .uib-monthpicker, .uib-yearpicker {
+      tbody {
+        .btn-default, .btn {
+          padding: @padding-base-horizontal 4px;
+        }
+      }
     }
   }
 
 //styling for the popup calendar actions
   .app-date, .app-datetime {
     .dropdown-menu {
+      border: 1px solid transparent;
+      padding: 0;
       li {
         &:last-child {
-          border-top: 1px solid @input-border;
-          margin-top: 0.5em;
-          overflow: auto;
+          padding: 1.2em;
+          overflow: auto !important;
         }
+      }
+    }
+
+    strong {
+      font-weight: normal;
+    }
+
+    table {
+      outline: none;
+    }
+
+    thead {
+      background-color: @component-active-bg;
+      tr:nth-child(2) {
+        background-color: @wm-datepicker-header-bg;
+        th {
+          &:first-child {
+            padding: 10px 0 10px 20px;
+          }
+          &:last-child {
+            padding: 10px 20px 10px 0;
+          }
+        }
+      }
+    }
+
+    .uib-daypicker {
+      tbody{
+        .btn-default {
+          border-radius: 50%;
+          min-width: 0;
+          height: 24pt;
+          width: 24pt;
+          vertical-align: middle;
+          text-align: center;
+          padding: 0;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          &:first-child {
+            padding-left: 20px;
+          }
+          &:last-child {
+            padding-right: 20px;
+          }
+        }
+        &:first-child {
+          td {
+            padding-top: 15px;
+          }
+        }
+        &:last-child {
+          td {
+            padding-bottom: 15px;
+          }
+        }
+      }
+      .btn-default {
+        &.active, &:focus {
+          background-color: @component-active-bg;
+          color: @component-active-color;
+          &:hover {
+            background-color: @component-active-bg;
+          }
+          .text-info {
+            color: @component-active-color;
+          }
+        }
+        &:hover {
+          background-color: @wm-datepicker-btn-hover-bg;
+          border-color: transparent;
+          color: @text-color;
+        }
+      }
+      .btn-sm {
+        font-size: 1em;
+      }
+    }
+
+    .btn-group {
+      box-shadow: none;
+      .btn , & + .btn {
+        background-color: transparent;
+        border-color: transparent;
+        color: @brand-primary;
+        font-size: 1.1em;
+        box-shadow: none;
       }
     }
   }
@@ -550,8 +1387,9 @@
 //Time Widget classes for styling the buttons
   .app-timeinput, .app-datetime {
     tbody {
-      .btn:not(.btn-link) {
+      .am-pm .btn {
         border: 1px solid @input-border;
+        padding: 8px 12px;
       }
       .btn-link {
         width: 100%;
@@ -570,41 +1408,49 @@
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
     .fc {
       .fc-state-default {
-        background: @btn-default-bg;
-        border: 1px solid @btn-default-border;
-        color: @btn-default-color;
+        background: rgba(0,0,0,.05);
+        border: 1px solid rgba(0,0,0,.05);
+        color: @component-active-color;
         text-shadow: none;
         &.fc-state-hover, &:focus, &.fc-state-active {
-          color: @component-active-color;
-          background: @component-active-bg;
-          border: 1px solid @component-active-bg;
+          color: @btn-default-color;
+          background: @btn-default-bg;
+          border: 1px solid @btn-default-border ;
         }
       }
     }
     .fc-state-highlight {
       &.fc-today {
-        background-color: @component-active-bg;
-        color: @component-active-color;
+        background-color: transparent;
+        color: @brand-primary;
       }
     }
     .fc {
       .fc-toolbar {
+        margin-bottom: 0;
+        padding: 1.82em;
+        background-color: @brand-primary;
         h2 {
-          color: @text-color;
+          color: @component-active-color;
+          text-transform: uppercase;
         }
       }
     }
     .fc-widget-header {
-      background-color: @body-bg;
-      color: @text-color;
+      background-color: transparent;
+      color: @wm-calendar-header-color;
+      font-weight: normal;
+      font-size: 1.03em;
     }
     .fc-body {
       .fc-row {
         min-height: 3em;
         .fc-content-skeleton {
-          padding: .8em 0;
+          padding: .5em 0 2.2em .5em;
+          color: @wm-calendar-text-color;
+          font-size: 1.52em;
           td {
-            text-align: center;
+            text-align: left;
           }
         }
       }
@@ -613,6 +1459,14 @@
 /*********************************************************************************************************************************************/
 /****************************************************Advanced editors******************************************************************************/
 /*********************************************************************************************************************************************/
+//Spinner
+  .app-spinner  {
+    .spinner-message {
+      color: @brand-primary;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
   .app-richtexteditor {
     .btn-default {
       background-color: @gray-lighter;
@@ -633,7 +1487,12 @@
 
     .ta-root .ta-toolbar .btn-group .btn {
       height: 3em;
-      padding: 1em;
+      padding: .75em;
+    }
+
+    .form-control {
+      background-color: @gray-lighter;
+      background-image: none;
     }
   }
 
@@ -671,6 +1530,7 @@
     }
     .input-group-addon {
       padding: 0.833em 1.333em;
+      background-color: @gray-lighter;
     }
   }
 /***popover class: removing the radius*******/
@@ -692,5 +1552,10 @@
       padding-top: 0.333em;
       font-size: 1.2em;
     }
+  }
+
+  /***Slider widget styling*******************/
+  input[type='range'] {
+    color: @brand-primary;
   }
 }

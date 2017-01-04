@@ -3,7 +3,6 @@
 @import "../../../components/bootstrap/less/bootstrap.less";
 @import "variables";
 
-
 //Variables
   font-size: @font-size-base;
   color: @text-color;
@@ -14,6 +13,7 @@
   @wm-header-text-color: @brand-primary;
   @wm-header-bg-color: #f5f5f7;
   @wm-header-border-color: #c1c1c4;
+
 //side panels
   @wm-panels-border-color: rgba(0,0,0,0.1);
 
@@ -30,6 +30,7 @@
 
 //Calendar
   @wm-calendar-bg-color: #fff;
+  @wm-calendar-border: rgba(0,0,0,0.03);
 
 //Button
   .btn {
@@ -41,7 +42,17 @@
     font-weight: normal;
   }
 
-/*******************************************************************************************/
+  .h1,.h2,.h3,.h4,.h5,.h6 {
+    width: 100%;
+  }
+  //stylings for tile widget
+  .app-tile {
+    &.bg-danger, &.bg-success, &.bg-info, &.bg-warning {
+      color: @panel-primary-text;
+    }
+  }
+
+  /*******************************************************************************************/
 /***************************************     LAYOUTS     ***********************************/
 /*******************************************************************************************/
 //content background
@@ -87,29 +98,45 @@
       .navbar-nav.navbar-right  {
         > li {
           .app-popover > a , .dropdown > .app-button, a {
-                           color: @wm-header-text-color;
-                         }
+            color: @wm-header-text-color;
+          }
+        }
       }
-    }
-    .dropdown-menu {
-      background-color: @wm-header-bg-color;
-      >li {
-        >a {
-          color: @text-color;
-          &:hover, &:focus {
-            color: @brand-primary;
+      .dropdown-menu {
+        background-color: @wm-header-bg-color;
+        >li {
+          >a {
+            color: @text-color;
+            &:hover, &:focus {
+              color: @brand-primary;
+            }
           }
         }
       }
     }
+    .mobile-navbar-left, .mobile-navbar-right {
+      width: 25%;
+    }
+    .mobile-navbar-center {
+      width: 50%;
+    }
+    .navbar-btn {
+      color: inherit;
+      background-color: inherit;
+      &:hover , &:focus {
+        color: inherit;
+      }
+    }
   }
-  .mobile-navbar-left, .mobile-navbar-right {
-    width: 25%;
+
+  //Material Menu
+  .dropdown-menu {
+    > li {
+      > a {
+        padding: @nav-link-padding;
+      }
+    }
   }
-  .mobile-navbar-center {
-    width: 50%;
-  }
-}
 
 //Mobile menu panel which comes from left
 .app-left-panel {
@@ -118,6 +145,18 @@
 
   .nav {
     li {
+      clear: both;
+      //for overriding the pills default color
+      &.active {
+        > a {
+          color: inherit;
+          background-color: transparent;
+          &:hover, &:focus {
+            color: inherit;
+            background-color: transparent;
+          }
+        }
+      }
       a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
         color: @wm-left-panel-btn-color;
         font-size: 1.15em;
@@ -142,6 +181,10 @@
           border-left-color: @wm-left-panel-link-hover-text-color;
           color: @wm-left-panel-link-hover-text-color;
         }
+        .badge {
+          right: 0.5em;
+          top: 1.5em;
+        }
       }
     }
   }
@@ -150,7 +193,6 @@
 //naviagtion styles for links list in the application
 .app-nav {
   .app-nav-item {
-    border-bottom: 1px @wm-header-border-color solid;
     a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
       letter-spacing: .025em;
       font-weight: 400;
@@ -174,18 +216,27 @@
         text-align: center;
       }
     }
-
+    .dropdown-menu {
+      position: relative;
+      box-shadow: none;
+      border: 0;
+      margin-left: 0;
+    }
     > .dropdown.open {
       .dropdown-menu {
         position: relative;
-        padding: 0.833em 0px;
-        margin: 0 0 1.333em;
         border: 0;
-        border-bottom: 1px solid @input-border;
         box-shadow: none;
         li {
           a {
-            padding: 0.667em 1.667em;
+            padding: .93em 1em;
+          }
+        }
+        .dropdown-submenu {
+          .dropdown-menu {
+            a {
+              padding-left: 2.5em;
+            }
           }
         }
       }
@@ -200,6 +251,13 @@
 
 //Mobile segmented control for android it should look like tabs
 .app-segmented-control {
+  .app-segments-container {
+    > ul > {
+      li.app-segment-content {
+        padding-top: 5em;
+      }
+    }
+  }
   > .btn-group {
     .btn.active {
       color: @component-active-color;
@@ -233,18 +291,15 @@
     > a, .app-menu a  {
       color: @text-color;
       background-color: transparent;
-      border-bottom-color: transparent;
       border-radius: 0;
-      box-shadow: none;
       margin-right: 0px;
-      border-color: transparent;
       text-transform: uppercase;
       border-left-width: 0px !important;
       border-right-width: 0px !important;
       &:hover {
-        border-bottom: transparent;
-        color: @link-color;
+        color: @brand-primary;
         background-color: transparent;
+        border-color: transparent;
       }
       .app-icon {
         background-size: 100%;
@@ -268,10 +323,21 @@
   }
 }
 
+//Switch
+  .app-switch {
+    .btn-group, span.app-switch-overlay {
+      .btn, &.btn {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
 //Tab Content
 .tab-content {
   .tab-body {
     border-color: transparent;
+    padding: 10px 0;
   }
 }
 
@@ -284,8 +350,21 @@
   padding: 0;
   margin: 0;
   box-shadow: none;
+  .panel-heading {
+    .panel-actions {
+      .panel-action {
+        .dropdown-menu {
+          > li {
+            > a:hover {
+              color: @text-color;
+            }
+          }
+        }
+      }
+    }
+  }
   .panel-body {
-    padding: 0;
+    padding: 10px 0;
   /***specific use cases when the radioset and checkboxset comes directly in the panel****/
     > .app-radioset, > .app-checboxset {
       li {
@@ -294,6 +373,15 @@
     }
   }
 }
+
+//Accordion
+  .app-accordion {
+    .app-accordion-panel {
+      .panel-heading {
+        border-bottom: 1px solid rgba(0,0,0,0.25);
+      }
+    }
+  }
 
 //Popover styles
 .popover {
@@ -313,6 +401,19 @@
   }
 }
 
+//modal dialog
+  .modal-dialog {
+    margin: 50% 10px;
+    .modal-content {
+      border-radius: 10px;
+      .modal-body {
+        .panel, .app-form, .app-dialog-form {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
 /***confirm dialog specific classes*****/
 .app-dialog-title {
   text-align: center;
@@ -326,6 +427,7 @@
       color: @link-color;
       border: 0;
       border-radius: 0;
+      padding: 1em 0.5em;
     }
     .btn + .btn {
       margin: 0;
@@ -407,11 +509,30 @@
 //form group widget
 .form-group {
   margin-bottom: 0;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   .control-label {
     padding-left: 1em;
     padding-right: 1em;
+    padding-top: 8px;
+  }
+  .form-control {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0;
+    border-radius: 0;
+  }
+  &.live-field.active {
+    .control-label {
+      color: @brand-primary;
+    }
+  }
+  .text-danger, .control-label.text-danger {
+    color: @brand-danger;
+  }
+  .ng-touched.ng-invalid {
+    border-color: @brand-danger;
+  }
+  .app-checkbox, .app-radio, .app-blob-upload {
+    padding-left: 1em;
   }
 }
 
@@ -449,14 +570,47 @@
     color: @component-active-bg;
   }
 }
+//Data Navigator
+  .app-datanavigator {
+    ul {
+      &.pagination, &.pager {
+        >li.pagecount {
+          >a {
+            padding-top: 9px;
+          }
+        }
+      }
+    }
+  }
 
-
+//Login Widget
+  .app-login {
+    form.app-login-form {
+      .form-group {
+        .form-control {
+          border-left-color: transparent;
+        }
+        .app-login-rememberme {
+          padding-left: 0;
+        }
+      }
+    }
+  }
 //Progress Bar
 .progress {
   border-radius: 0;
   box-shadow: none;
 }
 
+//Search
+  .input-group.app-search {
+    border-radius: 15px;
+    border: 1px solid rgba(0,0,0,0.25);
+    input[type="search"] {
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+  }
 //Calendar
 .app-calendar {
   background-color: @body-bg;
@@ -516,10 +670,24 @@
   thead {
     tr {
       th {
-        button {
-          font-size: 1em;
-          background: @btn-default-bg;
+        .btn.uib-left, .btn.uib-right, .btn.uib-title {
+          font-size: 1.3em;
+          background: transparent;
           color: @btn-default-color;
+          border-color: transparent;
+          font-weight: normal;
+          strong {
+            font-weight: normal;
+          }
+          &:hover, &:focus {
+            border-color: transparent;
+          }
+        }
+        .uib-left {
+          text-align: left;
+        }
+        .uib-right {
+          text-align: right;
         }
       }
     }
@@ -527,23 +695,33 @@
 
   tbody {
     .btn {
-      background: @btn-default-bg;
-      border-color: @gray-lighter;
+      background: transparent;
+      border-color: transparent;
       font-size: 10pt;
+      padding: 5pt;
+      &.btn-default {
+        color: @text-color;
+      }
       &.btn-info {
-        background-color: @btn-info-bg;
-        color: @btn-info-color;
+        background-color: @gray-darker;
+        color: @component-active-color;
+        span {
+          color: @label-color;
+        }
       }
       &:focus, &:hover, &.active {
         background-color: @component-active-bg;
         color: @component-active-color;
+        border-color: transparent;
         box-shadow: none;
+        outline-color: transparent;
         .text-info {
           color: inherit;
         }
       }
       .text-info {
         color: @brand-primary;
+        font-weight: bold;
       }
     }
   }
@@ -551,36 +729,83 @@
   .dropdown-menu {
     li {
       &:last-child {
-        border-top: 1px solid @input-border;
+        border-top: 1px solid @wm-calendar-border;
         margin-top: 0.583em;
         overflow: auto;
       }
     }
   }
-}
-
-//App-datetime
-.app-timeinput, .app-datetime {
-  tbody {
-    .btn {
-      height: 30pt;
-      &:not(.btn-link) {
-        border: 1px solid @input-border;
-      }
-    }
-    .text-info {
-      color: @text-color;
-    }
-
-    .btn-link {
-      width: 100%;
-      background-color: transparent;
-
-      &:hover {
-        background-color: @component-active-bg;
-        color: @component-active-color;
+  thead {
+    tr:nth-child(2) {
+      border-bottom: 1px solid @wm-calendar-border;
+      th {
+        padding-top: 10pt;
       }
     }
   }
+  .uib-daypicker {
+    tbody{
+      .btn-default {
+        position: relative;
+        border-radius: 50%;
+        min-width: 0;
+        height: 24pt;
+        width: 24pt;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0;
+        &:after {
+          bottom: -6px;
+        }
+        &:hover {
+          .text-muted {
+            color: @btn-primary-color;
+          }
+        }
+      }
+      tr {
+        border-bottom: 1px solid @wm-calendar-border;
+        td {
+          padding-bottom: 10pt;
+          padding-top: 5pt;
+        }
+      }
+      .text-muted {
+        color: rgba(0,0,0,0.2);
+      }
+    }
+  }
+  .uib-daypicker, .uib-monthpicker, .uib-yearpicker {
+    background-color: @body-bg;
+  }
+  .uib-month, .uib-year {
+    padding-top: 5pt;
+    padding-bottom: 10pt;
+  }
 }
+
+//App-datetime
+  .app-timeinput, .app-datetime {
+    tbody {
+      .btn {
+        height: 30pt;
+        &:not(.btn-link) {
+          border: 1px solid @input-border;
+        }
+      }
+      .text-info {
+        color: @text-color;
+      }
+
+      .btn-link {
+        width: 100%;
+        background-color: transparent;
+
+        &:hover {
+          background-color: @component-active-bg;
+          color: @component-active-color;
+        }
+      }
+    }
+  }
 }

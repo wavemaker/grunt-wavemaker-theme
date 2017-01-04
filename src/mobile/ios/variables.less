@@ -29,7 +29,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #F3F3F4;
+@body-bg:               #fff;
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
@@ -150,8 +150,8 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-bg:                 #fff;
 @btn-default-color:              @brand-primary;
+@btn-default-bg:                 #fff;
 @btn-default-border:             darken(@btn-default-color, 10%);
 
 @btn-primary-color:              #fff;
@@ -206,9 +206,6 @@
 //** Small `.form-control` border radius
 @input-border-radius-small:      @border-radius-small;
 
-//** Border color for inputs on focus
-@input-border-focus:             #66afe9;
-
 //** Placeholder text color
 @input-color-placeholder:        #999;
 
@@ -226,9 +223,9 @@
 @legend-border-color:            #e5e5e5;
 
 //** Background color for textual input addons
-@input-group-addon-bg:           @gray-lighter;
+@input-group-addon-bg:           transparent;
 //** Border color for textual input addons
-@input-group-addon-border-color: @input-border;
+@input-group-addon-border-color: transparent;
 
 //** Disabled cursor for form controls and buttons.
 @cursor-disabled:                not-allowed;
@@ -399,12 +396,12 @@
 // Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                  #f5f5f5 ;
-@navbar-inverse-bg:                     @brand-primary ;
+@navbar-inverse-bg:                     #222 ;
 @navbar-inverse-border:                 @brand-primary ;
 
 // Inverted navbar links
 @navbar-inverse-link-color:             #f5f5f5 ;
-@navbar-inverse-link-hover-color:       #fff ;
+@navbar-inverse-link-hover-color:       #fff;
 @navbar-inverse-link-hover-bg:              transparent;
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
 @navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 10%);
@@ -505,20 +502,20 @@
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-@state-success-text:                    #fff;
+@state-success-text:                    @brand-success;
 @state-success-bg:                      @brand-success;
 @state-success-border:                  darken(@state-success-bg, 5%);
 
-@state-info-text:                       @state-success-text ;
-@state-info-bg:                         @brand-primary ;
+@state-info-text:                       @brand-info;
+@state-info-bg:                         @brand-info;
 @state-info-border:                     darken(@state-info-bg, 7%) ;
 
-@state-warning-text:                    @state-success-text ;
-@state-warning-bg:                      @brand-warning ;
+@state-warning-text:                    @brand-warning;
+@state-warning-bg:                      @brand-warning;
 @state-warning-border:                  darken(@state-warning-bg, 5%) ;
 
-@state-danger-text:                     @state-success-text ;
-@state-danger-bg:                       @brand-danger ;
+@state-danger-text:                     @brand-danger;
+@state-danger-bg:                       @brand-danger;
 @state-danger-border:                   darken(@state-danger-bg, 5%) ;
 
 
@@ -634,19 +631,19 @@
 @alert-link-font-weight:      bold;
 
 @alert-success-bg:            @state-success-bg;
-@alert-success-text:          @state-success-text;
+@alert-success-text:          @panel-primary-text;
 @alert-success-border:        @state-success-border;
 
 @alert-info-bg:               @state-info-bg;
-@alert-info-text:             @state-info-text;
+@alert-info-text:             @panel-primary-text;
 @alert-info-border:           @state-info-border;
 
 @alert-warning-bg:            @state-warning-bg;
-@alert-warning-text:          @state-warning-text;
+@alert-warning-text:          @panel-primary-text;
 @alert-warning-border:        @state-warning-border;
 
 @alert-danger-bg:             @state-danger-bg;
-@alert-danger-text:           @state-danger-text;
+@alert-danger-text:           @panel-primary-text;
 @alert-danger-border:         @state-danger-border;
 
 
@@ -714,7 +711,7 @@
 @panel-bg:                    #fff;
 @panel-body-padding:          15px;
 @panel-heading-padding:       10px 15px;
-@panel-footer-padding:        @panel-heading-padding;
+@panel-footer-padding:        10px 5px;
 @panel-border-radius:         @border-radius-base;
 
 //** Border color for elements within panels
@@ -729,21 +726,21 @@
 @panel-primary-border:        @brand-primary;
 @panel-primary-heading-bg:    @brand-primary;
 
-@panel-success-text:          #fff;
-@panel-success-border:        @brand-success;
-@panel-success-heading-bg:    @brand-success;
+@panel-success-text:          @panel-primary-text;
+@panel-success-border:        @state-success-border;
+@panel-success-heading-bg:    @state-success-bg;
 
-@panel-info-text:             #fff;
-@panel-info-border:           @brand-info;
-@panel-info-heading-bg:       @brand-info;
+@panel-info-text:             @panel-primary-text;
+@panel-info-border:           @state-info-border;
+@panel-info-heading-bg:       @state-info-bg;
 
-@panel-warning-text:          #fff;
-@panel-warning-border:        @brand-warning;
-@panel-warning-heading-bg:    @brand-warning;
+@panel-warning-text:          @panel-primary-text;
+@panel-warning-border:        @state-warning-border;
+@panel-warning-heading-bg:    @state-warning-bg;
 
-@panel-danger-text:           #fff;
-@panel-danger-border:         @brand-danger;
-@panel-danger-heading-bg:     @brand-danger;
+@panel-danger-text:           @panel-primary-text;
+@panel-danger-border:         @state-danger-border;
+@panel-danger-heading-bg:     @state-danger-bg;
 
 
 //== Thumbnails

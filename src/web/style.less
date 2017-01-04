@@ -1,21 +1,22 @@
 /*START - default Theme*/
 
 .wm-app {
-@import url("../../components/bootstrap/less/bootstrap.less");
-@import url("variables.less");
+
+  @import url("../../components/bootstrap/less/bootstrap.less");
+  @import url("variables.less");
 
   font-size: @font-size-base;
   color: @text-color;
   font-family: @font-family-base;
   background-color: @body-bg;
 
-//Header
+  //Header
   @wm-header-border-color: #ffeb3b;
   @wm-header-text-color: #fff;
   @wm-header-bg-color: #2196f3;
   @wm-header-height: auto;
 
-//left panel
+  //left panel
   @wm-left-panel-bg: #fff;
   @wm-left-panel-list-border: 1px #e6e5e5 solid;
   @wm-left-panel-border-color: #CFDBE2;
@@ -26,36 +27,36 @@
   @wm-left-panel-link-hover-border-color: transparent;
   @wm-left-panel-dropdown-menu-bg: transparent;
 
-//right panel
+  //right panel
   @wm-right-panel-border-color: #CFDBE2;
   @wm-right-panel-bg: #fff;
   @wm-right-panel-btn-color: #515253;
   @wm-right-panel-list-border: 1px #e6e5e5 solid;
 
-//Footer
+  //Footer
   @wm-footer-border-color: #ccc;
   @wm-footer-text-color: #515253;
   @wm-footer-bg-color: #F5F7FA;
   @wm-footer-height: auto;
 
-//Table
+  //Table
   @table-header-bg: #fff;
   @pagination-active-hover-bg: darken(@brand-primary, 15%);
   @pagination-basic-bg: #ddd;
   @wm-grid-selection-bg: #CFD8DC;
 
-//Tabset
+  //Tabset
   @nav-tabs-color-hover : #000;
   @nav-tabs-color : #7a7a7a;
   @nav-tabs-bg: #fff;
 
-//input group hover
+  //input group hover
   @input-group-addon-hover-bg: rgba(0,0,0,.1);
 
-//Buttons
+  //Buttons
   @btn-group-active-btn-bg: #fff;
 
-//modal dialogs
+  //modal dialogs
   @modal-header-bg: @navbar-default-bg;
   @modal-header-color: @navbar-default-link-active-color;
 
@@ -76,9 +77,9 @@
     -o-box-shadow: @arguments;
   }
   .btn-shadow {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+      -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+      -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
   }
 
   /*Applies inset shadow effect*/
@@ -93,11 +94,29 @@
   .img-rounded {
     border-radius: @thumbnail-border-radius;
   }
-/******Label: overiding the label class as bootstrap is making all the labels bold***/
+
+  /******Label: overiding the label class as bootstrap is making all the labels bold***/
   label {
     font-weight: normal;
   }
-
+  .label-primary, .label-success, .label-info, .label-warning, .label-danger {
+    color: #fff;
+  }
+  .text-danger {
+    color: darken(@brand-danger, 20%);
+  }
+  .text-success {
+    color: darken(@brand-success, 20%);
+  }
+  .text-info {
+    color: darken(@brand-info, 20%);
+  }
+  .text-primary {
+    color: darken(@brand-primary, 20%);
+  }
+  .text-warning {
+    color: darken(@brand-warning, 20%);
+  }
   .h1,.h2,.h3,.h4,.h5,.h6 {
     width: 100%;
   }
@@ -105,6 +124,15 @@
     background-color: #f3f3f3;
     color: @text-color;
   }
+  .input-group-btn {
+    .btn[disabled] {
+      &:hover, &:focus {
+        background-color: transparent;
+        outline-color: transparent;
+      }
+    }
+  }
+
   * {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-tap-highlight-color: transparent;
@@ -116,8 +144,8 @@
   }
 
   .close {
-    border: 0;
-    background-color: transparent;
+     border: 0;
+     background-color: transparent;
   }
 
   /***Tabs Widget: Styling for the tabs widget comes here********/
@@ -128,7 +156,7 @@
       padding: @padding-base-horizontal;
     }
   }
-//navigation
+  //navigation
   .nav-tabs, .nav-justified {
     border-bottom-color: @nav-tabs-border-color;
     background-color: @nav-tabs-bg;
@@ -172,11 +200,11 @@
           border-color: transparent;
           color: @nav-tabs-color-hover;
           &:after {
-            -webkit-transform: scale(1);
-            -ms-transform: scale(1);
-            -o-transform: scale(1);
-            transform: scale(1);
-            background: @brand-primary;
+             -webkit-transform: scale(1);
+             -ms-transform: scale(1);
+             -o-transform: scale(1);
+             transform: scale(1);
+             background: @brand-primary;
           }
           &:hover, &:focus {
             outline: none;
@@ -194,7 +222,7 @@
     }
   }
 
-  /***App Message********/
+/***App Message********/
   .app-message .close {
     top: initial;
   }
@@ -207,7 +235,7 @@
     }
   }
 
-/***Button Style: Defining the sixe of the button for bootstrap classes********/
+  /***Button Style: Defining the sixe of the button for bootstrap classes********/
   .btn {
     text-transform: uppercase;
     font-size: 12px;
@@ -216,8 +244,13 @@
     &.btn-lg {
       font-size: 1.4em;
     }
+    &.btn-sm {
+      font-size: 10px;
+      padding: @padding-small-vertical @padding-small-horizontal;
+    }
     &.btn-xs {
-      padding: 0 0.5em;
+      font-size: 8px;
+      padding: @padding-xs-vertical @padding-xs-horizontal;
     }
     .caret {
       margin-left: 0.7em;
@@ -229,11 +262,11 @@
   }
 
   .btn-group {
-    .btn-shadow();
-    .btn {
-      box-shadow: none;
-      border-color: transparent;
-    }
+     .btn-shadow();
+     .btn {
+        box-shadow: none;
+        border-color: transparent;
+     }
   }
 
   .btn-default {
@@ -266,22 +299,22 @@
     &.btn-info {
       color: @brand-info;
       &:hover, &:focus {
-        background-color: @btn-info-bg;
-        color: @btn-info-color;
+         background-color: @btn-info-bg;
+         color: @btn-info-color;
       }
     }
     &.btn-warning {
       color: @brand-warning;
       &:hover, &:focus {
-        background-color: @btn-warning-bg;
-        color: @btn-warning-color;
+         background-color: @btn-warning-bg;
+         color: @btn-warning-color;
       }
     }
     &.btn-danger {
       color: @brand-danger;
       &:hover, &:focus {
-        background-color: @btn-danger-bg;
-        color: @btn-danger-color;
+         background-color: @btn-danger-bg;
+         color: @btn-danger-color;
       }
     }
   }
@@ -292,21 +325,21 @@
     border-bottom-color: @modal-header-border-color;
     color: @modal-header-color;
     .modal-title {
-      color: @modal-header-color;
+       color: @modal-header-color;
     }
   }
 
   /*****login modal form***/
   .app-login-dialog {
     .app-dialog-body {
-      .app-form {
-        border: 0;
-        margin-bottom: 0;
-      }
+        .app-form {
+            border: 0;
+            margin-bottom: 0;
+        }
     }
   }
 
-//Breadcrumb
+  //Breadcrumb
   .breadcrumb {
     li {
       a {
@@ -315,17 +348,17 @@
     }
   }
 
-//Progress Bar
+  //Progress Bar
   .progress {
     box-shadow: none;
     border-radius: 0;
     height: .55em;
     .progress-bar {
-      line-height: .92em;
+        line-height: .92em;
     }
   }
 
-//Table
+  //Table
   .table {
     > thead {
       > tr {
@@ -337,42 +370,44 @@
     }
   }
 
-/*****************************************************************************************************************************************/
-/*********************************************************Layout**************************************************************************/
-/*****************************************************************************************************************************************/
+  /*****************************************************************************************************************************************/
+  /*********************************************************Layout**************************************************************************/
+  /*****************************************************************************************************************************************/
   .app-content-column {
     background-color: @body-bg;
     padding: 1em 1.5em;
   }
 
-//Header
+  //Header
   .app-header, .app-mobile-header {
     background-color: @wm-header-bg-color;
     color: @wm-header-text-color;
+    box-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+    border-color: transparent;
     height: @wm-header-height;
     a {
       color: @wm-header-text-color;
     }
 
     .app-search {
-      background-color: @wm-header-bg-color;
-      .form-control {
-        background-image: linear-gradient(@wm-header-border-color, @wm-header-border-color), linear-gradient(@input-border, @input-border);
-        color: @wm-header-text-color;
-        &::-webkit-input-placeholder {
-          color: @wm-header-text-color;
-        }
-        &:-moz-placeholder {
-          color: @wm-header-text-color;
-        }
-        &:-ms-placeholder {
-          color: @wm-header-text-color;
-        }
-      }
+       background-color: @wm-header-bg-color;
+       .form-control {
+         background-image: linear-gradient(@wm-header-border-color, @wm-header-border-color), linear-gradient(@input-border, @input-border);
+         color: @wm-header-text-color;
+         &::-webkit-input-placeholder {
+           color: @wm-header-text-color;
+         }
+         &:-moz-placeholder {
+           color: @wm-header-text-color;
+         }
+         &:-ms-placeholder {
+           color: @wm-header-text-color;
+         }
+       }
     }
     .input-group-addon {
-      color: @wm-header-text-color;
-      font-size: 1.1em;
+       color: @wm-header-text-color;
+       font-size: 1.1em;
     }
 
     .app-mobile-header {
@@ -383,13 +418,11 @@
       }
     }
   }
-//Top Nav Bar
+
+  //Top Nav Bar
   .app-navbar {
     border-radius: 0;
-    background-color: @navbar-default-bg;
     color: @navbar-default-color;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
     padding: 0 1.52em;
     .navbar-nav {
       li {
@@ -416,7 +449,6 @@
 
         > .dropdown .dropdown-menu {
           margin: 0;
-          top: 95%;
           background-color: @dropdown-bg;
           a {
             color: @text-color;
@@ -437,9 +469,9 @@
           }
           .dropdown-menu {
             li > a {
-              &:hover {
-                background-color: rgba(0,0,0,.03);
-              }
+               &:hover {
+                  background-color: rgba(0,0,0,.03);
+               }
             }
           }
         }
@@ -447,7 +479,7 @@
     }
   }
 
-//Popover
+  //Popover
   .popover {
     min-width: 16.667em;
     .popover-content {
@@ -455,16 +487,29 @@
     }
   }
 
-//Left & Right Panels
+  //Left & Right Panels
   .app-left-panel, .app-right-panel {
-    box-shadow: 2px 2px 4px rgba(0,0,0,.15);
-    -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.15);
-    -moz-box-shadow: 2px 2px 4px rgba(0,0,0,.15);
-    .nav.nav-pills {
+     box-shadow: 2px 2px 4px rgba(0,0,0,.15);
+     -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.15);
+     -moz-box-shadow: 2px 2px 4px rgba(0,0,0,.15);
+    .nav {
       li {
+        //for overriding the pills default color
+        &.active {
+          > a {
+            color: inherit;
+            background-color: @wm-left-panel-link-active-bg;
+            &:hover, &:focus {
+              color: inherit;
+              background-color: @wm-left-panel-link-active-bg;
+            }
+          }
+        }
         margin-top: 0;
+        //border-bottom: @wm-left-panel-list-border;
 
         a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
+          //letter-spacing: .025em;
           padding: 1em;
           position: relative;
           border-radius: 0;
@@ -480,37 +525,24 @@
           &.active {
             background-color: @wm-left-panel-link-active-bg;
             &:hover, &:focus {
-              background-color: @wm-left-panel-link-hover-bg;
-              color: inherit;
+               background-color: @wm-left-panel-link-hover-bg;
+               color: inherit;
             }
           }
           .app-icon {
-            margin-left: 0.13em;
-            margin-right: 0.53em;
-            margin-top: .2em;
+            margin-right: 0.3em;
             font-size: 1.143em;
           }
-
           .badge {
             right: @padding-large-horizontal;
             top: @padding-large-horizontal;
             padding: 4px 6px;
           }
         }
-        &.active {
-          a {
-            background-color: @wm-left-panel-link-active-bg;
-            &.active, &:hover, &:focus {
-              background-color: @wm-left-panel-link-hover-bg;
-              color: inherit;
-            }
-          }
-        }
 
         > .dropdown.open {
           > .dropdown-menu {
             position: relative;
-            padding: 0;
             margin: 0 0 1.333em;
             border: 0;
             border-bottom: @wm-left-panel-list-border;
@@ -518,8 +550,8 @@
             background-color: @wm-left-panel-dropdown-menu-bg;
             li {
               a {
-                padding: 0.92em .92em .92em 3em;
-                font-size: 1.02em;
+                padding: 0.92em .92em .92em 2.5em;
+                font-size: 1em;
               }
             }
           }
@@ -527,9 +559,9 @@
       }
       &.open {
         a {
-          &:hover, &:focus {
-            background-color: @wm-left-panel-link-hover-bg;
-          }
+           &:hover, &:focus {
+              background-color: @wm-left-panel-link-hover-bg;
+           }
         }
       }
     }
@@ -544,19 +576,19 @@
     }
   }
 
-//Left Panel
+  //Left Panel
   .app-left-panel {
     background-color: @wm-left-panel-bg;
     border-right: 1px solid @wm-left-panel-border-color;
   }
 
-//Right Panel
+  //Right Panel
   .app-right-panel {
     background-color: @wm-right-panel-bg;
     border-left: 1px solid @wm-right-panel-border-color;
   }
 
-//Footer
+  //Footer
   .app-footer {
     padding: 1em 1.5em;
     background-color: @wm-footer-bg-color;
@@ -572,9 +604,9 @@
       color: @text-color;
     }
   }
-/******************************************************************************************************************************************/
-/***************************************************Widgets styling************************************************************************/
-/******************************************************************************************************************************************/
+  /******************************************************************************************************************************************/
+  /***************************************************Widgets styling************************************************************************/
+  /******************************************************************************************************************************************/
   .form-group {
     margin-bottom: 0.833em;
     &.live-field.active {
@@ -592,7 +624,7 @@
       outline: none;
     }
   }
-//for text, select controls
+  //for text, select controls
   .form-control, .form-group + .form-control {
     color: inherit;
     border: 0;
@@ -618,7 +650,11 @@
       box-shadow: none;
     }
   }
-
+  .form-control[disabled] {
+    background-color: transparent;
+    background-image: none;
+    border-bottom: 1px dotted rgba(0,0,0,0.1);
+  }
   .input-group-btn {
     .btn {
       background-color: transparent;
@@ -643,9 +679,16 @@
     }
     label {
       padding-left: @padding-base-horizontal;
+      &.disabled {
+        cursor: not-allowed;
+        span.caption {
+          cursor: not-allowed;
+        }
+      }
     }
     .caption {
       position: relative;
+      min-height: 1em;
       cursor: pointer;
       padding-left: 27px;
       margin: 5px 0;
@@ -662,94 +705,94 @@
   }
 
   //radio buttons
-  .radio {
-    .caption {
-      &:before, &:after {
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        border-radius: 50%;
-      }
-      &:before {
-        top: 0;
-        left: 0;
-        width: 17px;
-        height: 17px;
-        background-color: @brand-primary;
-        border: 1px @pre-border-color solid;
-        .inset-shadow(0, 0, 0, 13px, @body-bg);
-      }
-      &:after {
-        top: 45%;
-        left: 10px;
-        width: 17px;
-        height: 17px;
-        -moz-transform: translate(-50%, -50%) scale(0);
-        -ms-transform: translate(-50%, -50%) scale(0);
-        -webkit-transform: translate(-50%, -50%) scale(0);
-        transform: translate(-50%, -50%) scale(0);
-      }
-    }
-    input:checked + .caption:before {
-      -moz-box-shadow: inset 0 0 0 3px @body-bg;
-      -webkit-box-shadow: inset 0 0 0 3px @body-bg;
-      box-shadow: inset 0 0 0 3px @body-bg;
-    }
-    input:checked + .caption:after {
-      -moz-transform: translate(-50%, -50%) scale(1);
-      -ms-transform: translate(-50%, -50%) scale(1);
-      -webkit-transform: translate(-50%, -50%) scale(1);
-      transform: translate(-50%, -50%) scale(1);
-    }
-  }
+   .radio {
+     .caption {
+       &:before, &:after {
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+       }
+       &:before {
+         top: 0;
+         left: 0;
+         width: 17px;
+         height: 17px;
+         background-color: @brand-primary;
+         border: 1px @pre-border-color solid;
+         .inset-shadow(0, 0, 0, 13px, @body-bg);
+       }
+       &:after {
+         top: 45%;
+         left: 10px;
+         width: 17px;
+         height: 17px;
+         -moz-transform: translate(-50%, -50%) scale(0);
+         -ms-transform: translate(-50%, -50%) scale(0);
+         -webkit-transform: translate(-50%, -50%) scale(0);
+         transform: translate(-50%, -50%) scale(0);
+       }
+     }
+     input:checked + .caption:before {
+       -moz-box-shadow: inset 0 0 0 3px @body-bg;
+       -webkit-box-shadow: inset 0 0 0 3px @body-bg;
+       box-shadow: inset 0 0 0 3px @body-bg;
+     }
+     input:checked + .caption:after {
+       -moz-transform: translate(-50%, -50%) scale(1);
+       -ms-transform: translate(-50%, -50%) scale(1);
+       -webkit-transform: translate(-50%, -50%) scale(1);
+       transform: translate(-50%, -50%) scale(1);
+     }
+   }
 
 
-  //checkbox
-  .checkbox {
-    .caption {
-      &:before {
-        top: 0;
-        left: 0;
-        width: 17px;
-        height: 17px;
-        background-color: @brand-primary;
-        border: 1px @pre-border-color solid;
-        .inset-shadow(0, 0, 0, 13px, @body-bg);
-      }
-      &:after {
-        top: 45%;
-        left: 10px;
-        width: 40px;
-        height: 40px;
-        -moz-transform: translate(-50%, -50%) scale(0);
-        -ms-transform: translate(-50%, -50%) scale(0);
-        -webkit-transform: translate(-50%, -50%) scale(0);
-        transform: translate(-50%, -50%) scale(0);
-      }
-    }
-    input:checked + .caption:before {
-      -moz-box-shadow: inset 0 0 0 13px @brand-primary;
-      -webkit-box-shadow: inset 0 0 0 13px @brand-primary;
-      box-shadow: inset 0 0 0 13px @brand-primary;
-      background-color: @body-bg;
-      border-color: @brand-primary;
-      border-top-style: none;
-      border-right-style: none;
-      padding: 0 3px;
-      color: @wm-checked-color;
-      content: "\2713";
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-    }
-    input:checked + .caption:after {
-      -moz-transform: translate(-50%, -50%) scale(1);
-      -ms-transform: translate(-50%, -50%) scale(1);
-      -webkit-transform: translate(-50%, -50%) scale(1);
-      transform: translate(-50%, -50%) scale(1);
-    }
-  }
+   //checkbox
+   .checkbox {
+     .caption {
+       &:before {
+         top: 0;
+         left: 0;
+         width: 17px;
+         height: 17px;
+         background-color: @brand-primary;
+         border: 1px @pre-border-color solid;
+         .inset-shadow(0, 0, 0, 13px, @body-bg);
+       }
+       &:after {
+         top: 45%;
+         left: 10px;
+         width: 40px;
+         height: 40px;
+         -moz-transform: translate(-50%, -50%) scale(0);
+         -ms-transform: translate(-50%, -50%) scale(0);
+         -webkit-transform: translate(-50%, -50%) scale(0);
+         transform: translate(-50%, -50%) scale(0);
+       }
+     }
+     input:checked + .caption:before {
+       -moz-box-shadow: inset 0 0 0 13px @brand-primary;
+       -webkit-box-shadow: inset 0 0 0 13px @brand-primary;
+       box-shadow: inset 0 0 0 13px @brand-primary;
+       background-color: @body-bg;
+       border-color: @brand-primary;
+       border-top-style: none;
+       border-right-style: none;
+       padding: 0 3px;
+       color: @wm-checked-color;
+       content: "\2713";
+       text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+     }
+     input:checked + .caption:after {
+       -moz-transform: translate(-50%, -50%) scale(1);
+       -ms-transform: translate(-50%, -50%) scale(1);
+       -webkit-transform: translate(-50%, -50%) scale(1);
+       transform: translate(-50%, -50%) scale(1);
+     }
+   }
 
-//form widgets
+  //form widgets
   .app-form, .app-liveform {
-  //for labels in the form
+    //for labels in the form
     .control-label, .app-label {
       padding: 1em 1em 0;
       font-family: Robotomedium;
@@ -757,7 +800,7 @@
       font-weight: normal;
       color: @form-label-color;
     }
-  //action buttons in the form
+    //action buttons in the form
     .form-action {
       background-color: inherit;
       padding: @padding-base-horizontal;
@@ -774,25 +817,25 @@
         padding: @padding-base-horizontal;
       }
     }
-  //Styling File Upload in IE
+    //Styling File Upload in IE
     input[type="file"] {
       padding: 0;
-    //Browse textbox
+      //Browse textbox
       &::-ms-value {
         border: 1px solid @input-border;
         background-color: @input-bg;
       }
 
-    //Browse button
+      //Browse button
       &::-ms-browse {
         border: 1px solid @input-border;
       }
     }
 
     input {
-      &:focus.ng-valid {
-        border: 0;
-      }
+       &:focus.ng-valid {
+          border: 0;
+       }
     }
 
     .form-control-static {
@@ -827,7 +870,7 @@
     }
   }
 
-/***search widget****/
+  /***search widget****/
   .app-search {
     .input-group-addon {
       padding: 0.667em;
@@ -839,13 +882,14 @@
 
   /****Input addon***/
   .input-group-addon {
-    border:0;
-    border-bottom: 1px solid transparent;
+      border:0;
+      border-bottom: 1px solid transparent;
   }
-/******grid styles*******/
+
+  /******grid styles*******/
   .app-grid {
     .form-search {
-      padding: 1.5em;
+       padding: 1.5em;
     }
     .table {
       thead {
@@ -859,22 +903,43 @@
           }
           .sort-buttons-container {
             .sort-button {
-              //display: none;
-              .up {
-                border-width: 0 0.333em 0.333em;
-                bottom: -2px;
-              }
-              .down {
-                border-width: 0.333em 0.333em 0;
-                top: 0.250em;
-              }
+             //display: none;
+             .up {
+               border-width: 0 0.333em 0.333em;
+               bottom: -2px;
+             }
+             .down {
+               border-width: 0.333em 0.333em 0;
+               top: 0.250em;
+             }
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          &.active, &:hover, &.active:hover {
+            td {
+              background-color: @table-bg-active;
+              border-color: rgba(0,0,0,0.05);
             }
           }
         }
       }
       th, td, tr {
         &.info, &.info:hover {
-          background-color: @wm-grid-selection-bg;
+           background-color: @wm-grid-selection-bg;
+        }
+      }
+    }
+    //When table is condensed
+    .input-group.input-group-sm {
+      .input-group-addon, .input-group-btn {
+        padding: 0 4px;
+        .btn {
+          .app-icon {
+            font-size: 11px;
+          }
         }
       }
     }
@@ -896,13 +961,18 @@
     .app-datagrid {
       .app-datagrid-cell {
         &.cell-editing {
-          padding: @padding-small-vertical @padding-small-horizontal;
-          input {
-            border: 1px solid darken(@table-border-color, 10%);
-            background-color: @table-bg;
-            background-image: none;
+           padding: @padding-small-vertical @padding-small-horizontal;
+          .app-checkbox {
+            margin: 3px -4px;
           }
         }
+      }
+    }
+    .cell-editing {
+      input {
+        border-bottom: 1px solid darken(@table-border-color, 10%);
+        background-color: @table-bg;
+        background-image: none;
       }
     }
   }
@@ -911,89 +981,95 @@
 
   .app-datanavigator {
     .pagination.basic {
-      .pagination-prev, .pagination-next, .pagination-first, .pagination-last{
-        a {
-          padding: 3px 7px;
+      &.pagination-sm {
+        li a {
+          width: 20pt;
+          height: 20pt;
+        }
+        li.pagination-page a{
+          padding: 6px 0;
         }
       }
-      li {
-        font-size: 1.08em;
-        a {
-          color: @pagination-color;
-          background-color: @pagination-basic-bg;
-          border: 0;
-          border-radius: 50%;
-          padding: 8px 0;
-          margin: 0 2px;
-          width: 27pt;
-          height: 27pt;
-        }
-        &.active {
-          a, a:hover, a:focus {
-            color: @pagination-active-color;
-            background-color: @pagination-active-bg;
-            border: 0;
-          }
-          &:hover {
-            a, a:hover, a:focus {
-              background-color: @pagination-active-hover-bg;
-              color: @pagination-active-color;
-            }
-          }
-        }
-        &:hover, &:focus {
-          a, a:hover, a:focus {
-            color: inherit;
-            background-color: @pagination-hover-bg;
-            border: 0;
-          }
-        }
-        &.disabled {
+       .pagination-prev, .pagination-next, .pagination-first, .pagination-last{
           a {
-            background-color: @pagination-basic-bg;
-            color: @pagination-disabled-color;
+            padding: 3px 7px;
           }
-        }
-      }
+       }
+       li {
+           font-size: 1.08em;
+           a {
+             color: @pagination-color;
+             background-color: @pagination-basic-bg;
+             border: 0;
+             border-radius: 50%;
+             padding: 8px 0;
+             margin: 0 2px;
+             width: 27pt;
+             height: 27pt;
+           }
+           &.active {
+             a, a:hover, a:focus {
+               color: @pagination-active-color;
+               background-color: @pagination-active-bg;
+               border: 0;
+             }
+             &:hover {
+               a, a:hover, a:focus {
+                 background-color: @pagination-active-hover-bg;
+                 color: @pagination-active-color;
+               }
+             }
+           }
+           &:hover, &:focus {
+             a, a:hover, a:focus {
+                color: inherit;
+                background-color: @pagination-hover-bg;
+                border: 0;
+             }
+           }
+           &.disabled {
+              a {
+                background-color: @pagination-basic-bg;
+                color: @pagination-disabled-color;
+              }
+           }
+       }
     }
     .pagination {
-      li {
-        &.pagecount {
-          a {
-            height: 100%;
-            padding: 0;
-            background-color: @pagination-active-bg;
-            border-color: @pagination-active-bg;
-            input {
-              color: @pagination-active-color;
-              text-align: center;
-              background-image: none;
-              padding: @padding-base-vertical 2px;
-            }
-          }
+        li {
+           &.pagecount {
+              a {
+                 background-color: @pagination-active-bg;
+                 border-color: @pagination-active-bg;
+                 input {
+                    color: @pagination-active-color;
+                    text-align: center;
+                    background-image: none;
+                 }
+              }
+           }
         }
-      }
     }
     .pager {
-      li {
-        a {
-          margin: 0 .5em 0 0;
-          padding: @padding-base-vertical @padding-base-horizontal;
-        }
-      }
+       li {
+         a {
+            margin: 0 .5em 0 0;
+            padding: @padding-base-vertical @padding-base-horizontal;
+         }
+       }
     }
   }
 
   /*** pagination***/
   .pagination {
     li {
-      > a, > span {
-        color: @brand-primary;
-      }
+     > a, > span {
+       color: @brand-primary;
+     }
     }
   }
 
-//carousel styling: removing the left and right background image
+  //carousel styling: removing the left and right background image
   .carousel-control {
     &.left, &.right {
       background-image: none;
@@ -1005,15 +1081,17 @@
     .app-accordion-panel.panel {
       box-shadow: none;
       .panel-heading {
+        color: @text-color;
         background-color: transparent;
         .panel-icon {
-          margin-top: 0;
+           margin-top: 0;
         }
         .panel-title {
-          .heading {
-            line-height: inherit;
-            font-size: 1em;
-          }
+          color: @text-color;
+           .heading {
+              line-height: inherit;
+              font-size: 1em;
+           }
         }
         .panel-actions {
           right: 1em;
@@ -1054,14 +1132,26 @@
           }
         }
       }
+      &.panel-success .panel-collapse::before {
+        background-color: @brand-success;
+      }
+      &.panel-info .panel-collapse::before {
+        background-color: @brand-info;
+      }
+      &.panel-warning .panel-collapse::before {
+        background-color: @brand-warning;
+      }
+      &.panel-danger .panel-collapse::before {
+        background-color: @brand-danger;
+      }
     }
   }
 
   .panel-group {
     .panel-heading + .panel-collapse {
-      > .panel-body {
-        border-top: 0;
-      }
+       > .panel-body {
+         border-top: 0;
+       }
     }
   }
 
@@ -1072,43 +1162,43 @@
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     margin-bottom: 1em;
     .panel-heading {
-      .panel-title {
-        .heading {
-          font-size: 1.125em;
-        }
-        .description {
-          font-size: .75em;
-          color: inherit;
-          font-style: normal;
-          margin-top: 5px;
-          opacity: .7;
-        }
-      }
-      .panel-actions {
-        .panel-action {
-          top: -0.2em;
-          a {
-            &:focus, &:hover {
-              text-decoration: none;
+        .panel-title {
+            .heading {
+                font-size: 1.125em;
             }
-          }
-          .app-anchor{
-            font-size: 1.15em;
-            padding: 0 6px;
-            width: 30px;
-            height: 30px;
-            &:hover, &:focus {
-              background-color: rgba(158,158,158,.2);
-              border-radius: 50%;
-              transition: color .5s ease, background .5s ease;
-              -webkit-transition: color .5s ease, background .5s ease;
-              -moz-transition: color .5s ease, background .5s ease;
-              -ms-transition: color .5s ease, background .5s ease;
-              -o-transition: color .5s ease, background .5s ease;
+            .description {
+                font-size: .75em;
+                color: inherit;
+                font-style: normal;
+                margin-top: 5px;
+                opacity: .7;
             }
-          }
         }
-      }
+        .panel-actions {
+            .panel-action {
+                top: -0.2em;
+                a {
+                  &:focus, &:hover {
+                    text-decoration: none;
+                  }
+                }
+                .app-anchor{
+                  font-size: 1.15em;
+                  padding: 0 6px;
+                  width: 30px;
+                  height: 30px;
+                  &:hover, &:focus {
+                    background-color: rgba(158,158,158,.2);
+                    border-radius: 50%;
+                    transition: color .5s ease, background .5s ease;
+                    -webkit-transition: color .5s ease, background .5s ease;
+                    -moz-transition: color .5s ease, background .5s ease;
+                    -ms-transition: color .5s ease, background .5s ease;
+                    -o-transition: color .5s ease, background .5s ease;
+                  }
+                }
+            }
+        }
     }
   }
   .app-livelist, .app-grid {
@@ -1124,44 +1214,50 @@
         > .app-panel, > .app-card {
           border-color: @brand-primary;
         }
+        //Fix for select for an active list item
+        select {
+          option {
+            color: @text-color;
+          }
+        }
       }
     }
   }
   .app-card {
     .app-card-header {
-      background-color: transparent;
-      .card-heading {
-        font-size: 1.155em;
-      }
+       background-color: transparent;
+       .card-heading {
+          font-size: 1.155em;
+       }
 
-      .app-card-avatar {
-        height: 18pt;
-        width: 18pt;
-        .app-icon {
-          font-size: 18pt;
-          padding: 5px 0;
-        }
-      }
-      .app-card-header-text {
-        padding-left: 1em;
-      }
-      .app-card-avatar, .app-card-header-text{
-        padding-top: 0;
-      }
+       .app-card-avatar {
+          height: 18pt;
+          width: 18pt;
+          .app-icon {
+             font-size: 18pt;
+             padding: 5px 0;
+          }
+       }
+       .app-card-header-text {
+          padding-left: 1em;
+       }
+       .app-card-avatar, .app-card-header-text{
+          padding-top: 0;
+       }
     }
 
     .card-title {
-      font-size: 1.87em;
-      font-weight: normal;
-      color: rgba(0,0,0,0.87);
+        font-size: 1.87em;
+        font-weight: normal;
+        color: rgba(0,0,0,0.87);
     }
     .card-text {
-      font-size: 1.1em;
-      line-height: 1.6em;
+        font-size: 1.1em;
+        line-height: 1.6em;
     }
 
     .app-card-actions {
-      padding: .5em;
+       padding: .5em;
     }
   }
 
@@ -1181,34 +1277,39 @@
     -o-transition: all .3s;
     transition: all .3s;
     li {
-      a {
-        font-size: 1.1em;
-        padding: 10px 15px;
-        &:hover {
-          background-color: rgba(158,158,158,.2);
+        a {
+            font-size: 1.1em;
+            padding: 10px 15px;
+            &:hover {
+              background-color: rgba(158,158,158,.2);
+            }
         }
-      }
     }
   }
 
 
-//file upload button
+  //file upload button
   .app-single-file-upload {
     .glyphicon {
       margin-right: 0.500em;
     }
   }
-
-
-/*Date, DateTime & Dropdown widgets*/
-  .app-calendar, .app-date, .app-datetime, .app-timeinput {
-  //setting the margin for the group button so that it shows up over the input
-    .input-group-btn:last-child {
-      > .btn, .btn-group {
-        margin-left: 0;
-      }
+  //stylings for tile widget
+  .app-tile {
+    &.bg-danger, &.bg-success, &.bg-info, &.bg-warning {
+      color: @panel-primary-text;
     }
-  //setting the base font color for the popup content
+  }
+
+  /*Date, DateTime & Dropdown widgets*/
+  .app-calendar, .app-date, .app-datetime, .app-timeinput {
+     //setting the margin for the group button so that it shows up over the input
+    .input-group-btn:last-child {
+        > .btn, .btn-group {
+          margin-left: 0;
+        }
+    }
+    //setting the base font color for the popup content
     .dropdown-menu {
       color: @text-color;
     }
@@ -1225,9 +1326,9 @@
             padding: 1.4em 1em;
             text-transform: uppercase;
             &:hover, &:focus, &:active, &:active:hover, &:active:focus {
-              color: @component-active-color;
-              background-color: rgba(0,0,0,.01);
-              border-color: transparent;
+               color: @component-active-color;
+               background-color: rgba(0,0,0,.01);
+               border-color: transparent;
             }
           }
           .uib-left {
@@ -1249,8 +1350,8 @@
         box-shadow: none;
         padding: @padding-base-horizontal;
         &.btn-info {
-          background-color: transparent;
-          color: @brand-primary;
+          background-color: lighten(@brand-primary, 30%);
+          color: @text-color;
         }
         &:hover, &:focus, &.active:hover, &:focus:hover {
           background-color: @component-active-bg;
@@ -1262,6 +1363,7 @@
         }
         .text-info {
           color: @brand-primary;
+          font-weight: bold;
         }
       }
     }
@@ -1279,7 +1381,7 @@
     }
   }
 
-//styling for the popup calendar actions
+  //styling for the popup calendar actions
   .app-date, .app-datetime {
     .dropdown-menu {
       border: 1px solid transparent;
@@ -1301,17 +1403,17 @@
     }
 
     thead {
-      background-color: @component-active-bg;
-      tr:nth-child(2) {
-        background-color: @wm-datepicker-header-bg;
-        th {
-          &:first-child {
-            padding: 10px 0 10px 20px;
-          }
-          &:last-child {
-            padding: 10px 20px 10px 0;
-          }
-        }
+       background-color: @component-active-bg;
+       tr:nth-child(2) {
+         background-color: @wm-datepicker-header-bg;
+         th {
+             &:first-child {
+                padding: 10px 0 10px 20px;
+             }
+             &:last-child {
+                padding: 10px 20px 10px 0;
+             }
+         }
       }
     }
 
@@ -1330,66 +1432,66 @@
     }
 
     tbody {
-      tr {
-        td {
-          &:first-child {
-            padding-left: 20px;
-          }
+        tr {
+           td {
+              &:first-child {
+                 padding-left: 20px;
+              }
+              &:last-child {
+                 padding-right: 20px;
+              }
+           }
+           &:first-child {
+             td {
+                padding-top: 15px;
+             }
+           }
           &:last-child {
-            padding-right: 20px;
+            td {
+              padding-bottom: 15px;
+            }
           }
         }
-        &:first-child {
-          td {
-            padding-top: 15px;
-          }
+        .btn-default {
+           &.active, &:focus {
+              background-color: @component-active-bg;
+              color: @component-active-color;
+              &:hover {
+                background-color: @component-active-bg;
+              }
+              .text-info {
+                 color: @component-active-color;
+              }
+           }
+           &:hover {
+              background-color: @wm-datepicker-btn-hover-bg;
+              border-color: transparent;
+              color: @text-color;
+           }
         }
-        &:last-child {
-          td {
-            padding-bottom: 15px;
-          }
+        .btn-sm {
+          font-size: 1em;
         }
-      }
-      .btn-default {
-        &.active, &:focus {
-          background-color: @component-active-bg;
-          color: @component-active-color;
-          &:hover {
-            background-color: @component-active-bg;
-          }
-          .text-info {
-            color: @component-active-color;
-          }
-        }
-        &:hover {
-          background-color: @wm-datepicker-btn-hover-bg;
-          border-color: transparent;
-          color: @text-color;
-        }
-      }
-      .btn-sm {
-        font-size: 1em;
-      }
     }
 
     .btn-group {
       box-shadow: none;
       .btn , & + .btn {
-        background-color: transparent;
-        border-color: transparent;
-        color: @brand-primary;
-        font-size: 1.1em;
-        box-shadow: none;
+         background-color: transparent;
+         border-color: transparent;
+         color: @brand-primary;
+         font-size: 1.1em;
+         box-shadow: none;
       }
     }
   }
 
-//Time Widget classes for styling the buttons
+  //Time Widget classes for styling the buttons
   .app-timeinput, .app-datetime {
     tbody {
       .am-pm .btn {
-        border: 1px solid @input-border;
-        padding: 8px 12px;
+          border: 1px solid @input-border;
+          padding: 8px 12px;
       }
       .btn-link {
         width: 100%;
@@ -1402,7 +1504,7 @@
     }
   }
 
-//Calendar Specific
+  //Calendar Specific
   .app-calendar {
     background-color: @body-bg;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
@@ -1459,7 +1561,7 @@
 /*********************************************************************************************************************************************/
 /****************************************************Advanced editors******************************************************************************/
 /*********************************************************************************************************************************************/
-//Spinner
+  //Spinner
   .app-spinner  {
     .spinner-message {
       color: @brand-primary;
@@ -1505,7 +1607,7 @@
     }
   }
 
-//Tree
+  //Tree
   .app-tree {
     ul {
       li {
@@ -1556,6 +1658,6 @@
 
   /***Slider widget styling*******************/
   input[type='range'] {
-    color: @brand-primary;
+     color: @brand-primary;
   }
 }

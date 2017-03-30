@@ -1,20 +1,20 @@
 /*START - ios Theme Customizations*/
 .wm-app  {
-@import "../../../components/bootstrap/less/bootstrap.less";
-@import "variables";
+  @import "../../../components/bootstrap/less/bootstrap.less";
+  @import "variables";
 
-//Variables
+  //Variables
   font-size: @font-size-base;
   color: @text-color;
   font-family: @font-family-base;
   background-color: @body-bg;
 
-//header
+  //header
   @wm-header-text-color: @brand-primary;
   @wm-header-bg-color: #f5f5f7;
   @wm-header-border-color: #c1c1c4;
 
-//side panels
+  //side panels
   @wm-panels-border-color: rgba(0,0,0,0.1);
 
   @wm-left-panel-btn-color: #515253;
@@ -24,20 +24,20 @@
   @wm-left-panel-link-hover-text-color: @brand-primary;
   @wm-left-panel-hover-text-color: @brand-primary;
 
-//Tabset
+  //Tabset
   @nav-tabs-color-hover: @brand-primary;
   @nav-tabs-bg-color: #fff;
 
-//Calendar
+  //Calendar
   @wm-calendar-bg-color: #fff;
   @wm-calendar-border: rgba(0,0,0,0.03);
 
-//Button
+  //Button
   .btn {
     text-align: center;
   }
 
-//Label Styles: Donot remove
+  //Label Styles: Donot remove
   label {
     font-weight: normal;
   }
@@ -53,14 +53,14 @@
   }
 
   /*******************************************************************************************/
-/***************************************     LAYOUTS     ***********************************/
-/*******************************************************************************************/
-//content background
+  /***************************************     LAYOUTS     ***********************************/
+  /*******************************************************************************************/
+  //content background
   .app-content-column {
     background-color: @body-bg;
   }
 
-//Header
+  //Header
   .app-mobile-navbar {
     background-color: @wm-header-bg-color;
     color: @wm-header-text-color;
@@ -138,192 +138,192 @@
     }
   }
 
-//Mobile menu panel which comes from left
-.app-left-panel {
-  background-color: @wm-left-panel-bg;
-  border-right: @wm-left-panel-list-border;
+  //Mobile menu panel which comes from left
+  .app-left-panel {
+    background-color: @wm-left-panel-bg;
+    border-right: @wm-left-panel-list-border;
 
-  .nav {
-    li {
-      clear: both;
-      //for overriding the pills default color
-      &.active {
-        > a {
-          color: inherit;
-          background-color: transparent;
-          &:hover, &:focus {
+    .nav {
+      li {
+        clear: both;
+        //for overriding the pills default color
+        &.active {
+          > a {
             color: inherit;
             background-color: transparent;
+            &:hover, &:focus {
+              color: inherit;
+              background-color: transparent;
+            }
           }
         }
-      }
-      a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
-        color: @wm-left-panel-btn-color;
-        font-size: 1.15em;
-        border-radius: 0;
-        border-left: transparent;
-        transition: color .5s ease, background .5s ease;
-        -webkit-transition: color .5s ease, background .5s ease;
-        -moz-transition: color .5s ease, background .5s ease;
-        -ms-transition: color .5s ease, background .5s ease;
-        -o-transition: color .5s ease, background .5s ease;
-        &:hover {
-          color: @wm-left-panel-link-hover-text-color;
-          background-color: @wm-left-panel-link-hover-bg-color;
-          border-left-color: @wm-left-panel-link-hover-text-color;
+        a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
+          color: @wm-left-panel-btn-color;
+          font-size: 1.15em;
+          border-radius: 0;
+          border-left: transparent;
           transition: color .5s ease, background .5s ease;
           -webkit-transition: color .5s ease, background .5s ease;
           -moz-transition: color .5s ease, background .5s ease;
           -ms-transition: color .5s ease, background .5s ease;
           -o-transition: color .5s ease, background .5s ease;
-        }
-        &.active {
-          border-left-color: @wm-left-panel-link-hover-text-color;
-          color: @wm-left-panel-link-hover-text-color;
-        }
-        .badge {
-          right: 0.5em;
-          top: 1.5em;
+          &:hover {
+            color: @wm-left-panel-link-hover-text-color;
+            background-color: @wm-left-panel-link-hover-bg-color;
+            border-left-color: @wm-left-panel-link-hover-text-color;
+            transition: color .5s ease, background .5s ease;
+            -webkit-transition: color .5s ease, background .5s ease;
+            -moz-transition: color .5s ease, background .5s ease;
+            -ms-transition: color .5s ease, background .5s ease;
+            -o-transition: color .5s ease, background .5s ease;
+          }
+          &.active {
+            border-left-color: @wm-left-panel-link-hover-text-color;
+            color: @wm-left-panel-link-hover-text-color;
+          }
+          .badge {
+            right: 0.5em;
+            top: 1.5em;
+          }
         }
       }
     }
   }
-}
 
-//naviagtion styles for links list in the application
-.app-nav {
-  .app-nav-item {
-    a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
-      letter-spacing: .025em;
-      font-weight: 400;
-      padding: .93em 1em;
-      position: relative;
-      border-radius: 0;
-      line-height: 24pt;
-      color: @text-color;
-      &:hover {
-        text-decoration: none;
-        color: @wm-left-panel-link-hover-text-color;
-        background-color: @wm-left-panel-link-hover-bg-color;
+  //naviagtion styles for links list in the application
+  .app-nav {
+    .app-nav-item {
+      a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
+        letter-spacing: .025em;
+        font-weight: 400;
+        padding: .93em 1em;
+        position: relative;
+        border-radius: 0;
+        line-height: 24pt;
+        color: @text-color;
+        &:hover {
+          text-decoration: none;
+          color: @wm-left-panel-link-hover-text-color;
+          background-color: @wm-left-panel-link-hover-bg-color;
+        }
+        &.active {
+          background-color: transparent;
+          color: @wm-left-panel-link-hover-text-color;
+          border-left-color: @wm-left-panel-link-hover-text-color;
+        }
+        .app-icon {
+          width: 1.2em;
+          text-align: center;
+        }
       }
-      &.active {
-        background-color: transparent;
-        color: @wm-left-panel-link-hover-text-color;
-        border-left-color: @wm-left-panel-link-hover-text-color;
-      }
-      .app-icon {
-        width: 1.2em;
-        text-align: center;
-      }
-    }
-    .dropdown-menu {
-      position: relative;
-      box-shadow: none;
-      border: 0;
-      margin-left: 0;
-    }
-    > .dropdown.open {
       .dropdown-menu {
         position: relative;
-        border: 0;
         box-shadow: none;
-        li {
-          a {
-            padding: .93em 1em;
-          }
-        }
-        .dropdown-submenu {
-          .dropdown-menu {
+        border: 0;
+        margin-left: 0;
+      }
+      > .dropdown.open {
+        .dropdown-menu {
+          position: relative;
+          border: 0;
+          box-shadow: none;
+          li {
             a {
-              padding-left: 2.5em;
+              padding: .93em 1em;
+            }
+          }
+          .dropdown-submenu {
+            .dropdown-menu {
+              a {
+                padding-left: 2.5em;
+              }
             }
           }
         }
       }
-    }
-    > .dropdown {
-      > a {
-        padding: 1.333em;
-      }
-    }
-  }
-}
-
-//Mobile segmented control for android it should look like tabs
-.app-segmented-control {
-  .app-segments-container {
-    > ul > {
-      li.app-segment-content {
-        padding-top: 5em;
-      }
-    }
-  }
-  > .btn-group {
-    .btn.active {
-      color: @component-active-color;
-      border-color: @component-active-bg;
-      background-color: @component-active-bg;
-    }
-    .btn {
-      background-color: @btn-default-bg;
-      color: @btn-default-color;
-      border-color: @btn-default-color;
-      border-bottom-width: 1px;
-      border-right-width: 0;
-      &:active, &:focus, &:hover {
-        box-shadow: none;
-      }
-      &:last-child {
-        border-right-width: 1px;
-      }
-    }
-    &.btn-group-justified {
-      padding: 1em;
-    }
-  }
-}
-
-//Tabs
-.nav-tabs {
-  border-bottom-color: @nav-tabs-border-color;
-  background-color: @nav-tabs-bg-color;
-  > li {
-    > a, .app-menu a  {
-      color: @text-color;
-      background-color: transparent;
-      border-radius: 0;
-      margin-right: 0px;
-      text-transform: uppercase;
-      border-left-width: 0px !important;
-      border-right-width: 0px !important;
-      &:hover {
-        color: @brand-primary;
-        background-color: transparent;
-        border-color: transparent;
-      }
-      .app-icon {
-        background-size: 100%;
-        margin-right: 0.417em;
-        top: 0.167em;
-      }
-    }
-    &.active {
-      > a, .app-menu a {
-        border-bottom: transparent;
-        color: @nav-tabs-active-link-hover-color;
-        background-color: @nav-tabs-active-link-hover-bg;
-        &:hover {
-          border-bottom: transparent;
-          color: @nav-tabs-active-link-hover-color;
-          background-color: @nav-tabs-active-link-hover-bg;
+      > .dropdown {
+        > a {
+          padding: 1.333em;
         }
       }
     }
-
   }
-}
 
-//Switch
+  //Mobile segmented control for android it should look like tabs
+  .app-segmented-control {
+    .app-segments-container {
+      > ul > {
+        li.app-segment-content {
+          padding-top: 5em;
+        }
+      }
+    }
+    > .btn-group {
+      .btn.active {
+        color: @component-active-color;
+        border-color: @component-active-bg;
+        background-color: @component-active-bg;
+      }
+      .btn {
+        background-color: @btn-default-bg;
+        color: @btn-default-color;
+        border-color: @btn-default-color;
+        border-bottom-width: 1px;
+        border-right-width: 0;
+        &:active, &:focus, &:hover {
+          box-shadow: none;
+        }
+        &:last-child {
+          border-right-width: 1px;
+        }
+      }
+      &.btn-group-justified {
+        padding: 1em;
+      }
+    }
+  }
+
+  //Tabs
+  .nav-tabs {
+    border-bottom-color: @nav-tabs-border-color;
+    background-color: @nav-tabs-bg-color;
+    > li {
+      > a, .app-menu a  {
+        color: @text-color;
+        background-color: transparent;
+        border-radius: 0;
+        margin-right: 0px;
+        text-transform: uppercase;
+        border-left-width: 0px !important;
+        border-right-width: 0px !important;
+        &:hover {
+          color: @brand-primary;
+          background-color: transparent;
+          border-color: transparent;
+        }
+        .app-icon {
+          background-size: 100%;
+          margin-right: 0.417em;
+          top: 0.167em;
+        }
+      }
+      &.active {
+        > a, .app-menu a {
+          border-bottom: transparent;
+          color: @nav-tabs-active-link-hover-color;
+          background-color: @nav-tabs-active-link-hover-bg;
+          &:hover {
+            border-bottom: transparent;
+            color: @nav-tabs-active-link-hover-color;
+            background-color: @nav-tabs-active-link-hover-bg;
+          }
+        }
+      }
+
+    }
+  }
+
+  //Switch
   .app-switch {
     .btn-group, span.app-switch-overlay {
       .btn, &.btn {
@@ -333,48 +333,48 @@
     }
   }
 
-//Tab Content
-.tab-content {
-  .tab-body {
-    border-color: transparent;
-    padding: 10px 0;
+  //Tab Content
+  .tab-content {
+    .tab-body {
+      border-color: transparent;
+      padding: 10px 0;
+    }
   }
-}
 
-/*******************************************************************************************/
-/***************************************Containers Widgets**********************************/
-/*******************************************************************************************/
-//Panels
-.panel {
-  border-width: 0;
-  padding: 0;
-  margin: 0;
-  box-shadow: none;
-  .panel-heading {
-    .panel-actions {
-      .panel-action {
-        .dropdown-menu {
-          > li {
-            > a:hover {
-              color: @text-color;
+  /*******************************************************************************************/
+  /***************************************Containers Widgets**********************************/
+  /*******************************************************************************************/
+  //Panels
+  .panel {
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    .panel-heading {
+      .panel-actions {
+        .panel-action {
+          .dropdown-menu {
+            > li {
+              > a:hover {
+                color: @text-color;
+              }
             }
           }
         }
       }
     }
-  }
-  .panel-body {
-    padding: 10px 0;
-  /***specific use cases when the radioset and checkboxset comes directly in the panel****/
-    > .app-radioset, > .app-checboxset {
-      li {
-        margin-top: 0;
+    .panel-body {
+      padding: 10px 0;
+      /***specific use cases when the radioset and checkboxset comes directly in the panel****/
+      > .app-radioset, > .app-checboxset {
+        li {
+          margin-top: 0;
+        }
       }
     }
   }
-}
 
-//Accordion
+  //Accordion
   .app-accordion {
     .app-accordion-panel {
       .panel-heading {
@@ -383,25 +383,25 @@
     }
   }
 
-//Popover styles
-.popover {
-  border-radius: 0px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-  color: @text-color;
-}
-
-//Carousel
-.carousel-control {
-  &.left, &.right {
-    background-image: none;
+  //Popover styles
+  .popover {
+    border-radius: 0px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    color: @text-color;
   }
-  &.icon-prev, .icon-next, .glyphicon-chevron-left, .glyphicon-chevron-right {
-    color: grey;
-    text-shadow: none;
-  }
-}
 
-//modal dialog
+  //Carousel
+  .carousel-control {
+    &.left, &.right {
+      background-image: none;
+    }
+    &.icon-prev, .icon-next, .glyphicon-chevron-left, .glyphicon-chevron-right {
+      color: grey;
+      text-shadow: none;
+    }
+  }
+
+  //modal dialog
   .modal-dialog {
     margin: 50% 10px;
     .modal-content {
@@ -414,163 +414,171 @@
     }
   }
 
-/***confirm dialog specific classes*****/
-.app-dialog-title {
-  text-align: center;
-}
-.app-confirm-dialog {
-  .app-dialog-footer {
-    padding: 0;
-    .btn {
-      width: 50%;
-      background: transparent;
-      color: @link-color;
-      border: 0;
-      border-radius: 0;
-      padding: 1em 0.5em;
+  /***confirm dialog specific classes*****/
+  .app-dialog-title {
+    text-align: center;
+  }
+  .app-confirm-dialog {
+    .app-dialog-footer {
+      padding: 0;
+      .btn {
+        width: 50%;
+        background: transparent;
+        color: @link-color;
+        border: 0;
+        border-radius: 0;
+        padding: 1em 0.5em;
+      }
+      .btn + .btn {
+        margin: 0;
+        border-left: 1px @panel-inner-border solid;
+      }
     }
-    .btn + .btn {
+  }
+  .app-alert-dialog {
+    .app-dialog-footer .btn {
+      width: 100%;
+    }
+  }
+  /*******************************************************************************************/
+  /***************************************List Widgets**********************************/
+  /*******************************************************************************************/
+  //App Live list. The list-group classes are set through the boostrap variable
+  .app-livelist {
+    .media {
+      background-color: @list-group-bg;
+      border-bottom: 1px solid @list-group-border;
+      padding: @nav-link-padding;
+      margin-top: 0;
+    }
+    .media-right {
+      a, .btn{
+        color: inherit;
+      }
+    }
+    &.panel {
       margin: 0;
-      border-left: 1px @panel-inner-border solid;
     }
   }
-}
-.app-alert-dialog {
-  .app-dialog-footer .btn {
-    width: 100%;
-  }
-}
-/*******************************************************************************************/
-/***************************************List Widgets**********************************/
-/*******************************************************************************************/
-//App Live list. The list-group classes are set through the boostrap variable
-.app-livelist {
-  .media {
-    background-color: @list-group-bg;
-    border-bottom: 1px solid @list-group-border;
-    padding: @nav-link-padding;
-    margin-top: 0;
-  }
-  .media-right {
-    a, .btn{
-      color: inherit;
-    }
-  }
-  &.panel {
-    margin: 0;
-  }
-}
 
-//Tree
-.app-tree {
-  ul {
-    li {
-      span {
-        &:hover {
-          color: @gray-base;
+  //Tree
+  .app-tree {
+    ul {
+      li {
+        span {
+          &:hover {
+            color: @gray-base;
+          }
         }
       }
     }
   }
-}
-//App toggle
-.app-toggle {
-  .switch {
-    top: 0;
-  }
-  label {
-    box-shadow: none;
-  }
-}
-
-/*******************************************************************************************/
-/***************************************Form Widgets****************************************/
-/*******************************************************************************************/
-.app-form, .app-liveform {
-  .app-grid-layout {
-    input, select, textarea {
-      border: 0;
+  //App toggle
+  .app-toggle {
+    .switch {
+      top: 0;
     }
-    .app-grid-row {
-      border-bottom: 1px solid @input-border;
-      .app-grid-column {
-        border-right: 1px solid @input-border;
+    label {
+      box-shadow: none;
+    }
+  }
+
+  /*******************************************************************************************/
+  /***************************************Form Widgets****************************************/
+  /*******************************************************************************************/
+  .app-form, .app-liveform, .app-device-liveform, .app-livefilter {
+    .app-composite-widget {
+      &.caption-top label {
+        width: 33%;
       }
     }
-  }
-  .form-action, .form-action.btn-group {
-    .btn {
-      border-radius: @border-radius-base;
-      margin: 0 0.333em;
+    .app-grid-layout {
+      input, select, textarea {
+        border: 0;
+      }
+      .app-grid-row {
+        border-bottom: 1px solid @input-border;
+        .app-grid-column {
+          border-right: 1px solid @input-border;
+        }
+      }
+    }
+    .form-action, .form-action.btn-group {
+      .btn {
+        border-radius: @border-radius-base;
+        margin: 0 0.333em;
+      }
+    }
+    .input-group.app-search {
+      border: none;
     }
   }
-}
 
-//form group widget
-.form-group {
-  margin-bottom: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  .control-label {
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 8px;
-  }
-  .form-control {
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 0;
-    border-radius: 0;
-  }
-  &.live-field.active {
+  //form group widget
+  .form-group {
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     .control-label {
-      color: @brand-primary;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-top: 8px;
+    }
+    .form-control {
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      margin: 0;
+      border-radius: 0;
+    }
+    &.live-field.active {
+      .control-label {
+        color: @brand-primary;
+      }
+    }
+    .text-danger, .control-label.text-danger {
+      color: @brand-danger;
+    }
+    .ng-touched.ng-invalid {
+      border-color: @brand-danger;
+    }
+    .app-checkbox, .app-radio, .app-blob-upload {
+      padding-left: 1em;
     }
   }
-  .text-danger, .control-label.text-danger {
-    color: @brand-danger;
-  }
-  .ng-touched.ng-invalid {
-    border-color: @brand-danger;
-  }
-  .app-checkbox, .app-radio, .app-blob-upload {
-    padding-left: 1em;
-  }
-}
 
-//form controls
-.form-control {
-  box-shadow: none;
-  height: @input-height-base;
-  border-color: transparent;
-  &textarea {
-    height: (@input-height-base * 2);
-  }
-  &select {
-    padding-left: @thumbnail-padding;
-  }
-}
-
-/*******************************************************************************************/
-/***************************************Advanced Widgets****************************************/
-/*******************************************************************************************/
-//Spinner icon
-.app-spinner {
-//customize the spinner
-  background-color: rgba(255,255,255,.5);
-  .spinner-message {
-    background-color: transparent;
+  //form controls
+  .form-control {
+    box-shadow: none;
+    height: @input-height-base;
     border-color: transparent;
-    width: 150px;
-    height: 150px;
-    .spinner-text {
-      display: none;
+    &textarea {
+      height: (@input-height-base * 2);
+    }
+    &select {
+      padding-left: @thumbnail-padding;
     }
   }
-  .spinner-image {
-    font-size: 7em;
-    color: @component-active-bg;
+
+  /*******************************************************************************************/
+  /***************************************Advanced Widgets****************************************/
+  /*******************************************************************************************/
+  //Spinner icon
+  .app-spinner {
+    //customize the spinner
+    background-color: rgba(255,255,255,.5);
+    .spinner-message {
+      background-color: transparent;
+      border-color: transparent;
+      width: 150px;
+      height: 150px;
+      .spinner-text {
+        display: none;
+      }
+    }
+    .spinner-image {
+      font-size: 7em;
+      color: @component-active-bg;
+    }
   }
-}
-//Data Navigator
+  //Data Navigator
   .app-datanavigator {
     ul {
       &.pagination, &.pager {
@@ -583,7 +591,7 @@
     }
   }
 
-//Login Widget
+  //Login Widget
   .app-login {
     form.app-login-form {
       .form-group {
@@ -596,195 +604,195 @@
       }
     }
   }
-//Progress Bar
-.progress {
-  border-radius: 0;
-  box-shadow: none;
-}
+  //Progress Bar
+  .progress {
+    border-radius: 0;
+    box-shadow: none;
+  }
 
-//Search
+  //Search
   .input-group.app-search {
     border-radius: 15px;
     border: 1px solid rgba(0,0,0,0.25);
-    input[type="search"] {
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
+    input.form-control[type="search"] {
+      border-top-left-radius: 15px !important;
+      border-bottom-left-radius: 15px !important;
     }
   }
-//Calendar
-.app-calendar {
-  background-color: @body-bg;
-  .fc {
-    .fc-state-default {
-      color: @btn-default-color;
-      background: @btn-default-bg;
-      border-color: @btn-default-color;
-      text-shadow: none;
-      &.fc-state-hover, &:focus, &.fc-state-active {
-        color: @component-active-color;
-        background: @component-active-bg;
+  //Calendar
+  .app-calendar {
+    background-color: @body-bg;
+    .fc {
+      .fc-state-default {
+        color: @btn-default-color;
+        background: @btn-default-bg;
+        border-color: @btn-default-color;
+        text-shadow: none;
+        &.fc-state-hover, &:focus, &.fc-state-active {
+          color: @component-active-color;
+          background: @component-active-bg;
+        }
       }
     }
-  }
 
-  .fc-state-highlight {
-    &.fc-today {
-      background-color: @component-active-bg;
-      color: @component-active-color;
-    }
-  }
-  .fc {
-    .fc-toolbar {
-      h2 {
-        color: @link-color;
-      }
-    }
-    .fc-view-container {
-      background-color: @wm-calendar-bg-color;
-    }
-  }
-  .fc-widget-header {
-    background-color: @wm-calendar-bg-color;
-    color: @text-color;
-  }
-  .fc-body {
-    .fc-row {
-      min-height: 3em;
-      .fc-content-skeleton {
-        padding: .8em 0;
-        td {
-          text-align: center;
-        }
-      }
-    }
-  }
-  .fc-unthemed {
-    .fc-divider, .fc-popover, .fc-row, tbody, td, th, thead {
-    //border-color: transparent;
-    }
-  }
-}
-
-//App-date
-.app-date, .app-datetime {
-  thead {
-    tr {
-      th {
-        .btn.uib-left, .btn.uib-right, .btn.uib-title {
-          font-size: 1.3em;
-          background: transparent;
-          color: @btn-default-color;
-          border-color: transparent;
-          font-weight: normal;
-          strong {
-            font-weight: normal;
-          }
-          &:hover, &:focus {
-            border-color: transparent;
-          }
-        }
-        .uib-left {
-          text-align: left;
-        }
-        .uib-right {
-          text-align: right;
-        }
-      }
-    }
-  }
-
-  tbody {
-    .btn {
-      background: transparent;
-      border-color: transparent;
-      font-size: 10pt;
-      padding: 5pt;
-      &.btn-default {
-        color: @text-color;
-      }
-      &.btn-info {
-        background-color: @gray-darker;
-        color: @component-active-color;
-        span {
-          color: @label-color;
-        }
-      }
-      &:focus, &:hover, &.active {
+    .fc-state-highlight {
+      &.fc-today {
         background-color: @component-active-bg;
         color: @component-active-color;
-        border-color: transparent;
-        box-shadow: none;
-        outline-color: transparent;
-        .text-info {
-          color: inherit;
+      }
+    }
+    .fc {
+      .fc-toolbar {
+        h2 {
+          color: @link-color;
         }
       }
-      .text-info {
-        color: @brand-primary;
-        font-weight: bold;
+      .fc-view-container {
+        background-color: @wm-calendar-bg-color;
       }
     }
-  }
-
-  .dropdown-menu {
-    li {
-      &:last-child {
-        border-top: 1px solid @wm-calendar-border;
-        margin-top: 0.583em;
-        overflow: auto;
-      }
+    .fc-widget-header {
+      background-color: @wm-calendar-bg-color;
+      color: @text-color;
     }
-  }
-  thead {
-    tr:nth-child(2) {
-      border-bottom: 1px solid @wm-calendar-border;
-      th {
-        padding-top: 10pt;
-      }
-    }
-  }
-  .uib-daypicker {
-    tbody{
-      .btn-default {
-        position: relative;
-        border-radius: 50%;
-        min-width: 0;
-        height: 24pt;
-        width: 24pt;
-        vertical-align: middle;
-        text-align: center;
-        padding: 0;
-        &:after {
-          bottom: -6px;
-        }
-        &:hover {
-          .text-muted {
-            color: @btn-primary-color;
+    .fc-body {
+      .fc-row {
+        min-height: 3em;
+        .fc-content-skeleton {
+          padding: .8em 0;
+          td {
+            text-align: center;
           }
         }
       }
-      tr {
-        border-bottom: 1px solid @wm-calendar-border;
-        td {
-          padding-bottom: 10pt;
-          padding-top: 5pt;
-        }
-      }
-      .text-muted {
-        color: rgba(0,0,0,0.2);
+    }
+    .fc-unthemed {
+      .fc-divider, .fc-popover, .fc-row, tbody, td, th, thead {
+        //border-color: transparent;
       }
     }
   }
-  .uib-daypicker, .uib-monthpicker, .uib-yearpicker {
-    background-color: @body-bg;
-  }
-  .uib-month, .uib-year {
-    padding-top: 5pt;
-    padding-bottom: 10pt;
-  }
-}
 
-//App-datetime
+  //App-date
+  .app-date, .app-datetime {
+    thead {
+      tr {
+        th {
+          .btn.uib-left, .btn.uib-right, .btn.uib-title {
+            font-size: 1.3em;
+            background: transparent;
+            color: @btn-default-color;
+            border-color: transparent;
+            font-weight: normal;
+            strong {
+              font-weight: normal;
+            }
+            &:hover, &:focus {
+              border-color: transparent;
+            }
+          }
+          .uib-left {
+            text-align: left;
+          }
+          .uib-right {
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    tbody {
+      .btn {
+        background: transparent;
+        border-color: transparent;
+        font-size: 10pt;
+        padding: 5pt;
+        &.btn-default {
+          color: @text-color;
+        }
+        &.btn-info {
+          background-color: @gray-darker;
+          color: @component-active-color;
+          span {
+            color: @label-color;
+          }
+        }
+        &:focus, &:hover, &.active {
+          background-color: @component-active-bg;
+          color: @component-active-color;
+          border-color: transparent;
+          box-shadow: none;
+          outline-color: transparent;
+          .text-info {
+            color: inherit;
+          }
+        }
+        .text-info {
+          color: @brand-primary;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      li {
+        &:last-child {
+          border-top: 1px solid @wm-calendar-border;
+          margin-top: 0.583em;
+          overflow: auto;
+        }
+      }
+    }
+    thead {
+      tr:nth-child(2) {
+        border-bottom: 1px solid @wm-calendar-border;
+        th {
+          padding-top: 10pt;
+        }
+      }
+    }
+    .uib-daypicker {
+      tbody{
+        .btn-default {
+          position: relative;
+          border-radius: 50%;
+          min-width: 0;
+          height: 24pt;
+          width: 24pt;
+          vertical-align: middle;
+          text-align: center;
+          padding: 0;
+          &:after {
+            bottom: -6px;
+          }
+          &:hover {
+            .text-muted {
+              color: @btn-primary-color;
+            }
+          }
+        }
+        tr {
+          border-bottom: 1px solid @wm-calendar-border;
+          td {
+            padding-bottom: 10pt;
+            padding-top: 5pt;
+          }
+        }
+        .text-muted {
+          color: rgba(0,0,0,0.2);
+        }
+      }
+    }
+    .uib-daypicker, .uib-monthpicker, .uib-yearpicker {
+      background-color: @body-bg;
+    }
+    .uib-month, .uib-year {
+      padding-top: 5pt;
+      padding-bottom: 10pt;
+    }
+  }
+
+  //App-datetime
   .app-timeinput, .app-datetime {
     tbody {
       .btn {

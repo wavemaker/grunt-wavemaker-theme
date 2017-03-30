@@ -54,6 +54,7 @@ Understanding the Repository
 |  +--mobile
 |     +--android
 |        +--style.less
+|        +--variable.less
 |        +--fonts/
 |     +--ios
 |        +--style.less

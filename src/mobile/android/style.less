@@ -741,7 +741,8 @@
       left: 23px;
       top: 17px;
       margin: 0;
-      visibility: hidden;
+      opacity: 0;
+      z-index: -1;
     }
     label {
       &.disabled {
@@ -756,7 +757,7 @@
       }
     }
     .caption {
-      min-height: 1em;
+      min-height: 1.5em;
     }
   }
   //toggle button
@@ -963,9 +964,6 @@
       border-color: transparent;
       width: 10em;
       height: 10em;
-      .spinner-text {
-        display: none;
-      }
     }
     .spinner-image {
       font-size: 4em;

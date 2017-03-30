@@ -133,13 +133,13 @@ module.exports = function (grunt) {
         }
     );
     grunt.registerTask('generate_archive_paths', function () {
-        wmBuildConfig.web_zip       =  wmBuildConfig.themes_dist + '/' + grunt.option("web-name") + '_'+ grunt.option("web-version") + '.zip',
+        wmBuildConfig.web_zip       =  wmBuildConfig.themes_dist + '/' + grunt.option("web-name") + '.zip',
         grunt.config.set('compress.web.options.archive', wmBuildConfig.web_zip);
 
-        wmBuildConfig.mobile_zip     = wmBuildConfig.themes_dist + '/' + grunt.option("mobile-name") + '_'+ grunt.option("mobile-version") + '.zip',
+        wmBuildConfig.mobile_zip     = wmBuildConfig.themes_dist + '/' + grunt.option("mobile-name") + '.zip',
             grunt.config.set('compress.mobile.options.archive', wmBuildConfig.mobile_zip);
 
-        wmBuildConfig.bootswatch_zip = wmBuildConfig.themes_dist + '/' + grunt.option("bootswatch-name") + '_'+ grunt.option("bootswatch-version") + '.zip';
+        wmBuildConfig.bootswatch_zip = wmBuildConfig.themes_dist + '/' + grunt.option("bootswatch-name") + '.zip';
         grunt.config.set('compress.bootswatch.options.archive', wmBuildConfig.bootswatch_zip);
     });
     grunt.registerTask("load-fonts", "copy fonts into themes", function () {

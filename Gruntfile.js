@@ -1,4 +1,5 @@
 /*global module,require*/
+const fs = require('fs');
 module.exports = function (grunt) {
     'use strict';
 
@@ -16,6 +17,29 @@ module.exports = function (grunt) {
         mobile_zip : 'mobile.zip',
         bootswatch_zip : 'bootswatch.zip'
     };
+    // To generate compress config for themes
+    var buildCompressConfig = function () {
+        var compressConfig = {};
+           fs.readdirSync('./src/').forEach(function (file) {
+               if(fs.lstatSync('./src/'+file).isDirectory()){
+                   var obj = {
+                       options: {
+                           archive: '<%= config.themes_dist %>/' + file + '.zip',
+                           mode: 'zip'
+                       },
+                       files: [{
+                           src: ['**/*'],
+                           dot: true,
+                           cwd: '<%= config.themes_tmp %>/'+file+'/',
+                           expand: true
+                       }]
+                   };
+                   compressConfig[file] = obj;
+               }
+           });
+        return compressConfig;
+    };
+
     grunt.initConfig({
             config: wmBuildConfig,
             clean : ['<%= config.themes_dist %>/', '<%= config.themes_tmp %>/'],
@@ -92,56 +116,9 @@ module.exports = function (grunt) {
                         }]
                 }
             },
-            compress: {
-                web: {
-                    options: {
-                        archive: wmBuildConfig.web_zip,
-                        mode: 'zip'
-                    },
-                    files: [{
-                        src: ['**/*'],
-                        dot: true,
-                        cwd: '<%= config.themes_tmp %>/web/',
-                        expand: true
-                    }]
-                },
-                mobile: {
-                    options: {
-                        archive: wmBuildConfig.mobile_zip,
-                        mode: 'zip'
-                    },
-                    files: [{
-                        src: ['**/*'],
-                        dot: true,
-                        cwd: '<%= config.themes_tmp %>/mobile/',
-                        expand: true
-                    }]
-                },
-                bootswatch: {
-                    options: {
-                        archive: wmBuildConfig.bootswatch_zip,
-                        mode: 'zip'
-                    },
-                    files: [{
-                        src: ['**/*'],
-                        dot: true,
-                        cwd: '<%= config.themes_tmp %>/bootswatch/',
-                        expand: true
-                    }]
-                }
-            }
+            compress:buildCompressConfig()
         }
     );
-    grunt.registerTask('generate_archive_paths', function () {
-        wmBuildConfig.web_zip       =  wmBuildConfig.themes_dist + '/' + grunt.option("web-name") + '.zip',
-        grunt.config.set('compress.web.options.archive', wmBuildConfig.web_zip);
-
-        wmBuildConfig.mobile_zip     = wmBuildConfig.themes_dist + '/' + grunt.option("mobile-name") + '.zip',
-            grunt.config.set('compress.mobile.options.archive', wmBuildConfig.mobile_zip);
-
-        wmBuildConfig.bootswatch_zip = wmBuildConfig.themes_dist + '/' + grunt.option("bootswatch-name") + '.zip';
-        grunt.config.set('compress.bootswatch.options.archive', wmBuildConfig.bootswatch_zip);
-    });
     grunt.registerTask("load-fonts", "copy fonts into themes", function () {
         var copy, platform;
         grunt.file.expand('src/**/fonts').forEach(function (dir) {
@@ -173,6 +150,6 @@ module.exports = function (grunt) {
         });
         grunt.task.run('copy');
     });
-    grunt.registerTask('themes', ['clean', 'bower', 'copy', 'load-fonts', 'less:themes', 'xmlstoke', 'generate_archive_paths', 'compress']);
+    grunt.registerTask('themes', ['clean', 'bower', 'copy', 'load-fonts', 'less:themes', 'xmlstoke', 'compress']);
 };
 

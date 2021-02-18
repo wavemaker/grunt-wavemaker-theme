@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "bootstrap": "3.3.6",
-    "bootstrap-material-design": "0.5.8",
+    "bootstrap-material-design": "https://github.com/mdbootstrap/bootstrap-material-design.git#0.5.8",
     "wavicon": "https://github.com/wavemaker/wavicon.git#v1.0.4"
   },
   "exportsOverride": {

@@ -4,7 +4,7 @@ INSTRUCTIONS
 Install Prerequisites
 --------
 
-* Node.js v0.10.x+
+* Node.js v10.17.x+
 
 You can check if you have Node and npm installed by typing:
 <pre>

@@ -3,8 +3,7 @@
 .wm-app {
 
   @import url("../../components/bootstrap/less/bootstrap.less");
-  @import url("variables.less");
-  @import url("typography.less");
+  @import url("mixing.less");
 
   font-size: @font-size-base;
   color: @text-color;
@@ -233,90 +232,6 @@
     border-radius: 2px;
     .form-group {
       padding: 0 @padding-base-horizontal;
-    }
-  }
-
-  /***Button Style: Defining the sixe of the button for bootstrap classes********/
-  .btn {
-    text-transform: uppercase;
-    font-size: 12px;
-    .btn-shadow();
-    padding: 6px 15px;
-    &.btn-lg {
-      font-size: 1.4em;
-    }
-    &.btn-sm {
-      font-size: 10px;
-      padding: @padding-small-vertical @padding-small-horizontal;
-    }
-    &.btn-xs {
-      font-size: 8px;
-      padding: @padding-xs-vertical @padding-xs-horizontal;
-    }
-    .caret {
-      margin-left: 0.7em;
-    }
-    &.active, &:active {
-      -webkit-box-shadow: none;
-      box-shadow: none;
-    }
-  }
-
-  .btn-group {
-    .btn-shadow();
-    .btn {
-      box-shadow: none;
-      border-color: transparent;
-    }
-  }
-
-  .btn-default {
-    &:hover, &:focus &:active {
-      color: @btn-default-color;
-      background-color: darken(@btn-default-bg, 10%);
-      border-color: darken(@btn-default-bg, 10%);
-    }
-  }
-
-  .btn.btn-transparent {
-    &:hover {
-      background-color: #f0f0f0 !important;
-    }
-  }
-
-  .btn-flat {
-    text-transform: uppercase;
-    background-color: transparent;
-    border-color: transparent;
-    box-shadow: none;
-    color: inherit;
-    &.btn-primary {
-      color: @brand-primary;
-      &:hover, &:focus {
-        background-color: @btn-primary-bg;
-        color: @btn-primary-color;
-      }
-    }
-    &.btn-info {
-      color: @brand-info;
-      &:hover, &:focus {
-        background-color: @btn-info-bg;
-        color: @btn-info-color;
-      }
-    }
-    &.btn-warning {
-      color: @brand-warning;
-      &:hover, &:focus {
-        background-color: @btn-warning-bg;
-        color: @btn-warning-color;
-      }
-    }
-    &.btn-danger {
-      color: @brand-danger;
-      &:hover, &:focus {
-        background-color: @btn-danger-bg;
-        color: @btn-danger-color;
-      }
     }
   }
 

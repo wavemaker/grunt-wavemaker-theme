@@ -153,4 +153,3 @@ module.exports = function (grunt) {
     });
     grunt.registerTask('themes', ['clean', 'bower', 'copy', 'load-fonts', 'less:themes', 'xmlstoke', 'compress']);
 };
-

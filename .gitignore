@@ -7,3 +7,4 @@ tmp/
 src/**/*.css
 src/**/fonts/glyphicons-halflings-regular.*
 src/**/fonts/wavicon.*
+.DS_Store

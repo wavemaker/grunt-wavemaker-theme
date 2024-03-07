@@ -1,0 +1,25 @@
+//Breadcrumb
+.breadcrumb {
+  .typography-sigma(@typography-weight-normal);
+  color: @text-green;
+
+  display: flex;
+  align-items: center;
+
+  .active {
+    color: @text-primary;
+  }
+
+  > li {
+    display: flex;
+    align-items: center;
+  }
+
+  &.attribute-based > li + li:before,
+  & > li + li:before {
+    content: "\e998";
+    font-family: "System-Icon";
+    color: @color-black-40;
+    font-size: 1.5rem;
+  }
+}

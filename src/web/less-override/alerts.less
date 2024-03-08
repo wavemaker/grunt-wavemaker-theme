@@ -24,6 +24,8 @@
     margin-bottom: @alert-margin-bottom;
     border: 1px solid transparent;
     border-radius: @alert-border-radius;
+    font-size: .75rem;
+    line-height: 1.25rem;
 
     h4 {
         margin-top: 0;
@@ -79,6 +81,10 @@
     background-position: right;
     background-size: contain;
 
+    i {
+        display: none;
+    }
+
     &.alert {
         border: none;
         background-repeat: no-repeat;
@@ -88,28 +94,28 @@
 
     &.alert-success,
     .alert-success {
-        color: @lime-80;
+        color: @text-primary;
         background-color: @lime-10;
         background-image: url('https://bucket.pegadaian.co.id/design-system-salt-bucket/assets/images/aksen-green.svg');
     }
 
     &.alert-info,
     .alert-info {
-        color: @blue-80;
+        color: @text-primary;
         background-color: @blue-10;
         background-image: url('https://bucket.pegadaian.co.id/design-system-salt-bucket/assets/images/aksen-blue.svg');
     }
 
     &.alert-warning,
     .alert-warning {
-        color: @yellow-80;
+        color: @text-primary;
         background-color: @yellow-10;
         background-image: url('https://bucket.pegadaian.co.id/design-system-salt-bucket/assets/images/aksen-yellow.svg');
     }
 
     &.alert-danger,
     .alert-danger {
-        color: @red-80;
+        color: @text-primary;
         background-color: @red-10;
         background-image: url('https://bucket.pegadaian.co.id/design-system-salt-bucket/assets/images/aksen-red.svg');
     }

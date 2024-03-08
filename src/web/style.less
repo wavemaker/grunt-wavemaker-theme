@@ -1,7 +1,6 @@
 /*START - default Theme*/
 
 .wm-app {
-
   @import url("../../components/bootstrap/less/bootstrap.less");
   @import url("mixing.less");
 
@@ -19,16 +18,16 @@
   //left panel
   @wm-left-panel-bg: #fff;
   @wm-left-panel-list-border: 1px #e6e5e5 solid;
-  @wm-left-panel-border-color: #CFDBE2;
+  @wm-left-panel-border-color: #cfdbe2;
   @wm-left-panel-link-color: #4f5256;
   @wm-left-panel-link-hover-bg: #f7f7f7;
-  @wm-left-panel-link-active-bg: #F4F4F4;
+  @wm-left-panel-link-active-bg: #f4f4f4;
   @wm-left-panel-link-hover-text-color: inherit;
   @wm-left-panel-link-hover-border-color: transparent;
   @wm-left-panel-dropdown-menu-bg: transparent;
 
   //right panel
-  @wm-right-panel-border-color: #CFDBE2;
+  @wm-right-panel-border-color: #cfdbe2;
   @wm-right-panel-bg: #fff;
   @wm-right-panel-btn-color: #515253;
   @wm-right-panel-list-border: 1px #e6e5e5 solid;
@@ -36,22 +35,22 @@
   //Footer
   @wm-footer-border-color: #ccc;
   @wm-footer-text-color: #515253;
-  @wm-footer-bg-color: #F5F7FA;
+  @wm-footer-bg-color: #f5f7fa;
   @wm-footer-height: auto;
 
   //Table
   @table-header-bg: #fff;
   @pagination-active-hover-bg: darken(@brand-primary, 15%);
   @pagination-basic-bg: #ddd;
-  @wm-grid-selection-bg: #CFD8DC;
+  @wm-grid-selection-bg: #cfd8dc;
 
   //Tabset
-  @nav-tabs-color-hover : #000;
-  @nav-tabs-color : #7a7a7a;
+  @nav-tabs-color-hover: #000;
+  @nav-tabs-color: #7a7a7a;
   @nav-tabs-bg: #fff;
 
   //input group hover
-  @input-group-addon-hover-bg: rgba(0, 0, 0, .1);
+  @input-group-addon-hover-bg: rgba(0,0,0,.1);
 
   //Buttons
   @btn-group-active-btn-bg: #fff;
@@ -79,8 +78,10 @@
 
   .btn-shadow {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16),
+      0 2px 10px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16),
+      0 2px 10px rgba(0, 0, 0, 0.12);
   }
 
   /*Applies inset shadow effect*/
@@ -100,7 +101,6 @@
   label {
     font-weight: normal;
   }
-
   .label-primary,
   .label-success,
   .label-info,
@@ -128,7 +128,6 @@
   .text-warning {
     color: darken(@brand-warning, 20%);
   }
-
   .h1,
   .h2,
   .h3,
@@ -145,7 +144,6 @@
 
   .input-group-btn {
     .btn[disabled] {
-
       &:hover,
       &:focus {
         background-color: transparent;
@@ -182,10 +180,8 @@
   .nav-tabs {
     border-bottom-color: @nav-tabs-border-color;
     background-color: @nav-tabs-bg;
-
-    >li {
-
-      >a,
+    > li {
+      > a,
       .app-menu a {
         color: @nav-tabs-color;
         text-transform: uppercase;
@@ -213,7 +209,6 @@
           -o-transform: scale(0);
           transform: scale(0);
         }
-
         &:hover,
         &:focus {
           outline: none;
@@ -225,8 +220,7 @@
       }
 
       &.active {
-
-        >a,
+        > a,
         .app-menu a {
           border-color: transparent;
           color: @nav-tabs-color-hover;
@@ -238,7 +232,6 @@
             transform: scale(1);
             background: @brand-primary;
           }
-
           &:hover,
           &:focus {
             outline: none;
@@ -294,23 +287,13 @@
     }
   }
 
-  //Breadcrumb
-  .breadcrumb {
-    li {
-      a {
-        text-transform: uppercase;
-      }
-    }
-  }
-
   //Progress Bar
   .progress {
     box-shadow: none;
     border-radius: 0;
-    height: .55em;
-
+    height: 0.55em;
     .progress-bar {
-      line-height: .92em;
+      line-height: 0.92em;
     }
   }
 
@@ -351,7 +334,11 @@
       background-color: @wm-header-bg-color;
 
       .form-control {
-        background-image: linear-gradient(@wm-header-border-color, @wm-header-border-color), linear-gradient(@input-border, @input-border);
+        background-image: linear-gradient(
+            @wm-header-border-color,
+            @wm-header-border-color
+          ),
+          linear-gradient(@input-border, @input-border);
         color: @wm-header-text-color;
 
         &::-webkit-input-placeholder {
@@ -399,16 +386,15 @@
           text-transform: uppercase;
           box-shadow: inset 0px -3px 0 0px transparent;
           color: @navbar-default-color;
-
           &:hover,
           &:focus,
           &.active,
           &.app-popover-open {
             color: @navbar-default-link-active-color;
             background-color: @navbar-default-hover-bg;
-            -webkit-transition: color .3s ease;
-            -o-transition: color .3s ease;
-            transition: color .3s ease;
+            -webkit-transition: color 0.3s ease;
+            -o-transition: color 0.3s ease;
+            transition: color 0.3s ease;
           }
 
           &.active {
@@ -443,7 +429,7 @@
           .dropdown-menu {
             li>a {
               &:hover {
-                background-color: rgba(0, 0, 0, .03);
+                background-color: rgba(0, 0, 0, 0.03);
               }
             }
           }
@@ -452,22 +438,12 @@
     }
   }
 
-  //Popover
-  .popover {
-    min-width: 16.667em;
-
-    .popover-content {
-      padding: 0;
-    }
-  }
-
   //Left & Right Panels
   .app-left-panel,
   .app-right-panel {
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, .15);
-    -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, .15);
-    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, .15);
-
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     .nav {
       li {
 
@@ -476,7 +452,6 @@
           >a {
             color: inherit;
             background-color: @wm-left-panel-link-active-bg;
-
             &:hover,
             &:focus {
               color: inherit;
@@ -500,8 +475,7 @@
           line-height: 1.7;
           color: @wm-left-panel-link-color;
           text-shadow: none;
-          font-family: 'Robotomedium', Arial, sans-serif;
-
+          font-family: "Robotomedium", Arial, sans-serif;
           &:hover {
             color: @wm-left-panel-link-hover-text-color;
             text-decoration: none;
@@ -510,7 +484,6 @@
 
           &.active {
             background-color: @wm-left-panel-link-active-bg;
-
             &:hover,
             &:focus {
               background-color: @wm-left-panel-link-hover-bg;
@@ -540,7 +513,7 @@
 
             li {
               a {
-                padding: 0.92em .92em .92em 2.5em;
+                padding: 0.92em 0.92em 0.92em 2.5em;
                 font-size: 1em;
               }
             }
@@ -550,7 +523,6 @@
 
       &.open {
         a {
-
           &:hover,
           &:focus {
             background-color: @wm-left-panel-link-hover-bg;
@@ -572,7 +544,6 @@
 
   /****nav widget****/
   .app-nav {
-
     &.nav-pills,
     &.nav-justified {
       .app-nav-item {
@@ -588,10 +559,8 @@
         }
 
         &.active {
-
           a,
           .app-menu {
-
             &:active,
             &.hover,
             &:active:hover {
@@ -669,7 +638,6 @@
         color: @brand-primary;
       }
     }
-
     .text-danger,
     .control-label.text-danger {
       color: @brand-danger;
@@ -685,7 +653,7 @@
 
   //for text, select controls
   .form-control,
-  .form-group+.form-control {
+  .form-group + .form-control {
     color: inherit;
     border: 0;
     -webkit-background-size: 0 2px, 100% 1px;
@@ -699,8 +667,8 @@
     -webkit-transition: background 0s ease-out;
     -o-transition: background 0s ease-out;
     transition: background 0s ease-out;
-    background-image: linear-gradient(@brand-primary, @brand-primary), linear-gradient(@input-border, @input-border);
-
+    background-image: linear-gradient(@brand-primary, @brand-primary),
+      linear-gradient(@input-border, @input-border);
     &:hover,
     &:focus {
       outline: none;
@@ -760,7 +728,6 @@
       cursor: pointer;
       padding-left: 27px;
       margin: 5px 0;
-
       &:before,
       &:after {
         position: absolute;
@@ -777,7 +744,6 @@
   //radio buttons
   .radio {
     .caption {
-
       &:before,
       &:after {
         -moz-border-radius: 50%;
@@ -821,7 +787,6 @@
     }
   }
 
-
   //checkbox
   .checkbox {
     .caption {
@@ -858,7 +823,7 @@
       padding: 0 3px;
       color: @wm-checked-color;
       content: "\2713";
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     }
 
     input:checked+.caption:after {
@@ -872,7 +837,6 @@
   //form widgets
   .app-form,
   .app-liveform {
-
     //for labels in the form
     .control-label,
     .app-label {
@@ -933,7 +897,6 @@
 
   //filter
   .app-livefilter {
-
     .control-label,
     .app-label {
       padding: 1em 1em 0;
@@ -1008,7 +971,7 @@
 
               .down {
                 border-width: 0.333em 0.333em 0;
-                top: 0.250em;
+                top: 0.25em;
               }
             }
           }
@@ -1017,7 +980,6 @@
 
       tbody {
         tr {
-
           &.active,
           &:hover,
           &.active:hover {
@@ -1028,11 +990,9 @@
           }
         }
       }
-
       th,
       td,
       tr {
-
         &.info,
         &.info:hover {
           background-color: @wm-grid-selection-bg;
@@ -1042,7 +1002,6 @@
 
     //When table is condensed
     .input-group.input-group-sm {
-
       .input-group-addon,
       .input-group-btn {
         padding: 0 4px;
@@ -1096,12 +1055,10 @@
           width: 20pt;
           height: 20pt;
         }
-
         li.pagination-page a {
           padding: 6px 0;
         }
       }
-
       .pagination-prev,
       .pagination-next,
       .pagination-first,
@@ -1126,7 +1083,6 @@
         }
 
         &.active {
-
           a,
           a:hover,
           a:focus {
@@ -1136,7 +1092,6 @@
           }
 
           &:hover {
-
             a,
             a:hover,
             a:focus {
@@ -1145,10 +1100,8 @@
             }
           }
         }
-
         &:hover,
         &:focus {
-
           a,
           a:hover,
           a:focus {
@@ -1187,7 +1140,7 @@
     .pager {
       li {
         a {
-          margin: 0 .5em 0 0;
+          margin: 0 0.5em 0 0;
           padding: @padding-base-vertical @padding-base-horizontal;
         }
       }
@@ -1197,9 +1150,8 @@
   /*** pagination***/
   .pagination {
     li {
-
-      >a,
-      >span {
+      > a,
+      > span {
         color: @brand-primary;
       }
     }
@@ -1207,7 +1159,6 @@
 
   //carousel styling: removing the left and right background image
   .carousel-control {
-
     &.left,
     &.right {
       background-image: none;
@@ -1240,7 +1191,6 @@
           right: 1em;
           top: 1.2em;
           outline: none;
-
         }
       }
 
@@ -1320,11 +1270,11 @@
         }
 
         .description {
-          font-size: .75em;
+          font-size: 0.75em;
           color: inherit;
           font-style: normal;
           margin-top: 5px;
-          opacity: .7;
+          opacity: 0.7;
         }
       }
 
@@ -1333,35 +1283,31 @@
           top: -0.2em;
 
           a {
-
             &:focus,
             &:hover {
               text-decoration: none;
             }
           }
-
           .app-anchor {
             font-size: 1.15em;
             padding: 0 6px;
             width: 30px;
             height: 30px;
-
             &:hover,
             &:focus {
-              background-color: rgba(158, 158, 158, .2);
+              background-color: rgba(158, 158, 158, 0.2);
               border-radius: 50%;
-              transition: color .5s ease, background .5s ease;
-              -webkit-transition: color .5s ease, background .5s ease;
-              -moz-transition: color .5s ease, background .5s ease;
-              -ms-transition: color .5s ease, background .5s ease;
-              -o-transition: color .5s ease, background .5s ease;
+              transition: color 0.5s ease, background 0.5s ease;
+              -webkit-transition: color 0.5s ease, background 0.5s ease;
+              -moz-transition: color 0.5s ease, background 0.5s ease;
+              -ms-transition: color 0.5s ease, background 0.5s ease;
+              -o-transition: color 0.5s ease, background 0.5s ease;
             }
           }
         }
       }
     }
   }
-
   .app-livelist,
   .app-grid {
     &.panel {
@@ -1370,14 +1316,12 @@
       box-shadow: none;
     }
   }
-
   .app-list,
   .app-livelist {
     .app-list-item {
       &.active {
-
-        >.app-panel,
-        >.app-card {
+        > .app-panel,
+        > .app-card {
           border-color: @brand-primary;
         }
 
@@ -1412,7 +1356,6 @@
       .app-card-header-text {
         padding-left: 1em;
       }
-
       .app-card-avatar,
       .app-card-header-text {
         padding-top: 0;
@@ -1431,7 +1374,7 @@
     }
 
     .app-card-actions {
-      padding: .5em;
+      padding: 0.5em;
     }
   }
 
@@ -1447,33 +1390,30 @@
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
-
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
     li {
       a {
         font-size: 1.1em;
         padding: 10px 15px;
 
         &:hover {
-          background-color: rgba(158, 158, 158, .2);
+          background-color: rgba(158, 158, 158, 0.2);
         }
       }
     }
   }
 
-
   //file upload button
   .app-single-file-upload {
     .glyphicon {
-      margin-right: 0.500em;
+      margin-right: 0.5em;
     }
   }
 
   //stylings for tile widget
   .app-tile {
-
     &.bg-danger,
     &.bg-success,
     &.bg-info,
@@ -1487,11 +1427,9 @@
   .app-date,
   .app-datetime,
   .app-timeinput {
-
     //setting the margin for the group button so that it shows up over the input
     .input-group-btn:last-child {
-
-      >.btn,
+      > .btn,
       .btn-group {
         margin-left: 0;
       }
@@ -1505,7 +1443,6 @@
     thead {
       tr {
         th {
-
           .btn.uib-left,
           .btn.uib-right,
           .btn.uib-title {
@@ -1516,14 +1453,13 @@
             font-size: 1.24em;
             padding: 1.4em 1em;
             text-transform: uppercase;
-
             &:hover,
             &:focus,
             &:active,
             &:active:hover,
             &:active:focus {
               color: @component-active-color;
-              background-color: rgba(0, 0, 0, .01);
+              background-color: rgba(0, 0, 0, 0.01);
               border-color: transparent;
             }
           }
@@ -1540,7 +1476,6 @@
     }
 
     tbody {
-
       .btn-default,
       .btn {
         background-color: @gray-lighter;
@@ -1554,7 +1489,6 @@
           background-color: lighten(@brand-primary, 30%);
           color: @text-color;
         }
-
         &:hover,
         &:focus,
         &.active:hover,
@@ -1576,15 +1510,13 @@
     }
 
     small {
-      font-size: .85em;
+      font-size: 0.85em;
       text-transform: uppercase;
       color: @component-active-color;
     }
-
     .uib-monthpicker,
     .uib-yearpicker {
       tbody {
-
         .btn-default,
         .btn {
           padding: @padding-base-horizontal 4px;
@@ -1674,7 +1606,6 @@
       }
 
       .btn-default {
-
         &.active,
         &:focus {
           background-color: @component-active-bg;
@@ -1703,9 +1634,8 @@
 
     .btn-group {
       box-shadow: none;
-
       .btn,
-      &+.btn {
+      & + .btn {
         background-color: transparent;
         border-color: transparent;
         color: @brand-primary;
@@ -1743,17 +1673,16 @@
 
     .fc {
       .fc-state-default {
-        background: rgba(0, 0, 0, .05);
-        border: 1px solid rgba(0, 0, 0, .05);
+        background: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.05);
         color: @component-active-color;
         text-shadow: none;
-
         &.fc-state-hover,
         &:focus,
         &.fc-state-active {
           color: @btn-default-color;
           background: @btn-default-bg;
-          border: 1px solid @btn-default-border ;
+          border: 1px solid @btn-default-border;
         }
       }
     }
@@ -1792,7 +1721,7 @@
     }
 
     .fc-day-number {
-      padding: .5em .3em;
+      padding: 0.5em 0.3em;
       color: @wm-calendar-text-color;
       font-size: 1.52em;
       text-align: left;
@@ -1816,7 +1745,6 @@
       background-color: @gray-lighter;
       border-color: @gray-light;
       color: @text-color;
-
       &.disabled,
       &[disabled],
       &.disabled:hover,
@@ -1834,7 +1762,6 @@
         background-color: @gray-lighter;
         color: @text-color;
       }
-
       &:focus,
       &.active,
       &:active:hover {
@@ -1846,7 +1773,7 @@
 
     .ta-root .ta-toolbar .btn-group .btn {
       height: 3em;
-      padding: .75em;
+      padding: 0.75em;
     }
 
     .form-control {
@@ -1857,7 +1784,6 @@
 
   fieldset[disabled] {
     .app-richtexteditor {
-
       .btn-default,
       .btn-default:hover,
       .btn-default:focus,
@@ -1881,9 +1807,8 @@
         }
 
         &.selected {
-
-          >i,
-          >span {
+          > i,
+          > span {
             color: @brand-primary;
           }
         }
@@ -1902,15 +1827,7 @@
       background-color: @gray-lighter;
     }
   }
-
-  /***popover class: removing the radius*******/
-  .popover {
-    padding: 0;
-    border-radius: @border-radius-base;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-    color: @text-color;
-  }
-
+  
   .app-fileupload .app-multi-file-upload,
   .app-fileupload .app-single-file-upload {
     height: auto;
@@ -1927,7 +1844,7 @@
   }
 
   /***Slider widget styling*******************/
-  input[type='range'] {
+  input[type="range"] {
     color: @brand-primary;
   }
 }

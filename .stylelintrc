@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "stylelint-config-standard-less",
+    "stylelint-prettier/recommended"
+  ],
+  "plugins": ["stylelint-prettier", "stylelint-less"],
+  "rules": {
+    "prettier/prettier": true,
+
+    "at-rule-no-unknown": null,
+    "color-no-invalid-hex": true,
+    "less/color-no-invalid-hex": true,
+
+    "comment-empty-line-before": null,
+    "comment-no-empty": null,
+    "no-descending-specificity": null,
+    "no-empty-source": null
+  }
+}

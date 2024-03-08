@@ -50,7 +50,7 @@
   @nav-tabs-bg: #fff;
 
   //input group hover
-  @input-group-addon-hover-bg: rgba(0, 0, 0, 0.1);
+  @input-group-addon-hover-bg: rgba(0,0,0,.1);
 
   //Buttons
   @btn-group-active-btn-bg: #fff;
@@ -68,13 +68,14 @@
   @wm-checked-color: #fff;
 
   /*Box Shadow effect*/
-  .box-shadow (@x:0px, @y:2px, @blur:5px, @color:#DBDBDB) {
+  .box-shadow (@x: 0px, @y: 2px, @blur: 5px, @color: #DBDBDB) {
     box-shadow: @arguments;
     -webkit-box-shadow: @arguments;
     -moz-box-shadow: @arguments;
     -ms-box-shadow: @arguments;
     -o-box-shadow: @arguments;
   }
+
   .btn-shadow {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
     -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16),
@@ -84,7 +85,7 @@
   }
 
   /*Applies inset shadow effect*/
-  .inset-shadow(@x:0px, @y:2px, @blur:5px, @spread:0 , @color:#DBDBDB) {
+  .inset-shadow(@x: 0px, @y: 2px, @blur: 5px, @spread: 0, @color: #DBDBDB) {
     box-shadow: inset @arguments;
     -webkit-box-shadow: inset @arguments;
     -moz-box-shadow: inset @arguments;
@@ -107,18 +108,23 @@
   .label-danger {
     color: #fff;
   }
+
   .text-danger {
     color: darken(@brand-danger, 20%);
   }
+
   .text-success {
     color: darken(@brand-success, 20%);
   }
+
   .text-info {
     color: darken(@brand-info, 20%);
   }
+
   .text-primary {
     color: darken(@brand-primary, 20%);
   }
+
   .text-warning {
     color: darken(@brand-warning, 20%);
   }
@@ -130,10 +136,12 @@
   .h6 {
     width: 100%;
   }
+
   .btn-secondary {
     background-color: #f3f3f3;
     color: @text-color;
   }
+
   .input-group-btn {
     .btn[disabled] {
       &:hover,
@@ -167,6 +175,7 @@
       padding: @padding-base-horizontal;
     }
   }
+
   //navigation
   .nav-tabs {
     border-bottom-color: @nav-tabs-border-color;
@@ -182,6 +191,7 @@
         box-shadow: none;
         margin-right: 0;
         border-color: transparent;
+
         &:after {
           content: "";
           height: 2px;
@@ -208,11 +218,13 @@
           border-bottom-color: transparent;
         }
       }
+
       &.active {
         > a,
         .app-menu a {
           border-color: transparent;
           color: @nav-tabs-color-hover;
+
           &:after {
             -webkit-transform: scale(1);
             -ms-transform: scale(1);
@@ -240,12 +252,15 @@
 
   /***App Message********/
   .app-message .close {
+    position: relative;
     top: initial;
   }
+
   /***Tabs Widget: Styling for the tabs widget comes here********/
   .list-group-item-separator {
     margin-bottom: 2px;
     border-radius: 2px;
+
     .form-group {
       padding: 0 @padding-base-horizontal;
     }
@@ -256,6 +271,7 @@
     background-color: @modal-header-bg;
     border-bottom-color: @modal-header-border-color;
     color: @modal-header-color;
+
     .modal-title {
       color: @modal-header-color;
     }
@@ -283,8 +299,8 @@
 
   //Table
   .table {
-    > thead {
-      > tr {
+    >thead {
+      >tr {
         th {
           font-weight: normal;
           background-color: @table-header-bg;
@@ -309,12 +325,14 @@
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
     border-color: transparent;
     height: @wm-header-height;
+
     a {
       color: @wm-header-text-color;
     }
 
     .app-search {
       background-color: @wm-header-bg-color;
+
       .form-control {
         background-image: linear-gradient(
             @wm-header-border-color,
@@ -322,17 +340,21 @@
           ),
           linear-gradient(@input-border, @input-border);
         color: @wm-header-text-color;
+
         &::-webkit-input-placeholder {
           color: @wm-header-text-color;
         }
+
         &:-moz-placeholder {
           color: @wm-header-text-color;
         }
+
         &:-ms-placeholder {
           color: @wm-header-text-color;
         }
       }
     }
+
     .input-group-addon {
       color: @wm-header-text-color;
       font-size: 1.1em;
@@ -341,6 +363,7 @@
     .app-mobile-header {
       background-color: @navbar-default-bg;
       color: @navbar-default-color;
+
       a {
         color: @navbar-default-color;
       }
@@ -352,6 +375,7 @@
     border-radius: 0;
     color: @navbar-default-color;
     padding: 0 1.52em;
+
     .navbar-nav {
       li {
         a {
@@ -372,20 +396,23 @@
             -o-transition: color 0.3s ease;
             transition: color 0.3s ease;
           }
+
           &.active {
             color: @navbar-default-link-active-color;
             box-shadow: inset 0px -3px 0 0px @wm-header-border-color;
           }
         }
 
-        > .dropdown .dropdown-menu {
+        >.dropdown .dropdown-menu {
           margin: 0;
           background-color: @dropdown-bg;
+
           a {
             color: @text-color;
             padding: 1em;
             font-size: 1em;
             text-transform: initial;
+
             &:hover {
               background-color: @navbar-default-hover-bg;
             }
@@ -394,12 +421,13 @@
       }
 
       .app-nav-item {
-        > .dropdown {
+        >.dropdown {
           a.dropdown-toggle {
             padding: 1.2em;
           }
+
           .dropdown-menu {
-            li > a {
+            li>a {
               &:hover {
                 background-color: rgba(0, 0, 0, 0.03);
               }
@@ -418,9 +446,10 @@
     -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     .nav {
       li {
+
         //for overriding the pills default color
         &.active {
-          > a {
+          >a {
             color: inherit;
             background-color: @wm-left-panel-link-active-bg;
             &:hover,
@@ -430,6 +459,7 @@
             }
           }
         }
+
         margin-top: 0;
         //border-bottom: @wm-left-panel-list-border;
 
@@ -451,6 +481,7 @@
             text-decoration: none;
             background-color: @wm-left-panel-link-hover-bg;
           }
+
           &.active {
             background-color: @wm-left-panel-link-active-bg;
             &:hover,
@@ -459,24 +490,27 @@
               color: inherit;
             }
           }
+
           .app-icon {
             margin-right: 0.3em;
             font-size: 1.143em;
           }
+
           .badge {
             top: 1.2em !important;
             padding: 4px 6px;
           }
         }
 
-        > .dropdown.open {
-          > .dropdown-menu {
+        >.dropdown.open {
+          >.dropdown-menu {
             position: relative;
             margin: 0 0 1.333em;
             border: 0;
             border-bottom: @wm-left-panel-list-border;
             box-shadow: none;
             background-color: @wm-left-panel-dropdown-menu-bg;
+
             li {
               a {
                 padding: 0.92em 0.92em 0.92em 2.5em;
@@ -486,6 +520,7 @@
           }
         }
       }
+
       &.open {
         a {
           &:hover,
@@ -495,10 +530,11 @@
         }
       }
     }
+
     .app-nav {
       .app-nav-item {
-        > .dropdown {
-          > a {
+        >.dropdown {
+          >a {
             padding: 1.333em;
           }
         }
@@ -515,11 +551,13 @@
           .dropdown-toggle {
             padding: @padding-base-horizontal;
           }
+
           &:hover {
             color: @nav-pills-active-link-hover-bg;
             background-color: @nav-link-hover-bg;
           }
         }
+
         &.active {
           a,
           .app-menu {
@@ -529,6 +567,7 @@
               color: @navbar-default-link-active-color;
               background-color: @nav-pills-active-link-hover-bg;
             }
+
             &.open {
               .dropdown-toggle {
                 color: @nav-pills-active-link-hover-color;
@@ -540,6 +579,7 @@
       }
     }
   }
+
   .nav-justified {
     .app-nav-item {
       .app-menu {
@@ -576,11 +616,23 @@
       color: @text-color;
     }
   }
+
   /******************************************************************************************************************************************/
   /***************************************************Widgets styling************************************************************************/
   /******************************************************************************************************************************************/
+
+
+  /***************************************************Custom Component Pegadaian Design************************************************************************/
+  /************************************************************************************************************************************************************/
+  
+
+  
+  /***************************************************Custom Component Pegadaian Design************************************************************************/
+  /************************************************************************************************************************************************************/
+
   .form-group {
     margin-bottom: 0.833em;
+
     &.live-field.active {
       .control-label {
         color: @brand-primary;
@@ -590,6 +642,7 @@
     .control-label.text-danger {
       color: @brand-danger;
     }
+
     .ng-touched.ng-invalid {
       border-color: transparent;
       background-image: none;
@@ -597,6 +650,7 @@
       outline: none;
     }
   }
+
   //for text, select controls
   .form-control,
   .form-group + .form-control {
@@ -626,22 +680,26 @@
       box-shadow: none;
     }
   }
+
   .form-control[disabled] {
     background-color: transparent;
     background-image: none;
     border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
   }
+
   .input-group-btn {
     .btn {
       background-color: transparent;
       border: 0;
       box-shadow: none;
       color: inherit;
+
       i {
         font-size: 18pt;
       }
     }
   }
+
   //**** form elements*****/
 
   .radio,
@@ -651,15 +709,19 @@
       z-index: -1;
       margin: 3px 0 !important;
     }
+
     label {
       padding-left: @padding-base-horizontal;
+
       &.disabled {
         cursor: not-allowed;
+
         span.caption {
           cursor: not-allowed;
         }
       }
     }
+
     .caption {
       position: relative;
       min-height: 1em;
@@ -688,6 +750,7 @@
         -webkit-border-radius: 50%;
         border-radius: 50%;
       }
+
       &:before {
         top: 0;
         left: 0;
@@ -697,6 +760,7 @@
         border: 1px @pre-border-color solid;
         .inset-shadow(0, 0, 0, 13px, @body-bg);
       }
+
       &:after {
         top: 45%;
         left: 10px;
@@ -708,12 +772,14 @@
         transform: translate(-50%, -50%) scale(0);
       }
     }
-    input:checked + .caption:before {
+
+    input:checked+.caption:before {
       -moz-box-shadow: inset 0 0 0 3px @body-bg;
       -webkit-box-shadow: inset 0 0 0 3px @body-bg;
       box-shadow: inset 0 0 0 3px @body-bg;
     }
-    input:checked + .caption:after {
+
+    input:checked+.caption:after {
       -moz-transform: translate(-50%, -50%) scale(1);
       -ms-transform: translate(-50%, -50%) scale(1);
       -webkit-transform: translate(-50%, -50%) scale(1);
@@ -733,6 +799,7 @@
         border: 1px @pre-border-color solid;
         .inset-shadow(0, 0, 0, 13px, @body-bg);
       }
+
       &:after {
         top: 45%;
         left: 10px;
@@ -744,7 +811,8 @@
         transform: translate(-50%, -50%) scale(0);
       }
     }
-    input:checked + .caption:before {
+
+    input:checked+.caption:before {
       -moz-box-shadow: inset 0 0 0 13px @brand-primary;
       -webkit-box-shadow: inset 0 0 0 13px @brand-primary;
       box-shadow: inset 0 0 0 13px @brand-primary;
@@ -757,7 +825,8 @@
       content: "\2713";
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     }
-    input:checked + .caption:after {
+
+    input:checked+.caption:after {
       -moz-transform: translate(-50%, -50%) scale(1);
       -ms-transform: translate(-50%, -50%) scale(1);
       -webkit-transform: translate(-50%, -50%) scale(1);
@@ -777,11 +846,13 @@
       font-weight: normal;
       color: @form-label-color;
     }
+
     //action buttons in the form
     .form-action {
       background-color: inherit;
       padding: @padding-base-horizontal;
       border-top: 1px solid @panel-inner-border;
+
       .btn {
         margin: 0 0.333em;
         border-radius: @border-radius-base;
@@ -790,13 +861,16 @@
 
     .panel-body {
       padding: 0;
+
       .app-grid-layout {
         padding: @padding-base-horizontal;
       }
     }
+
     //Styling File Upload in IE
     input[type="file"] {
       padding: 0;
+
       //Browse textbox
       &::-ms-value {
         border: 1px solid @input-border;
@@ -829,18 +903,22 @@
       margin-bottom: 1em;
       font-weight: bold;
     }
+
     .form-action {
       padding: @padding-base-horizontal;
       border-top: 1px solid @panel-inner-border;
+
       .btn {
         margin: 0 0.333em;
         border-radius: @border-radius-base;
       }
     }
+
     .panel-body {
       padding: @padding-base-horizontal;
     }
   }
+
   /***Switch widget****/
   .app-switch {
     .btn {
@@ -852,6 +930,7 @@
   .app-search {
     .input-group-addon {
       padding: 0.667em;
+
       &:hover {
         background: @input-group-addon-hover-bg;
       }
@@ -869,22 +948,27 @@
     .form-search {
       padding: 1.5em;
     }
+
     .table {
       thead {
         tr {
           padding: @padding-base-horizontal 1.72em;
         }
+
         th {
           .header-data {
             text-transform: uppercase;
           }
+
           .sort-buttons-container {
             .sort-button {
+
               //display: none;
               .up {
                 border-width: 0 0.333em 0.333em;
                 bottom: -2px;
               }
+
               .down {
                 border-width: 0.333em 0.333em 0;
                 top: 0.25em;
@@ -893,6 +977,7 @@
           }
         }
       }
+
       tbody {
         tr {
           &.active,
@@ -914,11 +999,13 @@
         }
       }
     }
+
     //When table is condensed
     .input-group.input-group-sm {
       .input-group-addon,
       .input-group-btn {
         padding: 0 4px;
+
         .btn {
           .app-icon {
             font-size: 11px;
@@ -935,6 +1022,7 @@
     .panel-footer {
       .app-datagrid-actions {
         vertical-align: middle;
+
         .btn {
           margin: 0 0.333em;
         }
@@ -948,6 +1036,7 @@
         }
       }
     }
+
     .cell-editing {
       input {
         border-bottom: 1px solid darken(@table-border-color, 10%);
@@ -978,8 +1067,10 @@
           padding: 3px 7px;
         }
       }
+
       li {
         font-size: 1.08em;
+
         a {
           color: @pagination-color;
           background-color: @pagination-basic-bg;
@@ -990,6 +1081,7 @@
           width: 27pt;
           height: 27pt;
         }
+
         &.active {
           a,
           a:hover,
@@ -998,6 +1090,7 @@
             background-color: @pagination-active-bg;
             border: 0;
           }
+
           &:hover {
             a,
             a:hover,
@@ -1017,6 +1110,7 @@
             border: 0;
           }
         }
+
         &.disabled {
           a {
             background-color: @pagination-basic-bg;
@@ -1025,12 +1119,14 @@
         }
       }
     }
+
     .pagination {
       li {
         &.pagecount {
           a {
             background-color: @pagination-active-bg;
             border-color: @pagination-active-bg;
+
             input {
               color: @pagination-active-color;
               text-align: center;
@@ -1040,6 +1136,7 @@
         }
       }
     }
+
     .pager {
       li {
         a {
@@ -1072,27 +1169,34 @@
   .app-accordion {
     .app-accordion-panel.panel {
       box-shadow: none;
+
       .panel-heading {
         color: @text-color;
         background-color: transparent;
+
         .panel-icon {
           margin-top: 0;
         }
+
         .panel-title {
           color: @text-color;
+
           .heading {
             line-height: inherit;
             font-size: 1em;
           }
         }
+
         .panel-actions {
           right: 1em;
           top: 1.2em;
           outline: none;
         }
       }
+
       .panel-collapse {
         border: 0;
+
         &:before {
           content: "";
           height: 2px;
@@ -1114,6 +1218,7 @@
         &.in {
           outline: none;
           box-shadow: none;
+
           &:before {
             -webkit-transform: scale(1);
             -ms-transform: scale(1);
@@ -1123,15 +1228,19 @@
           }
         }
       }
+
       &.panel-success .panel-collapse::before {
         background-color: @brand-success;
       }
+
       &.panel-info .panel-collapse::before {
         background-color: @brand-info;
       }
+
       &.panel-warning .panel-collapse::before {
         background-color: @brand-warning;
       }
+
       &.panel-danger .panel-collapse::before {
         background-color: @brand-danger;
       }
@@ -1139,8 +1248,8 @@
   }
 
   .panel-group {
-    .panel-heading + .panel-collapse {
-      > .panel-body {
+    .panel-heading+.panel-collapse {
+      >.panel-body {
         border-top: 0;
       }
     }
@@ -1153,11 +1262,13 @@
     border-color: transparent;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     margin-bottom: 1em;
+
     .panel-heading {
       .panel-title {
         .heading {
           font-size: 1.125em;
         }
+
         .description {
           font-size: 0.75em;
           color: inherit;
@@ -1166,9 +1277,11 @@
           opacity: 0.7;
         }
       }
+
       .panel-actions {
         .panel-action {
           top: -0.2em;
+
           a {
             &:focus,
             &:hover {
@@ -1211,6 +1324,7 @@
         > .app-card {
           border-color: @brand-primary;
         }
+
         //Fix for select for an active list item
         select {
           option {
@@ -1220,9 +1334,11 @@
       }
     }
   }
+
   .app-card {
     .app-card-header {
       background-color: transparent;
+
       .card-heading {
         font-size: 1.155em;
       }
@@ -1230,11 +1346,13 @@
       .app-card-avatar {
         height: 18pt;
         width: 18pt;
+
         .app-icon {
           font-size: 18pt;
           padding: 5px 0;
         }
       }
+
       .app-card-header-text {
         padding-left: 1em;
       }
@@ -1249,6 +1367,7 @@
       font-weight: normal;
       color: rgba(0, 0, 0, 0.87);
     }
+
     .card-text {
       font-size: 1.1em;
       line-height: 1.6em;
@@ -1278,6 +1397,7 @@
       a {
         font-size: 1.1em;
         padding: 10px 15px;
+
         &:hover {
           background-color: rgba(158, 158, 158, 0.2);
         }
@@ -1291,6 +1411,7 @@
       margin-right: 0.5em;
     }
   }
+
   //stylings for tile widget
   .app-tile {
     &.bg-danger,
@@ -1313,6 +1434,7 @@
         margin-left: 0;
       }
     }
+
     //setting the base font color for the popup content
     .dropdown-menu {
       color: @text-color;
@@ -1341,9 +1463,11 @@
               border-color: transparent;
             }
           }
+
           .uib-left {
             text-align: left;
           }
+
           .uib-right {
             text-align: right;
           }
@@ -1360,6 +1484,7 @@
         width: auto;
         box-shadow: none;
         padding: @padding-base-horizontal;
+
         &.btn-info {
           background-color: lighten(@brand-primary, 30%);
           color: @text-color;
@@ -1371,16 +1496,19 @@
           background-color: @component-active-bg;
           border-color: @component-active-bg;
           color: @component-active-color;
+
           .text-info {
             color: inherit;
           }
         }
+
         .text-info {
           color: @brand-primary;
           font-weight: bold;
         }
       }
     }
+
     small {
       font-size: 0.85em;
       text-transform: uppercase;
@@ -1403,6 +1531,7 @@
     .dropdown-menu {
       border: 1px solid transparent;
       padding: 0;
+
       li {
         &:last-child {
           padding: 1.2em;
@@ -1421,12 +1550,15 @@
 
     thead {
       background-color: @component-active-bg;
+
       tr:nth-child(2) {
         background-color: @wm-datepicker-header-bg;
+
         th {
           &:first-child {
             padding: 10px 0 10px 20px;
           }
+
           &:last-child {
             padding: 10px 20px 10px 0;
           }
@@ -1454,39 +1586,47 @@
           &:first-child {
             padding-left: 20px;
           }
+
           &:last-child {
             padding-right: 20px;
           }
         }
+
         &:first-child {
           td {
             padding-top: 15px;
           }
         }
+
         &:last-child {
           td {
             padding-bottom: 15px;
           }
         }
       }
+
       .btn-default {
         &.active,
         &:focus {
           background-color: @component-active-bg;
           color: @component-active-color;
+
           &:hover {
             background-color: @component-active-bg;
           }
+
           .text-info {
             color: @component-active-color;
           }
         }
+
         &:hover {
           background-color: @wm-datepicker-btn-hover-bg;
           border-color: transparent;
           color: @text-color;
         }
       }
+
       .btn-sm {
         font-size: 1em;
       }
@@ -1513,9 +1653,11 @@
         border: 1px solid @input-border;
         padding: 8px 12px;
       }
+
       .btn-link {
         width: 100%;
         background-color: transparent;
+
         &:hover {
           background-color: @btn-primary-bg;
           color: @btn-primary-color;
@@ -1528,6 +1670,7 @@
   .app-calendar {
     background-color: @body-bg;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+
     .fc {
       .fc-state-default {
         background: rgba(0, 0, 0, 0.05);
@@ -1543,34 +1686,40 @@
         }
       }
     }
+
     .fc-state-highlight {
       &.fc-today {
         background-color: transparent;
         color: @brand-primary;
       }
     }
+
     .fc {
       .fc-toolbar {
         margin-bottom: 0;
         padding: 1.82em;
         background-color: @brand-primary;
+
         h2 {
           color: @component-active-color;
           text-transform: uppercase;
         }
       }
     }
+
     .fc-widget-header {
       background-color: transparent;
       color: @wm-calendar-header-color;
       font-weight: normal;
       font-size: 1.03em;
     }
+
     .fc-body {
       .fc-row {
         min-height: 5em;
       }
     }
+
     .fc-day-number {
       padding: 0.5em 0.3em;
       color: @wm-calendar-text-color;
@@ -1578,6 +1727,7 @@
       text-align: left;
     }
   }
+
   /*********************************************************************************************************************************************/
   /****************************************************Advanced editors******************************************************************************/
   /*********************************************************************************************************************************************/
@@ -1589,6 +1739,7 @@
       border-color: transparent;
     }
   }
+
   .app-richtexteditor {
     .btn-default {
       background-color: @gray-lighter;
@@ -1654,6 +1805,7 @@
             color: @text-color;
           }
         }
+
         &.selected {
           > i,
           > span {
@@ -1669,6 +1821,7 @@
     &.input-group {
       width: 13em;
     }
+
     .input-group-addon {
       padding: 0.833em 1.333em;
       background-color: @gray-lighter;
@@ -1683,6 +1836,7 @@
 
   .app-files-upload-status {
     padding-top: 0.833em;
+
     &.multiple {
       padding-top: 0.333em;
       font-size: 1.2em;

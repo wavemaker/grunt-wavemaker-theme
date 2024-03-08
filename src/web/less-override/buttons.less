@@ -1,11 +1,13 @@
 .btn {
-	text-transform: uppercase;
-	font-size: 12px;
-	.btn-shadow();
-	padding: 6px 15px;
+	text-transform: capitalize;
+	font-size: 1rem;
+	padding: .375rem .75rem;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	font-weight: @btn-font-weight;
 
 	&.btn-lg {
-		font-size: 1.4em;
+		font-size: 1rem;
 	}
 
 	&.btn-sm {
@@ -26,6 +28,34 @@
 	&:active {
 		-webkit-box-shadow: none;
 		box-shadow: none;
+	}
+}
+
+.btn-secondary {
+	background-color: @white !important;
+	color: @lime-50 !important;
+	border-color: @lime-50 !important;
+
+	&:hover {
+		color: @lime-80 !important;
+		background-color: @white !important;
+		border-color: @lime-80 !important;
+	}
+
+	&:active {
+		color: @lime-60 !important;
+		background-color: @white !important;
+		border-color: @lime-60 !important;
+	}
+
+}
+
+.btn-link {
+	font-weight: @btn-font-weight;
+	display: flex;
+	align-items: center;
+	.si-plus-round-fill::before {
+		color: @lime-50;
 	}
 }
 

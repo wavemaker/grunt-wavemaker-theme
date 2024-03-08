@@ -1,0 +1,122 @@
+@alert-success-bg: @lime-50;
+@alert-success-border: @lime-50;
+@alert-success-text: @white;
+
+@alert-info-bg: @blue-50;
+@alert-info-border: @blue-50;
+@alert-info-text: @white;
+
+@alert-warning-bg: @yellow-50;
+@alert-warning-border: @yellow-50;
+@alert-warning-text: @white;
+
+@alert-danger-bg: @red-50;
+@alert-danger-border: @red-50;
+@alert-danger-text: @white;
+
+@alert-margin-bottom: 1rem;
+@alert-padding-y: .75rem;
+@alert-padding-x: 1.25rem;
+@alert-border-radius: @border-radius-base;
+
+.alert {
+    padding: @alert-padding;
+    margin-bottom: @alert-margin-bottom;
+    border: 1px solid transparent;
+    border-radius: @alert-border-radius;
+    font-size: .75rem;
+    line-height: 1.25rem;
+
+    h4 {
+        margin-top: 0;
+        color: inherit;
+    }
+
+    .alert-link {
+        font-weight: @alert-link-font-weight;
+    }
+
+    >p,
+    >ul {
+        margin-bottom: 0;
+    }
+
+    >p+p {
+        margin-top: 5px;
+    }
+}
+
+.alert-dismissable,
+.alert-dismissible {
+    padding-right: (@alert-padding-x + 20);
+
+    .close {
+        position: relative;
+        top: -2px;
+        right: -21px;
+        color: inherit;
+    }
+}
+
+
+.alert-success {
+    .alert-variant(@alert-success-bg; @alert-success-border; @alert-success-text);
+}
+
+.alert-info {
+    .alert-variant(@alert-info-bg; @alert-info-border; @alert-info-text);
+}
+
+.alert-warning {
+    .alert-variant(@alert-warning-bg; @alert-warning-border; @alert-warning-text);
+}
+
+.alert-danger {
+    .alert-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+}
+
+.variant {
+    border: none;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+
+    i {
+        display: none;
+    }
+
+    &.alert {
+        border: none;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+    }
+
+    &.alert-success,
+    .alert-success {
+        color: @text-primary;
+        background-color: @lime-10;
+        background-image: url('https://bucket.pegadaian.co.id/design-system-salt-bucket/assets/images/aksen-green.svg');
+    }
+
+    &.alert-info,
+    .alert-info {
+        color: @text-primary;
+        background-color: @blue-10;
+        background-image: url('https://bucket.pegadaian.co.id/design-system-salt-bucket/assets/images/aksen-blue.svg');
+    }
+
+    &.alert-warning,
+    .alert-warning {
+        color: @text-primary;
+        background-color: @yellow-10;
+        background-image: url('https://bucket.pegadaian.co.id/design-system-salt-bucket/assets/images/aksen-yellow.svg');
+    }
+
+    &.alert-danger,
+    .alert-danger {
+        color: @text-primary;
+        background-color: @red-10;
+        background-image: url('https://bucket.pegadaian.co.id/design-system-salt-bucket/assets/images/aksen-red.svg');
+    }
+}

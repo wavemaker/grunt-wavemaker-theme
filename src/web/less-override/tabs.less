@@ -1,40 +1,39 @@
 .app-tabs,
 .tab-body {
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-    //navigation
-    .nav-tabs {
-        border-bottom-color: @nav-tabs-border-color;
-        background-color: @nav-tabs-bg;
-        display: flex;
+  //navigation
+  .nav-tabs {
+    border-bottom-color: @nav-tabs-border-color;
+    background-color: @nav-tabs-bg;
+    display: flex;
 
-        >li {
-            flex: 1 1 auto;
-            text-align: center;
+    > li {
+      flex: 1 1 auto;
+      text-align: center;
 
-            >a,
-            .app-menu a {
-                color: @text-secondary;
-                text-transform: capitalize;
-                font-weight: bold;
+      > a,
+      .app-menu a {
+        color: @text-secondary;
+        text-transform: capitalize;
+        font-weight: bold;
 
-                &:hover,
-                &:focus {
-                    color: @text-green;
-                }
-            }
-
-            &.active {
-
-                >a,
-                .app-menu a,
-                .app-menu a:hover {
-                    border-color: transparent;
-                    color: @text-green !important;
-                }
-            }
+        &:hover,
+        &:focus {
+          color: @text-green;
         }
+      }
+
+      &.active {
+        > a,
+        .app-menu a,
+        .app-menu a:hover {
+          border-color: transparent;
+          color: @text-green !important;
+        }
+      }
     }
+  }
 }

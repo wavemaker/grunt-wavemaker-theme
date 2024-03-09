@@ -2,7 +2,7 @@
   "name": "wm-theme",
   "version": "1.0.0",
   "scripts": {
-    "stylint": "npx stylelint \"src/web/**/*.less\""
+    "stylelint": "npx stylelint \"src/web/**/*.less\""
   },
   "devDependencies": {
     "grunt": "0.4.5",

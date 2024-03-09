@@ -15,6 +15,11 @@
     "comment-no-empty": null,
     "no-descending-specificity": null,
     "no-empty-source": null,
-    "font-family-no-missing-generic-family-keyword": null
+    "font-family-no-missing-generic-family-keyword": null,
+    "property-no-vendor-prefix": null,
+    "declaration-block-no-shorthand-property-overrides": null,
+    "selector-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+    "no-duplicate-selectors": null
   }
 }

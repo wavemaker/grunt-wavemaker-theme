@@ -1,8 +1,8 @@
 //Breadcrumb
 .breadcrumb {
   .typography-sigma(@typography-weight-normal);
-  color: @text-green;
 
+  color: @text-green;
   display: flex;
   align-items: center;
 
@@ -15,10 +15,10 @@
     align-items: center;
   }
 
-  &.attribute-based > li + li:before,
-  & > li + li:before {
+  &.attribute-based > li + li::before,
+  & > li + li::before {
     content: "\e998";
-    font-family: "System-Icon";
+    font-family: System-Icon;
     color: @color-black-40;
     font-size: 1.5rem;
   }

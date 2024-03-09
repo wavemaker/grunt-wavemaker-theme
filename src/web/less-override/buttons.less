@@ -1,133 +1,130 @@
 .btn {
-	text-transform: capitalize;
-	font-size: 1rem;
-	padding: .375rem .75rem;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	font-weight: @btn-font-weight;
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 0.375rem 0.75rem;
+  box-shadow: none;
+  font-weight: @btn-font-weight;
 
-	&.btn-lg {
-		font-size: 1rem;
-	}
+  &.btn-lg {
+    font-size: 1rem;
+  }
 
-	&.btn-sm {
-		font-size: 10px;
-		padding: @padding-small-vertical @padding-small-horizontal;
-	}
+  &.btn-sm {
+    font-size: 10px;
+    padding: @padding-small-vertical @padding-small-horizontal;
+  }
 
-	&.btn-xs {
-		font-size: 8px;
-		padding: @padding-xs-vertical @padding-xs-horizontal;
-	}
+  &.btn-xs {
+    font-size: 8px;
+    padding: @padding-xs-vertical @padding-xs-horizontal;
+  }
 
-	.caret {
-		margin-left: 0.7em;
-	}
+  .caret {
+    margin-left: 0.7em;
+  }
 
-	&.active,
-	&:active {
-		-webkit-box-shadow: none;
-		box-shadow: none;
-	}
+  &.active,
+  &:active {
+    box-shadow: none;
+  }
 }
 
 .btn-secondary {
-	background-color: @white !important;
-	color: @lime-50 !important;
-	border-color: @lime-50 !important;
+  background-color: @white !important;
+  color: @lime-50 !important;
+  border-color: @lime-50 !important;
 
-	&:hover {
-		color: @lime-80 !important;
-		background-color: @white !important;
-		border-color: @lime-80 !important;
-	}
+  &:hover {
+    color: @lime-80 !important;
+    background-color: @white !important;
+    border-color: @lime-80 !important;
+  }
 
-	&:active {
-		color: @lime-60 !important;
-		background-color: @white !important;
-		border-color: @lime-60 !important;
-	}
-
+  &:active {
+    color: @lime-60 !important;
+    background-color: @white !important;
+    border-color: @lime-60 !important;
+  }
 }
 
 .btn-link {
-	font-weight: @btn-font-weight;
-	display: flex;
-	align-items: center;
-	.si-plus-round-fill::before {
-		color: @lime-50;
-	}
+  font-weight: @btn-font-weight;
+  display: flex;
+  align-items: center;
+
+  .si-plus-round-fill::before {
+    color: @lime-50;
+  }
 }
 
 .btn-group {
-	.btn-shadow();
+  .btn-shadow();
 
-	.btn {
-		box-shadow: none;
-		border-color: transparent;
-	}
+  .btn {
+    box-shadow: none;
+    border-color: transparent;
+  }
 }
 
 .btn-default {
-
-	&:hover,
-	&:focus &:active {
-		color: @btn-default-color;
-		background-color: darken(@btn-default-bg, 10%);
-		border-color: darken(@btn-default-bg, 10%);
-	}
+  &:hover,
+  &:focus &:active {
+    color: @btn-default-color;
+    background-color: darken(@btn-default-bg, 10%);
+    border-color: darken(@btn-default-bg, 10%);
+  }
 }
 
 .btn.btn-transparent {
-	&:hover {
-		background-color: #f0f0f0 !important;
-	}
+  &:hover {
+    background-color: #f0f0f0 !important;
+  }
 }
 
 .btn-flat {
-	text-transform: uppercase;
-	background-color: transparent;
-	border-color: transparent;
-	box-shadow: none;
-	color: inherit;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: inherit;
 
-	&.btn-primary {
-		color: @brand-primary;
+  &.btn-primary {
+    color: @brand-primary;
 
-		&:hover,
-		&:focus {
-			background-color: @btn-primary-bg;
-			color: @btn-primary-color;
-		}
-	}
+    &:hover,
+    &:focus {
+      background-color: @btn-primary-bg;
+      color: @btn-primary-color;
+    }
+  }
 
-	&.btn-info {
-		color: @brand-info;
+  &.btn-info {
+    color: @brand-info;
 
-		&:hover,
-		&:focus {
-			background-color: @btn-info-bg;
-			color: @btn-info-color;
-		}
-	}
+    &:hover,
+    &:focus {
+      background-color: @btn-info-bg;
+      color: @btn-info-color;
+    }
+  }
 
-	&.btn-warning {
-		color: @brand-warning;
+  &.btn-warning {
+    color: @brand-warning;
 
-		&:hover,
-		&:focus {
-			background-color: @btn-warning-bg;
-			color: @btn-warning-color;
-		}
-	}
+    &:hover,
+    &:focus {
+      background-color: @btn-warning-bg;
+      color: @btn-warning-color;
+    }
+  }
 
-	&.btn-danger {
-		color: @brand-danger;
+  &.btn-danger {
+    color: @brand-danger;
 
-		&:hover,
-		&:focus {
-			background-color: @btn-danger-bg;
-			color: @btn-danger-color;
-		}
-	}
+    &:hover,
+    &:focus {
+      background-color: @btn-danger-bg;
+      color: @btn-danger-color;
+    }
+  }
 }

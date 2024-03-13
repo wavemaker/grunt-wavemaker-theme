@@ -9,9 +9,7 @@
       }
       .panel-title {
         .heading {
-          font-size: 24px !important;
-          line-height: inherit;
-          font-family: NunitoSans-ExtraBold;
+          .typography-omicron("Bold")
         }
       }
       .panel-actions {
@@ -22,7 +20,6 @@
       }
     }
     .panel-collapse {
-      font-family: NunitoSans-SemiBold;
       border: 0;
       &:before {
         content: "";
@@ -53,6 +50,7 @@
           // background: @brand-primary;  
         }
       }
+      .typography-omicron("Bold")
     }
     &.panel-success .panel-collapse::before {
       background-color: @brand-success;

@@ -1,4 +1,25 @@
 /**** accordion classes ****/
+
+@font-face {
+  font-family: System-Icon;
+  src: url("../../resources/icons/pegadaian/System-Icon.css");
+}
+
+[class^="wi-"],
+[class*=" wi-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: System-Icon !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .app-accordion {
   .app-accordion-panel.panel {
     box-shadow: none;
@@ -23,10 +44,13 @@
 
         i.wi-plus::before {
           content: "\e996";
+          font-size: 25px;
         }
 
         i.wi-minus::before {
           content: "\e999";
+          font-size: 25px;
+          color: black;
         }
       }
     }

@@ -1,27 +1,40 @@
-/****accordion classes****/
+/**** accordion classes ****/
 .app-accordion {
   .app-accordion-panel.panel {
     box-shadow: none;
+
     .panel-heading {
       background-color: transparent;
+
       .panel-icon {
         margin-top: 0;
       }
+
       .panel-title {
         .heading {
-          .typography-omicron("Bold")
+          .typography-omicron("Bold");
         }
       }
+
       .panel-actions {
         right: 1em;
         top: 1.2em;
         outline: none;
 
+        i.wi-plus::before {
+          content: "\e996";
+        }
+
+        i.wi-minus::before {
+          content: "\e999";
+        }
       }
     }
+
     .panel-collapse {
       border: 0;
-      &:before {
+
+      &::before {
         content: "";
         height: 2px;
         position: absolute;
@@ -42,33 +55,40 @@
       &.in {
         outline: none;
         box-shadow: none;
-        &:before {
+
+        &::before {
           -webkit-transform: scale(1);
           -ms-transform: scale(1);
           -o-transform: scale(1);
           transform: scale(1);
-          // background: @brand-primary;  
+          // background: @brand-primary;
         }
       }
-      .typography-omicron("SemiBold")
+      .typography-omicron("SemiBold");
     }
+
     &.panel-success .panel-collapse::before {
       background-color: @brand-success;
     }
+
     &.panel-info .panel-collapse::before {
       background-color: @brand-info;
     }
+
     &.panel-warning .panel-collapse::before {
       background-color: @brand-warning;
     }
+
     &.panel-danger .panel-collapse::before {
       background-color: @brand-danger;
     }
   }
 }
+
 .panel-group {
   margin-bottom: 0;
   border-radius: 6px;
+
   .panel-heading + .panel-collapse {
     > .panel-body {
       border-top: 0;
@@ -76,12 +96,13 @@
   }
 }
 
-.panel-group .panel{
+.panel-group .panel {
   margin-bottom: 0 !important;
   border-radius: 6px !important;
-  border-width: 1px 1px 1px 1px !important;
+  border-width: 1px !important;
   border-color: #d5d5d5 !important;
 }
-.app-accordion .app-accordion-panel.panel .active{
+
+.app-accordion .app-accordion-panel.panel .active {
   color: @lime-50 !important;
 }

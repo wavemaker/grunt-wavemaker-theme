@@ -1,0 +1,38 @@
+// Inline
+.popover {
+  min-width: 16.667em;
+  box-shadow:
+    0 0 2px 0 #00000014,
+    0 2px 6px 0 #00000024;
+  border: 0;
+  border-radius: 12px;
+  background-color: @white;
+  overflow: visible;
+
+  .popover-header {
+    padding: 16px;
+    background-color: @white;
+    border-bottom: 1px solid @color-black-20;
+    .typography-lambda("Bold");
+  }
+
+  .popover-content {
+    padding: 16px;
+  }
+
+  &.top > .arrow {
+    border-top-color: rgb(0 0 0 / 8%);
+  }
+
+  &.left > .arrow {
+    border-left-color: rgb(0 0 0 / 8%);
+  }
+
+  &.right > .arrow {
+    border-right-color: rgb(0 0 0 / 8%);
+  }
+
+  &.bottom > .arrow {
+    border-bottom-color: rgb(0 0 0 / 8%);
+  }
+}

@@ -1,0 +1,132 @@
+/**** accordion classes ****/
+
+@font-face {
+  font-family: System-Icon;
+  src: url("../../resources/icons/pegadaian/System-Icon.css");
+}
+
+[class^="wi-"],
+[class*=" wi-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: System-Icon !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-accordion {
+  .app-accordion-panel.panel {
+    box-shadow: none;
+
+    .panel-heading {
+      background-color: transparent;
+
+      .panel-icon {
+        margin-top: 0;
+      }
+
+      .panel-title {
+        .heading {
+          .typography-omicron("Bold");
+        }
+      }
+
+      .panel-actions {
+        right: 1em;
+        top: 1.2em;
+        outline: none;
+
+        i.wi-plus::before {
+          content: "\e996";
+          font-size: 25px;
+        }
+
+        i.wi-minus::before {
+          content: "\e999";
+          font-size: 25px;
+          color: black;
+        }
+      }
+    }
+
+    .panel-collapse {
+      border: 0;
+
+      &::before {
+        content: "";
+        height: 2px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        -webkit-transition: all;
+        -o-transition: all;
+        transition: all;
+        -webkit-transition-duration: 250ms;
+        transition-duration: 250ms;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+      }
+
+      &.in {
+        outline: none;
+        box-shadow: none;
+
+        &::before {
+          -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+          -o-transform: scale(1);
+          transform: scale(1);
+          // background: @brand-primary;
+        }
+      }
+      .typography-omicron("SemiBold");
+    }
+
+    &.panel-success .panel-collapse::before {
+      background-color: @brand-success;
+    }
+
+    &.panel-info .panel-collapse::before {
+      background-color: @brand-info;
+    }
+
+    &.panel-warning .panel-collapse::before {
+      background-color: @brand-warning;
+    }
+
+    &.panel-danger .panel-collapse::before {
+      background-color: @brand-danger;
+    }
+  }
+}
+
+.panel-group {
+  margin-bottom: 0;
+  border-radius: 6px;
+
+  .panel-heading + .panel-collapse {
+    > .panel-body {
+      border-top: 0;
+    }
+  }
+}
+
+.panel-group .panel {
+  margin-bottom: 0 !important;
+  border-radius: 6px !important;
+  border-width: 1px !important;
+  border-color: #d5d5d5 !important;
+}
+
+.app-accordion .app-accordion-panel.panel .active {
+  color: @lime-50 !important;
+}

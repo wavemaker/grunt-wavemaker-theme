@@ -41,7 +41,7 @@
   @table-header-bg: #fff;
   @pagination-active-hover-bg: darken(@brand-primary, 15%);
   @pagination-basic-bg: #ddd;
-  @wm-grid-selection-bg: #cfd8dc;
+  @wm-grid-selection-bg: none;
 
   //Tabset
   @nav-tabs-color-hover: #000;
@@ -988,12 +988,11 @@
 
       tbody {
         tr {
-          &.active,
           &:hover,
+          &.active,
           &.active:hover {
             td {
-              background-color: @table-bg-active;
-              border-color: rgba(0 0 0 0.05);
+              background-color: inherit;
             }
           }
         }
@@ -1004,7 +1003,7 @@
       tr {
         &.info,
         &.info:hover {
-          background-color: @wm-grid-selection-bg;
+          background-color: inherit;
         }
       }
     }

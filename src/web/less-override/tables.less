@@ -1,11 +1,38 @@
 //Table
 .table {
+  border-collapse: collapse !important;
+  border-radius: 8px !important;
+  border: 1px solid @color-black-20;
   > thead {
     > tr {
       th {
-        font-weight: normal;
-        background-color: @table-header-bg;
+        .typography-sigma("Bold");
+        background-color: @lime-50;
+        color: white;
+        border-radius: 0.5px;
+        &:first-child {
+          border-top-left-radius: 8px;
+        }
+        &:last-child {
+          border-top-right-radius: 8px;
+        }
       }
     }
+  }
+
+  > tbody > tr:last-child > td:first-child {
+    border-bottom-left-radius: 8px;
+  }
+
+  > tbody > tr:last-child > td:last-child {
+    border-bottom-right-radius: 8px;
+  }
+
+  tr:nth-child(odd) {
+    background-color: @color-black-20;
+  }
+
+  tr:nth-child(even) {
+    background-color: white;
   }
 }

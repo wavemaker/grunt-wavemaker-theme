@@ -41,7 +41,7 @@
   @table-header-bg: #fff;
   @pagination-active-hover-bg: darken(@brand-primary, 15%);
   @pagination-basic-bg: #ddd;
-  @wm-grid-selection-bg: #cfd8dc;
+  @wm-grid-selection-bg: none;
 
   //Tabset
   @nav-tabs-color-hover: #000;
@@ -288,18 +288,6 @@
 
     .progress-bar {
       line-height: 0.92em;
-    }
-  }
-
-  //Table
-  .table {
-    > thead {
-      > tr {
-        th {
-          font-weight: normal;
-          background-color: @table-header-bg;
-        }
-      }
     }
   }
 
@@ -647,68 +635,6 @@
     }
   }
 
-  //for text, select controls
-  .form-control,
-  .form-group + .form-control {
-    color: inherit;
-    border: 0;
-    -webkit-background-size:
-      0 2px,
-      100% 1px;
-    background-size:
-      0 2px,
-      100% 1px;
-    background-repeat: no-repeat;
-    background-position:
-      center bottom,
-      center -webkit-calc(100% - 1px);
-    background-position:
-      center bottom,
-      center calc(100% - 1px);
-    background-color: rgba(0 0 0 0);
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-transition: background 0s ease-out;
-    -o-transition: background 0s ease-out;
-    transition: background 0s ease-out;
-    background-image: linear-gradient(@brand-primary, @brand-primary),
-      linear-gradient(@input-border, @input-border);
-
-    &:hover,
-    &:focus {
-      outline: none;
-      -webkit-background-size:
-        100% 2px,
-        100% 1px;
-      background-size:
-        100% 2px,
-        100% 1px;
-      -webkit-transition-duration: 0.4s;
-      -o-transition-duration: 0.4s;
-      transition-duration: 0.4s;
-      box-shadow: none;
-    }
-  }
-
-  .form-control[disabled] {
-    background-color: transparent;
-    background-image: none;
-    border-bottom: 1px dotted rgba(0 0 0 0.1);
-  }
-
-  .input-group-btn {
-    .btn {
-      background-color: transparent;
-      border: 0;
-      box-shadow: none;
-      color: inherit;
-
-      i {
-        font-size: 18pt;
-      }
-    }
-  }
-
   //**** form elements*****/
 
   .radio,
@@ -989,12 +915,11 @@
 
       tbody {
         tr {
-          &.active,
           &:hover,
+          &.active,
           &.active:hover {
             td {
-              background-color: @table-bg-active;
-              border-color: rgba(0 0 0 0.05);
+              background-color: inherit;
             }
           }
         }
@@ -1005,7 +930,7 @@
       tr {
         &.info,
         &.info:hover {
-          background-color: @wm-grid-selection-bg;
+          background-color: inherit;
         }
       }
     }

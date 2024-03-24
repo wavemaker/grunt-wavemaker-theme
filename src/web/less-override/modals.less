@@ -17,14 +17,29 @@
     color: black;
   }
 
-  .close span {
+  button.close {
+    margin-top: 4px;
+    margin-right: -15px;
+    opacity: 1;
+  }
+
+  button.close:hover {
+    opacity: 1;
+  }
+
+  button.close::before {
     font-family: System-Icon !important;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    content: "\e99a";
+    content: "\e99c";
+    opacity: 1;
+  }
+
+  button.close span {
+    visibility: collapse;
   }
 }
 

@@ -1,0 +1,52 @@
+@font-face {
+  font-family: System-Icon;
+  src: url("../../resources/icons/pegadaian/System-Icon.css");
+}
+
+.modal-header {
+  background-color: white;
+  .typography-omicron("Bold");
+
+  border-bottom-color: @color-black-20;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding: 1rem;
+  color: black;
+
+  .modal-title {
+    color: black;
+  }
+
+  button.close {
+    margin-top: 4px;
+    margin-right: -15px;
+    opacity: 1;
+  }
+
+  button.close:hover {
+    opacity: 1;
+  }
+
+  button.close::before {
+    font-family: System-Icon !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    content: "\e99c";
+    opacity: 1;
+  }
+
+  button.close span {
+    visibility: collapse;
+  }
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 3px 9px black(5, 5, 5);
+  background-clip: padding-box;
+}

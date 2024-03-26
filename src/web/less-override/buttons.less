@@ -4,19 +4,27 @@
   padding: 0.375rem 0.75rem;
   box-shadow: none;
   font-weight: @btn-font-weight;
+  border-radius: 0.5rem;
+  height: fit-content;
+  .typography-omicron(@typography-weight-bold);
+
+  &.btn-xl {
+    padding: 0.75rem 1rem;
+  }
 
   &.btn-lg {
-    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &.btn-md {
+    padding: 0.5rem 0.75rem;
+    .typography-sigma(@typography-weight-bold);
   }
 
   &.btn-sm {
-    font-size: 10px;
-    padding: @padding-small-vertical @padding-small-horizontal;
-  }
-
-  &.btn-xs {
-    font-size: 8px;
-    padding: @padding-xs-vertical @padding-xs-horizontal;
+    padding: 3px 10px;
+    border-radius: 4px;
+    .typography-omega(@typography-weight-bold);
   }
 
   .caret {
@@ -54,6 +62,10 @@
 
   .si-plus-round-fill::before {
     color: @lime-50;
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 }
 

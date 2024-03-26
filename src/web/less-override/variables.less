@@ -158,8 +158,7 @@
 @font-face {
   font-family: "robotoregular";
   src: url("fonts/Roboto-Regular-webfont.eot");
-  src: url("fonts/Roboto-Regular-webfont.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"),
     url("fonts/Roboto-Regular-webfont.woff") format("woff"),
     url("fonts/Roboto-Regular-webfont.ttf") format("truetype"),
     url("fonts/Roboto-Regular-webfont.svg#robotoregular") format("svg");
@@ -463,15 +462,9 @@
 //** Default `.form-control` height
 @input-height-base: (@line-height-computed + (@padding-base-vertical * 2) + 2);
 //** Large `.form-control` height
-@input-height-large: (
-  ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) +
-    2
-);
+@input-height-large: (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
 //** Small `.form-control` height
-@input-height-small: (
-  floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) +
-    2
-);
+@input-height-small: (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
 
 //** `.form-group` margin
 @form-group-margin-bottom: 0;
@@ -805,10 +798,8 @@
 //** Popover outer arrow color
 @popover-arrow-outer-color: fadein(@popover-border-color, 5%);
 //** Popover outer arrow fallback color
-@popover-arrow-outer-fallback-color: darken(
-  @popover-fallback-border-color,
-  20%
-);
+@popover-arrow-outer-fallback-color: darken(@popover-fallback-border-color,
+    20%);
 
 //== Labels
 //

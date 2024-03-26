@@ -1,0 +1,140 @@
+.app-date {
+  @modal-padding-x: 16px;
+  @modal-padding-y: 16px;
+
+  // Input
+  &.input-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 100%;
+
+    .input-group-btn {
+      width: initial;
+      position: absolute;
+      display: block;
+      right: 12px;
+      z-index: 10;
+
+      .btn-time {
+        background: transparent;
+        color: #58585b;
+        border: 0;
+        font-size: 1.65rem;
+
+        .sl-calendar::before {
+          content: "\e91c";
+          font-family: System-Icon;
+        }
+      }
+    }
+  }
+
+  // Calendar Modal
+  &.bs-datepicker {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+      0 0 2px 0 #00000014,
+      0 2px 6px 0 #00000024;
+
+    .bs-datepicker-head {
+      background: @white;
+      color: @lime-50;
+
+      .typography-omicron(@typography-weight-bold);
+
+      .current {
+        &:nth-child(2) {
+          margin-right: -5px;
+        }
+
+        &:nth-child(3) {
+          margin-left: -5px;
+        }
+      }
+
+      .previous,
+      .next {
+        padding: 0 @modal-padding-x;
+
+        span {
+          display: flex;
+          align-items: center;
+          font-family: System-Icon;
+          color: @color-black-60;
+          font-size: 0;
+
+          &::after {
+            font-size: 24px;
+          }
+        }
+      }
+
+      .previous span::after {
+        content: "\e997";
+        display: block;
+      }
+
+      .next span::after {
+        content: "\e998";
+        display: block;
+      }
+    }
+
+    .bs-datepicker-body {
+      border: 0;
+      padding: 0 @modal-padding-x 8px @modal-padding-x;
+
+      table.days.weeks {
+        tr {
+          th,
+          td {
+            text-align: center;
+            padding: 4px 8px;
+          }
+        }
+
+        thead {
+          background: @white;
+          border-top: 1px solid @color-black-20;
+          border-bottom: 1px solid @color-black-20;
+
+          tr th {
+            color: @text-secondary;
+            padding-top: 8px;
+            padding-bottom: 8px;
+
+            .typography-omicron(@typography-weight-normal);
+          }
+        }
+
+        tbody {
+          tr {
+            td {
+              span {
+                .typography-sigma(@typography-weight-normal);
+
+                color: @text-primary;
+                line-height: 32px;
+
+                &.is-other-month {
+                  color: @color-black-40;
+                }
+
+                &.selected {
+                  background-color: @lime-50;
+                  color: @white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .bs-datepicker-buttons {
+      display: none;
+    }
+  }
+}

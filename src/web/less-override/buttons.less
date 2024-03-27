@@ -1,0 +1,142 @@
+.btn {
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 0.375rem 0.75rem;
+  box-shadow: none;
+  font-weight: @btn-font-weight;
+  border-radius: 0.5rem;
+  height: fit-content;
+  .typography-omicron(@typography-weight-bold);
+
+  &.btn-xl {
+    padding: 0.75rem 1rem;
+  }
+
+  &.btn-lg {
+    padding: 0.5rem 1rem;
+  }
+
+  &.btn-md {
+    padding: 0.5rem 0.75rem;
+    .typography-sigma(@typography-weight-bold);
+  }
+
+  &.btn-sm {
+    padding: 3px 10px;
+    border-radius: 4px;
+    .typography-omega(@typography-weight-bold);
+  }
+
+  .caret {
+    margin-left: 0.7em;
+  }
+
+  &.active,
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.btn-secondary {
+  background-color: @white !important;
+  color: @lime-50 !important;
+  border-color: @lime-50 !important;
+
+  &:hover {
+    color: @lime-80 !important;
+    background-color: @white !important;
+    border-color: @lime-80 !important;
+  }
+
+  &:active {
+    color: @lime-60 !important;
+    background-color: @white !important;
+    border-color: @lime-60 !important;
+  }
+}
+
+.btn-link {
+  font-weight: @btn-font-weight;
+  display: flex;
+  align-items: center;
+
+  .si-plus-round-fill::before {
+    color: @lime-50;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn-group {
+  .btn-shadow();
+
+  .btn {
+    box-shadow: none;
+    border-color: transparent;
+  }
+}
+
+.btn-default {
+  &:hover,
+  &:focus &:active {
+    color: @btn-default-color;
+    background-color: darken(@btn-default-bg, 10%);
+    border-color: darken(@btn-default-bg, 10%);
+  }
+}
+
+.btn.btn-transparent {
+  &:hover {
+    background-color: #f0f0f0 !important;
+  }
+}
+
+.btn-flat {
+  text-transform: uppercase;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: inherit;
+
+  &.btn-primary {
+    color: @brand-primary;
+
+    &:hover,
+    &:focus {
+      background-color: @btn-primary-bg;
+      color: @btn-primary-color;
+    }
+  }
+
+  &.btn-info {
+    color: @brand-info;
+
+    &:hover,
+    &:focus {
+      background-color: @btn-info-bg;
+      color: @btn-info-color;
+    }
+  }
+
+  &.btn-warning {
+    color: @brand-warning;
+
+    &:hover,
+    &:focus {
+      background-color: @btn-warning-bg;
+      color: @btn-warning-color;
+    }
+  }
+
+  &.btn-danger {
+    color: @brand-danger;
+
+    &:hover,
+    &:focus {
+      background-color: @btn-danger-bg;
+      color: @btn-danger-color;
+    }
+  }
+}

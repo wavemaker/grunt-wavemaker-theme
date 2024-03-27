@@ -2,6 +2,8 @@
   @input-padding-x: 12px;
   @input-padding-y: 12px;
 
+  position: relative;
+
   .form-control {
     .typography-omicron(@typography-weight-normal);
 
@@ -27,6 +29,21 @@
 
     &::placeholder {
       color: @color-black-50;
+    }
+  }
+
+  .app-icon-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 0;
+
+    &.right {
+      right: @input-padding-x;
+    }
+
+    &.left {
+      left: @input-padding-x;
     }
   }
 }
